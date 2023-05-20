@@ -1,0 +1,17 @@
+2023-05-16 14:00:02  root(         lfm: 102)  I  Start lfm
+2023-05-16 14:00:02  lfm(          ui: 709)  I  Support wide chars: False
+2023-05-16 14:00:02  lfm( preferences: 318)  W  KEYS: Missing Action item compress_dir
+2023-05-16 14:00:02  lfm( preferences: 318)  W  KEYS: Missing Action item change_owner
+2023-05-16 14:00:02  lfm( preferences: 318)  W  KEYS: Missing Action item change_perms
+2023-05-16 14:00:02  lfm( preferences: 318)  W  KEYS: Missing Action item backup_file
+2023-05-16 14:00:02  lfm( preferences: 318)  W  KEYS: Missing Action item uncompress_dir_other_pane
+2023-05-16 14:00:02  lfm( preferences: 318)  W  KEYS: Missing Action item diff_file_with_backup
+2023-05-16 14:00:02  lfm( preferences: 318)  W  KEYS: Missing Action item move_file
+2023-05-16 14:00:02  lfm( preferences: 318)  W  KEYS: Missing Action item uncompress_dir
+2023-05-16 14:00:02  lfm( preferences: 318)  W  KEYS: Missing Action item show_filesystems_info
+2023-05-16 14:00:02  lfm( preferences: 318)  W  KEYS: Missing Action item compress_uncompress_file
+2023-05-16 14:00:02  lfm( preferences: 387)  I  Load history file from "/home/javier/.config/lfm/lfm.history"
+2023-05-16 14:00:46  lfm( preferences: 344)  I  Dump keys into file
+2023-05-16 14:01:40  lfm( preferences: 344)  I  Dump keys into file
+2023-05-16 14:04:32  lfm( preferences: 344)  I  Dump keys into file
+2023-05-16 14:05:19  lfm( preferences: 344)  I  Dump keys into file
