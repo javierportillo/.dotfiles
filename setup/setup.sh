@@ -1,9 +1,7 @@
 #!/bin/bash
-set -e
 
 OHMYZSH_DIR="$HOME/.oh-my-zsh"
 CUSTOM_DIR="${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}"
-
 DOTFILES_DIR="$(dirname "$(dirname "$(readlink -f "$0")")")"
 
 echo "Installing dependencies"
@@ -28,6 +26,21 @@ else
 	echo "$OHMYZSH_DIR already exists, skipping..."
 fi
 
+echo "install zsh auto suggestions"
+if [ ! -d "$CUSTOM_DIR/plugins/zsh-autosuggestions" ]; then
+	git clone https://github.com/zsh-users/zsh-autosuggestions $CUSTOM_DIR/plugins/zsh-autosuggestions
+fi
+
+echo "install zsh syntax highlighting"
+if [ ! -d "$CUSTOM_DIR/plugins/zsh-syntax-highlighting" ]; then
+	git clone https://github.com/zsh-users/zsh-syntax-highlighting.git $CUSTOM_DIR/plugins/zsh-syntax-highlighting
+fi
+
+echo "install zsh vi mode"
+if [ ! -d "$CUSTOM_DIR/plugins/zsh-vi-mode" ]; then
+	git clone https://github.com/jeffreytse/zsh-vi-mode $CUSTOM_DIR/plugins/zsh-vi-mode
+fi
+
 echo "install p10k"
 echo "https://github.com/romkatv/powerlevel10k#meslo-nerd-font-patched-for-powerlevel10k"
 read -p "don't forget to install the Meslo font"
@@ -36,8 +49,25 @@ if [ ! -d "$OHMYZSH_DIR/custom/themes/powerlevel10k" ]; then
 	git clone --depth=1 https://github.com/romkatv/powerlevel10k.git $CUSTOM_DIR/themes/powerlevel10k
 fi
 
+
+echo "install asdf"
 if [ ! -d "$HOME/.asdf" ]; then
 	git clone https://github.com/asdf-vm/asdf.git ~/.asdf --branch v0.11.3
 fi
 
+echo "install asdf plugins"
+asdf plugin add nodejs https://github.com/asdf-vm/asdf-nodejs.git
+asdf plugin add erlang https://github.com/asdf-vm/asdf-erlang.git
 
+# dependencies for asdf erlang
+sudo apt install build-essential autoconf m4 libncurses5-dev libwxgtk3.0-gtk3-dev libwxgtk-webview3.0-gtk3-dev libgl1-mesa-dev libglu1-mesa-dev libpng-dev libssh-dev unixodbc-dev xsltproc fop libxml2-utils libncurses-dev openjdk-11-jdk
+
+asdf plugin add erlang https://github.com/asdf-vm/asdf-erlang.git
+asdf plugin add elixir https://github.com/asdf-vm/asdf-elixir.git
+asdf plugin add tmux https://github.com/aphecetche/asdf-tmux.git
+asdf plugin add neovim
+asdf plugin-add kubectx https://github.com/virtualstaticvoid/asdf-kubectx.git
+asdf plugin-add k9s https://github.com/looztra/asdf-k9s
+
+echo "install from .tool-versions"
+#asdf install

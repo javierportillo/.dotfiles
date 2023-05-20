@@ -77,7 +77,8 @@ COMPLETION_WAITING_DOTS="true"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(alias-finder aliases asdf colored-man-pages command-not-found docker-compose docker fd git thefuck themes)
+# zsh-syntax-highlighting should be the last one!!!!!!!!!!!!!!!
+plugins=(alias-finder aliases asdf colored-man-pages command-not-found docker-compose docker fd git thefuck themes zsh-autosuggestions zsh-vi-mode zsh-syntax-highlighting)
 
 source $ZSH/oh-my-zsh.sh
 
