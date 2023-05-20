@@ -19,29 +19,6 @@ k9s:
   currentContext: docker-desktop
   currentCluster: docker-desktop
   clusters:
-    arn:aws:eks:eu-west-2:106860803613:cluster/dev0:
-      namespace:
-        active: test-lb
-        lockFavorites: false
-        favorites:
-        - test-lb
-        - kube-system
-        - all
-        - default
-      view:
-        active: ns
-      featureGates:
-        nodeShell: false
-      shellPod:
-        image: busybox:1.35.0
-        command: []
-        args: []
-        namespace: default
-        limits:
-          cpu: 100m
-          memory: 100Mi
-        labels: {}
-      portForwardAddress: localhost
     docker-desktop:
       namespace:
         active: all
