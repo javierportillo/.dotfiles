@@ -3,3 +3,6 @@
 	email = javiermarquezportillo@gmail.com
 [init]
 	defaultBranch = main
+[core]
+	editor = nvim
+
