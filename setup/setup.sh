@@ -4,12 +4,18 @@ OHMYZSH_DIR="$HOME/.oh-my-zsh"
 CUSTOM_DIR="${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}"
 DOTFILES_DIR="$(dirname "$(dirname "$(readlink -f "$0")")")"
 
+read -p "have you already updated the repos?"
+
 echo "Installing dependencies"
 
 sudo apt install git curl zsh stow xdg-user-dirs exa lfm python3-pip fzf
 
 echo "stowing files from $DOTFILES_DIR/home"
 stow -vv -t $HOME -d $DOTFILES_DIR -S home
+
+echo "setting locales"
+sudo locale-gen en_US.UTF-8
+sudo update-locale LANG=en_US.UTF-8
 
 echo "updating xdg dirs"
 xdg-user-dirs-update
