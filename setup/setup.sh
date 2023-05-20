@@ -6,7 +6,7 @@ DOTFILES_DIR="$(dirname "$(dirname "$(readlink -f "$0")")")"
 
 echo "Installing dependencies"
 
-sudo apt install git curl zsh stow xdg-user-dirs exa lfm python3-pip
+sudo apt install git curl zsh stow xdg-user-dirs exa lfm python3-pip fzf
 
 echo "stowing files from $DOTFILES_DIR/home"
 stow -vv -t $HOME -d $DOTFILES_DIR -S home
@@ -61,8 +61,9 @@ asdf plugin add erlang https://github.com/asdf-vm/asdf-erlang.git
 asdf plugin add elixir https://github.com/asdf-vm/asdf-elixir.git
 asdf plugin add tmux https://github.com/aphecetche/asdf-tmux.git
 asdf plugin add neovim
-asdf plugin-add kubectx https://github.com/virtualstaticvoid/asdf-kubectx.git
-asdf plugin-add k9s https://github.com/looztra/asdf-k9s
+asdf plugin add kubectx https://github.com/virtualstaticvoid/asdf-kubectx.git
+asdf plugin add k9s https://github.com/looztra/asdf-k9s
+asdf plugin add zoxide https://github.com/nyrst/asdf-zoxide.git
 
 # dependencies for asdf erlang
 sudo apt install build-essential autoconf m4 libncurses5-dev libwxgtk3.0-gtk3-dev libwxgtk-webview3.0-gtk3-dev libgl1-mesa-dev libglu1-mesa-dev libpng-dev libssh-dev unixodbc-dev xsltproc fop libxml2-utils libncurses-dev openjdk-11-jdk
