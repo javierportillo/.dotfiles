@@ -41,6 +41,9 @@ if [ ! -d "$CUSTOM_DIR/plugins/zsh-vi-mode" ]; then
 	git clone https://github.com/jeffreytse/zsh-vi-mode $CUSTOM_DIR/plugins/zsh-vi-mode
 fi
 
+echo "install zsh thefuck"
+pip install thefuck
+
 echo "install p10k"
 echo "https://github.com/romkatv/powerlevel10k#meslo-nerd-font-patched-for-powerlevel10k"
 read -p "don't forget to install the Meslo font"
