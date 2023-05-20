@@ -106,6 +106,9 @@ alias k="kubectl"
 alias kx="kubectx"
 alias kn="kubens"
 
+alias ls="exa"
+alias la="exa -lah"
+
 alias ip="ip --color=always"
 
 
