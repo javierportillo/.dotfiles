@@ -418,7 +418,8 @@ tmux_conf_uninstall_plugins_on_reload=true
 set -g @plugin 'janoamaral/tokyo-night-tmux'
 
 set -g @plugin '27medkamal/tmux-session-wizard'
-set -g @session-wizard 'z'
+set -g @session-wizard 't'
+set -g detach-on-destroy off
 
 set -g @plugin 'christoomey/vim-tmux-navigator'
 
