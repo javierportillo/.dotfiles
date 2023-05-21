@@ -424,14 +424,14 @@ bind x kill-pane # skip prompt
 
 set -g @plugin 'christoomey/vim-tmux-navigator'
 
-set -g @plugin 'tmux-plugins/tmux-resurrect'
-set -g @resurrect-strategy-vim 'session'
-set -g @resurrect-strategy-nvim 'session'
-set -g @resurrect-processes '"~nvim . -S"'
+# set -g @plugin 'tmux-plugins/tmux-resurrect'
+# set -g @resurrect-strategy-vim 'session'
+# set -g @resurrect-strategy-nvim 'session'
+# set -g @resurrect-processes '"~nvim . -S"'
 
-# tmux-continuum should be placed last
-set -g @plugin 'tmux-plugins/tmux-continuum'
-set -g @continuum-restore 'on'
+# # tmux-continuum should be placed last
+# set -g @plugin 'tmux-plugins/tmux-continuum'
+# set -g @continuum-restore 'on'
 
 # -- custom variables ----------------------------------------------------------
 
