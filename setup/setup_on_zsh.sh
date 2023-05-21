@@ -17,6 +17,10 @@ fi
 
 ln -s ~/.local/oh-my-tmux/.tmux.conf ~/.config/tmux/tmux.conf
 
+echo "install telescope dependencies"
+npm i -g fd-find
+sudo apt install ripgrep
+
 echo "install asdf plugins"
 asdf plugin add nodejs https://github.com/asdf-vm/asdf-nodejs.git
 asdf plugin add erlang https://github.com/asdf-vm/asdf-erlang.git
