@@ -420,6 +420,7 @@ set -g @plugin 'janoamaral/tokyo-night-tmux'
 set -g @plugin '27medkamal/tmux-session-wizard'
 set -g @session-wizard 't'
 set -g detach-on-destroy off
+bind x kill-pane # skip prompt
 
 set -g @plugin 'christoomey/vim-tmux-navigator'
 
