@@ -6,7 +6,7 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
 fi
 
 # If you come from bash you might have to change your $PATH.
-export PATH=$HOME/bin:$HOME/.local/bin:/usr/local/bin:$PATH
+export PATH=$HOME/bin:$HOME/.local/bin:/usr/local/bin:$PATH:/snap/bin
 
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
@@ -78,7 +78,7 @@ COMPLETION_WAITING_DOTS="true"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 # zsh-syntax-highlighting should be the last one!!!!!!!!!!!!!!!
-plugins=(alias-finder aliases asdf colored-man-pages command-not-found docker-compose docker fd git thefuck themes zsh-autosuggestions zsh-vi-mode zsh-syntax-highlighting)
+plugins=(alias-finder aliases asdf colored-man-pages command-not-found docker-compose docker fd git thefuck themes zoxide zsh-autosuggestions zsh-vi-mode zsh-syntax-highlighting)
 
 source $ZSH/oh-my-zsh.sh
 
