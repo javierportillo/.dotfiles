@@ -418,13 +418,18 @@ tmux_conf_uninstall_plugins_on_reload=true
 #set -g @plugin 'tmux-plugins/tmux-copycat'
 #set -g @plugin 'tmux-plugins/tmux-cpu'
 
+## THEME
 # set -g @plugin 'janoamaral/tokyo-night-tmux'
+# set -g @plugin 'fabioluciano/tmux-tokyo-night'
+# set -g @theme_variation 'storm'
 
+## SESSION WIZZARD
 set -g @plugin '27medkamal/tmux-session-wizard'
 set -g @session-wizard 't'
 set -g detach-on-destroy off
 bind x kill-pane # skip prompt
 
+## TMUX NAVIGATOR (integrates with neovim)
 set -g @plugin 'christoomey/vim-tmux-navigator'
 
 # set -g @plugin 'tmux-plugins/tmux-resurrect'
