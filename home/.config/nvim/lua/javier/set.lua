@@ -35,3 +35,6 @@ vim.opt.cursorline = true
 vim.opt.equalalways = false
 
 vim.opt.showmode = false
+
+vim.opt.cmdheight = 0
+
