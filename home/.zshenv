@@ -10,4 +10,5 @@ export LESSHISTFILE="-"
 
 # other
 export EDITOR="nvim"
+export COLORTERM="truecolor"
 
