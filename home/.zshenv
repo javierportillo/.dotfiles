@@ -12,3 +12,6 @@ export LESSHISTFILE="-"
 export EDITOR="nvim"
 export COLORTERM="truecolor"
 
+# fzf default options
+export FZF_DEFAULT_OPTS="--color=16"
+
