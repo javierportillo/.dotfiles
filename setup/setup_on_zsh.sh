@@ -5,6 +5,8 @@ if [ ! -d "$HOME/.local/oh-my-tmux" ]; then
     git clone https://github.com/gpakosz/.tmux.git "$HOME/.local/oh-my-tmux"
 fi
 
+ln -s ~/.local/oh-my-tmux/.tmux.conf ~/.config/tmux/tmux.conf
+
 echo "install tmux session wizard script"
 if [ ! -f "$HOME/.local/bin/t" ]; then
     curl https://raw.githubusercontent.com/27medkamal/tmux-session-wizard/master/session-wizard.sh > "$HOME/.local/bin/t" && chmod u+x "$HOME/.local/bin/t"
@@ -19,8 +21,6 @@ echo "install nvim packer"
 if [ ! -d "$HOME/.local/share/nvim/site/pack/packer/start/packer.nvim" ]; then
     git clone --depth 1 https://github.com/wbthomason/packer.nvim "$HOME/.local/share/nvim/site/pack/packer/start/packer.nvim"
 fi
-
-ln -s ~/.local/oh-my-tmux/.tmux.conf ~/.config/tmux/tmux.conf
 
 echo "install telescope dependencies"
 npm i -g fd-find
