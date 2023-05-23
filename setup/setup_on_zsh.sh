@@ -41,5 +41,6 @@ asdf plugin add k9s https://github.com/looztra/asdf-k9s
 asdf plugin add zoxide https://github.com/nyrst/asdf-zoxide.git
 
 echo "install from .tool-versions"
-#asdf install
+echo "run asdf install on ~/ at your own risk (it takes long)"
+echo "i recommend commenting erlang and elixir and installing later"
 
