@@ -79,9 +79,6 @@ cmp.setup({
       ellipsis_char = "...",
     }),
   },
-  experimental = {
-    ghost_text = true,
-  },
   view = {
     entries = { name = "native", selection_order = "near_cursor" },
   },
