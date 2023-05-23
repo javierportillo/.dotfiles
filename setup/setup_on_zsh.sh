@@ -39,6 +39,7 @@ asdf plugin add neovim
 asdf plugin add kubectx https://github.com/virtualstaticvoid/asdf-kubectx.git
 asdf plugin add k9s https://github.com/looztra/asdf-k9s
 asdf plugin add zoxide https://github.com/nyrst/asdf-zoxide.git
+asdf plugin add awscli
 
 echo "install from .tool-versions"
 echo "run asdf install on ~/ at your own risk (it takes long)"
