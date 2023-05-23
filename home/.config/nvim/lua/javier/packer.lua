@@ -55,7 +55,6 @@ return require('packer').startup(function(use)
   }
 
   use 'folke/tokyonight.nvim'
-  use 'xiyaowong/transparent.nvim'
   use 'theprimeagen/harpoon'
   use 'mbbill/undotree'
   use 'tpope/vim-fugitive'
