@@ -26,6 +26,10 @@ echo "install telescope dependencies"
 npm i -g fd-find
 sudo apt install ripgrep
 
+echo "install formatters"
+npm i -g prettierd
+pip install beautysh
+
 echo "install asdf plugins"
 asdf plugin add nodejs https://github.com/asdf-vm/asdf-nodejs.git
 asdf plugin add erlang https://github.com/asdf-vm/asdf-erlang.git
@@ -39,6 +43,3 @@ asdf plugin add zoxide https://github.com/nyrst/asdf-zoxide.git
 echo "install from .tool-versions"
 #asdf install
 
-echo "install formatters"
-npm i -g prettierd
-pip install beautysh
