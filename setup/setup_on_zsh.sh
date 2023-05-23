@@ -10,6 +10,11 @@ if [ ! -f "$HOME/.local/bin/t" ]; then
     curl https://raw.githubusercontent.com/27medkamal/tmux-session-wizard/master/session-wizard.sh > "$HOME/.local/bin/t" && chmod u+x "$HOME/.local/bin/t"
 fi
 
+echo "install lf file manager"
+if [ ! -f "$HOME/.local/bin/lf" ]; then
+    wget -c https://github.com/gokcehan/lf/releases/download/r30/lf-linux-amd64.tar.gz -O - | tar -xz -C "$HOME/.local/bin"
+fi
+
 echo "install nvim packer"
 if [ ! -d "$HOME/.local/share/nvim/site/pack/packer/start/packer.nvim" ]; then
     git clone --depth 1 https://github.com/wbthomason/packer.nvim "$HOME/.local/share/nvim/site/pack/packer/start/packer.nvim"
