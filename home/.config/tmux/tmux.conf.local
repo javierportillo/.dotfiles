@@ -135,13 +135,13 @@ tmux_conf_theme_pane_indicator="$tmux_conf_theme_colour_4"
 tmux_conf_theme_pane_active_indicator="$tmux_conf_theme_colour_4"
 
 # status line style (when <prefix> :)
-tmux_conf_theme_message_fg="$tmux_conf_theme_colour_6"
+tmux_conf_theme_message_fg="$tmux_conf_theme_colour_4"
 tmux_conf_theme_message_bg="terminal"
 tmux_conf_theme_message_attr="bold"
 
 # status line command style (<prefix> : Escape)
 tmux_conf_theme_message_command_fg="$tmux_conf_theme_colour_16"
-tmux_conf_theme_message_command_bg="$tmux_conf_theme_colour_6"
+tmux_conf_theme_message_command_bg="$tmux_conf_theme_colour_4"
 tmux_conf_theme_message_command_attr="bold"
 
 # window modes style (on copy mode, or when viewing session list or copy buffer list)
@@ -195,7 +195,7 @@ tmux_conf_theme_window_status_format="#I #W#{?#{||:#{windw_bell_flag},#{window_z
 #     - #{username}
 #     - #{username_ssh}
 tmux_conf_theme_window_status_current_fg="$tmux_conf_theme_colour_16"
-tmux_conf_theme_window_status_current_bg="$tmux_conf_theme_colour_2"
+tmux_conf_theme_window_status_current_bg="$tmux_conf_theme_colour_14"
 tmux_conf_theme_window_status_current_attr="bold"
 tmux_conf_theme_window_status_current_format="#I #W#{?#{||:#{window_bell_flag},#{window_zoomed_flag}}, ,}#{?window_bell_flag,!,}#{?window_zoomed_flag,Z,}"
 #tmux_conf_theme_window_status_current_format="#{circled_window_index} #W#{?#{||:#{window_bell_flag},#{window_zoomed_flag}}, ,}#{?window_bell_flag,!,}#{?window_zoomed_flag,Z,}"
@@ -213,7 +213,7 @@ tmux_conf_theme_window_status_bell_attr="blink,bold"
 
 # window last status style (style for last visited window tab)
 tmux_conf_theme_window_status_last_fg="$tmux_conf_theme_colour_16"
-tmux_conf_theme_window_status_last_bg="$tmux_conf_theme_colour_4"
+tmux_conf_theme_window_status_last_bg="$tmux_conf_theme_colour_10"
 tmux_conf_theme_window_status_last_attr="none"
 
 # status left/right sections separators
@@ -253,13 +253,13 @@ tmux_conf_theme_status_left=" ✨ #S "
 tmux_conf_theme_status_right=" #{prefix}#{mouse}#{pairing}#{synchronized} | #{username}#{root} | #{hostname} "
 
 # status left style
-tmux_conf_theme_status_left_fg="$tmux_conf_theme_colour_3"
+tmux_conf_theme_status_left_fg="$tmux_conf_theme_colour_1"
 tmux_conf_theme_status_left_bg="$tmux_conf_theme_colour_16"
 tmux_conf_theme_status_left_attr="none"
 
 # status right style
-tmux_conf_theme_status_right_fg="$tmux_conf_theme_colour_4,$tmux_conf_theme_colour_16"
-tmux_conf_theme_status_right_bg="$tmux_conf_theme_colour_16,$tmux_conf_theme_colour_4"
+tmux_conf_theme_status_right_fg="$tmux_conf_theme_colour_14,$tmux_conf_theme_colour_16"
+tmux_conf_theme_status_right_bg="$tmux_conf_theme_colour_16,$tmux_conf_theme_colour_14"
 tmux_conf_theme_status_right_attr="none,none"
 
 # pairing indicator
