@@ -1,4 +1,6 @@
 -- vim.cmd [[colorscheme base16-vice]]
+--
+vim.g.colors_name = 'base16-vice'
 
 require('base16-colorscheme').setup({
   base00 = '#17191e',
