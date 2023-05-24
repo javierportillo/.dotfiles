@@ -6,6 +6,7 @@ vim.keymap.set('n', '<leader>fh', builtin.help_tags, {})
 vim.keymap.set('n', '<leader>fp', builtin.git_files, {})
 vim.keymap.set('n', '<leader>fc', builtin.commands, {})
 vim.keymap.set('n', '<leader>fm', builtin.man_pages, {})
+vim.keymap.set('n', '<leader>fth', function () builtin.colorscheme({ enable_preview = true }) end, {})
 
 -- You dont need to set any of these options. These are the default ones. Only
 -- the loading is important
