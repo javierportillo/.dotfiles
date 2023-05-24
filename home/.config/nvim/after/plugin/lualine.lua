@@ -1,6 +1,6 @@
 require("lualine").setup({
   options = {
-    theme = "tokyonight",
+    theme = "auto",
     component_separators = {
       left = "",
       right = "",
@@ -8,14 +8,6 @@ require("lualine").setup({
     section_separators = {
       left = "",
       right = "",
-    },
-  },
-  sections = {
-    lualine_b = {
-      {
-        "diff",
-        colored = false,
-      },
     },
   },
 })
