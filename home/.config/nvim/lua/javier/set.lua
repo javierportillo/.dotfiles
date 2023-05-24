@@ -36,3 +36,5 @@ vim.opt.equalalways = false
 
 vim.opt.showmode = false
 
+vim.g.netrw_banner = 0
+
