@@ -8,7 +8,7 @@ read -p "have you already updated the repos?"
 
 echo "Installing dependencies"
 
-sudo apt install git curl zsh stow xdg-user-dirs exa python3-pip fzf
+sudo apt install git curl zsh stow xdg-user-dirs exa python3-pip fzf bat
 
 echo "stowing files from $DOTFILES_DIR/home"
 stow -vv -t $HOME -d $DOTFILES_DIR -S home
