@@ -1,1 +1,1 @@
--- vim.cmd [[colorscheme horizon]]
+vim.cmd [[colorscheme base16-tokyo-night-storm]]

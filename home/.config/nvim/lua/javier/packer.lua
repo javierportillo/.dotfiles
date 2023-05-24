@@ -54,6 +54,7 @@ return require('packer').startup(function(use)
     requires = { 'nvim-lua/plenary.nvim' },
   }
 
+  use 'RRethy/nvim-base16'
   use 'xiyaowong/transparent.nvim'
   use 'theprimeagen/harpoon'
   use 'mbbill/undotree'
