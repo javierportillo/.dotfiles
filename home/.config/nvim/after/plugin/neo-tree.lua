@@ -1,6 +1,15 @@
 -- Unless you are still migrating, remove the deprecated commands from v1.x
 vim.cmd([[ let g:neo_tree_remove_legacy_commands = 1 ]])
 
+vim.fn.sign_define("DiagnosticSignError",
+  { text = "", texthl = "DiagnosticSignError" })
+vim.fn.sign_define("DiagnosticSignWarn",
+  { text = "", texthl = "DiagnosticSignWarn" })
+vim.fn.sign_define("DiagnosticSignInfo",
+  { text = "", texthl = "DiagnosticSignInfo" })
+vim.fn.sign_define("DiagnosticSignHint",
+  { text = "", texthl = "DiagnosticSignHint" })
+
 require("neo-tree").setup({
   -- If a user has a sources list it will replace this one.
   -- Only sources listed here will be loaded.
@@ -14,7 +23,7 @@ require("neo-tree").setup({
   },
   add_blank_line_at_top = false,           -- Add a blank line at the top of the tree.
   auto_clean_after_session_restore = true, -- Automatically clean up broken neo-tree buffers saved in sessions
-  close_if_last_window = true,            -- Close Neo-tree if it is the last window left in the tab
+  close_if_last_window = true,             -- Close Neo-tree if it is the last window left in the tab
   -- popup_border_style is for input and confirmation dialogs.
   -- Configurtaion of floating window is done in the individual source sections.
   -- "NC" is a special style that works well with NormalNC set
@@ -40,7 +49,7 @@ require("neo-tree").setup({
   log_to_file = false,                                               -- true, false, "/path/to/file.log", use :NeoTreeLogs to show the file
   open_files_in_last_window = true,                                  -- false = open files in top left window
   open_files_do_not_replace_types = { "terminal", "trouble", "qf" }, -- when opening files, do not use windows containing these filetypes or buftypes
-  popup_border_style = "NC",                                         -- "double", "none", "rounded", "shadow", "single" or "solid"
+  popup_border_style = "single",                                     -- "double", "none", "rounded", "shadow", "single" or "solid"
   resize_timer_interval = 500,                                       -- in ms, needed for containers to redraw right aligned and faded content
   -- set to -1 to disable the resize timer entirely
   --                           -- NOTE: this will speed up to 50 ms for 1 second following a resize
@@ -133,42 +142,46 @@ require("neo-tree").setup({
     --      print(args.source, " moved to ", args.destination)
     --    end
     --  },
-    --  {
-    --    event = "neo_tree_buffer_enter",
-    --    handler = function()
-    --      vim.cmd 'highlight! Cursor blend=100'
-    --    end
-    --  },
-    --  {
-    --    event = "neo_tree_buffer_leave",
-    --    handler = function()
-    --      vim.cmd 'highlight! Cursor guibg=#5f87af blend=0'
-    --    end
-    --  },
+    {
+      event = "neo_tree_buffer_enter",
+      handler = function()
+        vim.cmd 'highlight! Cursor blend=100'
+      end
+    },
+    {
+      event = "neo_tree_buffer_leave",
+      handler = function()
+        vim.cmd 'highlight! Cursor guibg=#5f87af blend=0'
+      end
+    },
     -- {
     --   event = "neo_tree_window_before_open",
     --   handler = function(args)
     --     print("neo_tree_window_before_open", vim.inspect(args))
     --   end
     -- },
-    -- {
-    --   event = "neo_tree_window_after_open",
-    --   handler = function(args)
-    --     vim.cmd("wincmd =")
-    --   end
-    -- },
+    {
+      event = "neo_tree_window_after_open",
+      handler = function(args)
+        if args.position == "left" or args.position == "right" then
+          vim.cmd("wincmd =")
+        end
+      end
+    },
     -- {
     --   event = "neo_tree_window_before_close",
     --   handler = function(args)
     --     print("neo_tree_window_before_close", vim.inspect(args))
     --   end
     -- },
-    -- {
-    --   event = "neo_tree_window_after_close",
-    --   handler = function(args)
-    --     vim.cmd("wincmd =")
-    --   end
-    -- }
+    {
+      event = "neo_tree_window_after_close",
+      handler = function(args)
+        if args.position == "left" or args.position == "right" then
+          vim.cmd("wincmd =")
+        end
+      end
+    }
   },
   default_component_configs = {
     container = {
@@ -280,11 +293,12 @@ require("neo-tree").setup({
           --   zindex = 10,
           --   highlight = "NeoTreeSymbolicLinkTarget",
           -- },
-          { "clipboard",   zindex = 10 },
-          { "bufnr",       zindex = 10 },
-          { "modified",    zindex = 20 },
-          { "diagnostics", zindex = 20 },
-          { "git_status",  zindex = 20 },
+          { "harpoon_index", zindex = 10 },
+          { "clipboard",     zindex = 10 },
+          { "bufnr",         zindex = 10 },
+          { "modified",      zindex = 20 },
+          { "diagnostics",   zindex = 20 },
+          { "git_status",    zindex = 20 },
         },
       },
     },
@@ -387,6 +401,21 @@ require("neo-tree").setup({
     },
   },
   filesystem = {
+    components = {
+      harpoon_index = function(config, node, _)
+        local Marked = require("harpoon.mark")
+        local path = node:get_id()
+        local succuss, index = pcall(Marked.get_index_of, path)
+        if succuss and index and index > 0 then
+          return {
+            text = string.format(" ⥤ %d", index), -- <-- Add your favorite harpoon like arrow here
+            highlight = config.highlight or "NeoTreeDirectoryIcon",
+          }
+        else
+          return {}
+        end
+      end
+    },
     window = {
       mappings = {
         ["H"] = "toggle_hidden",
