@@ -14,7 +14,7 @@ require("neo-tree").setup({
   },
   add_blank_line_at_top = false,           -- Add a blank line at the top of the tree.
   auto_clean_after_session_restore = true, -- Automatically clean up broken neo-tree buffers saved in sessions
-  close_if_last_window = false,            -- Close Neo-tree if it is the last window left in the tab
+  close_if_last_window = true,            -- Close Neo-tree if it is the last window left in the tab
   -- popup_border_style is for input and confirmation dialogs.
   -- Configurtaion of floating window is done in the individual source sections.
   -- "NC" is a special style that works well with NormalNC set
@@ -75,7 +75,8 @@ require("neo-tree").setup({
     padding = 0,                -- can be int or table
     -- padding = { left = 2, right = 0 },
     -- separator = "▕", -- can be string or table, see below
-    separator = { left = "▏", right = "▕" },
+    -- separator = { left = "▏", right = "▕" },
+    separator = { left = "", right = "" },
     -- separator = { left = "/", right = "\\", override = nil },     -- |/  a  \/  b  \/  c  \...
     -- separator = { left = "/", right = "\\", override = "right" }, -- |/  a  \  b  \  c  \...
     -- separator = { left = "/", right = "\\", override = "left" },  -- |/  a  /  b  /  c  /...
@@ -85,11 +86,16 @@ require("neo-tree").setup({
     show_separator_on_edge = false,
     --                       true  : |/    a    \/    b    \/    c    \|
     --                       false : |     a    \/    b    \/    c     |
+    -- highlight_tab = "NeoTreeTabInactive",
+    -- highlight_tab_active = "NeoTreeTabActive",
+    -- highlight_background = "NeoTreeTabInactive",
+    -- highlight_separator = "NeoTreeTabSeparatorInactive",
+    -- highlight_separator_active = "NeoTreeTabSeparatorActive",
     highlight_tab = "NeoTreeTabInactive",
-    highlight_tab_active = "NeoTreeTabActive",
+    highlight_tab_active = "lualine_a_normal",
     highlight_background = "NeoTreeTabInactive",
     highlight_separator = "NeoTreeTabSeparatorInactive",
-    highlight_separator_active = "NeoTreeTabSeparatorActive",
+    highlight_separator_active = "lualine_a_normal",
   },
 
   event_handlers = {
@@ -99,13 +105,13 @@ require("neo-tree").setup({
     --      -- add something to the state that can be used by custom components
     --    end
     --  },
-    {
-      event = "file_opened",
-      handler = function(_)
-        --auto close
-        require("neo-tree").close_all()
-      end
-    },
+    -- {
+    --   event = "file_opened",
+    --   handler = function(_)
+    --     --auto close
+    --     require("neo-tree").close_all()
+    --   end
+    -- },
     --  {
     --    event = "file_opened",
     --    handler = function(file_path)
@@ -211,6 +217,7 @@ require("neo-tree").setup({
     modified = {
       symbol = "[+] ",
       highlight = "NeoTreeModified",
+      align = "right"
     },
     name = {
       trailing_slash = false,
@@ -336,9 +343,9 @@ require("neo-tree").setup({
       nowait = true,
     },
     mappings = {
-      ["<space>"] = {
+      ["<C-space>"] = {
         "toggle_node",
-        nowait = false, -- disable `nowait` if you have existing combos starting with this char that you want to use
+        -- nowait = false, -- disable `nowait` if you have existing combos starting with this char that you want to use
       },
       ["<2-LeftMouse>"] = "open",
       ["<cr>"] = "open",
