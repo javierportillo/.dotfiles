@@ -16,9 +16,30 @@ k9s:
     fullScreenLogs: false
     textWrap: false
     showTime: false
-  currentContext: docker-desktop
-  currentCluster: docker-desktop
+  currentContext: jobchain/dev0
+  currentCluster: arn:aws:eks:eu-west-2:106860803613:cluster/dev0
   clusters:
+    arn:aws:eks:eu-west-2:106860803613:cluster/dev0:
+      namespace:
+        active: demo-app
+        lockFavorites: false
+        favorites:
+        - demo-app
+        - default
+      view:
+        active: po
+      featureGates:
+        nodeShell: false
+      shellPod:
+        image: busybox:1.35.0
+        command: []
+        args: []
+        namespace: default
+        limits:
+          cpu: 100m
+          memory: 100Mi
+        labels: {}
+      portForwardAddress: localhost
     docker-desktop:
       namespace:
         active: all
