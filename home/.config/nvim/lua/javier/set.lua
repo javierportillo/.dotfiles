@@ -32,7 +32,7 @@ vim.opt.updatetime = 50
 
 vim.opt.cursorline = true
 
-vim.opt.equalalways = false
+-- vim.opt.equalalways = false -- make splits keep their size when others close
 
 vim.opt.showmode = false
 
