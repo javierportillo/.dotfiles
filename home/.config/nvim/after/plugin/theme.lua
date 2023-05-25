@@ -1,5 +1,5 @@
 -- vim.cmd [[colorscheme base16-vice]]
---
+
 vim.g.colors_name = 'base16-vice'
 
 require('base16-colorscheme').setup({
@@ -21,3 +21,5 @@ require('base16-colorscheme').setup({
   base0E = '#00f6d9',
   base0F = '#ff3d81'
 })
+
+vim.api.nvim_set_hl(0, "VertSplit", { fg = "#17191e", bg = "NONE" })
