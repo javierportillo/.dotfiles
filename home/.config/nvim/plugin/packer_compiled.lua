@@ -124,6 +124,11 @@ _G.packer_plugins = {
     path = "/home/javier/.local/share/nvim/site/pack/packer/start/harpoon",
     url = "https://github.com/theprimeagen/harpoon"
   },
+  ["lexima.vim"] = {
+    loaded = true,
+    path = "/home/javier/.local/share/nvim/site/pack/packer/start/lexima.vim",
+    url = "https://github.com/cohama/lexima.vim"
+  },
   ["lsp-zero.nvim"] = {
     loaded = true,
     path = "/home/javier/.local/share/nvim/site/pack/packer/start/lsp-zero.nvim",
@@ -183,6 +188,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/javier/.local/share/nvim/site/pack/packer/start/nvim-treesitter",
     url = "https://github.com/nvim-treesitter/nvim-treesitter"
+  },
+  ["nvim-ts-rainbow2"] = {
+    loaded = true,
+    path = "/home/javier/.local/share/nvim/site/pack/packer/start/nvim-ts-rainbow2",
+    url = "https://github.com/HiPhish/nvim-ts-rainbow2"
   },
   ["nvim-web-devicons"] = {
     loaded = true,

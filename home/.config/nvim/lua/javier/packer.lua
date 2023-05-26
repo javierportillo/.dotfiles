@@ -70,7 +70,9 @@ return require('packer').startup(function(use)
   use 'numToStr/Comment.nvim'
   use 'christoomey/vim-tmux-navigator'
   use 'psliwka/vim-smoothie'
+  use 'cohama/lexima.vim'
 
   use 'RRethy/nvim-base16'
   use 'xiyaowong/transparent.nvim'
+  use 'HiPhish/nvim-ts-rainbow2'
 end)

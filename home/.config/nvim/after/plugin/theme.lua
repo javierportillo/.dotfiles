@@ -22,4 +22,8 @@ require('base16-colorscheme').setup({
   base0F = '#ff3d81'
 })
 
+-- fix the vertical split lines
 vim.api.nvim_set_hl(0, "VertSplit", { fg = "#17191e", bg = "NONE" })
+
+-- fix color of matching paren
+vim.api.nvim_set_hl(0, "MatchParen", { fg = "white", bg = "black" })
