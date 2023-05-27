@@ -3,11 +3,12 @@ local lsp = require("lsp-zero").preset({
 })
 
 lsp.on_attach(function(_, bufnr)
-  lsp.default_keymaps({ buffer = bufnr, omit = { '<F3>' } })
+  lsp.default_keymaps({ buffer = bufnr, omit = { '<F3>', 'gl' } })
 
   vim.keymap.set("n", "gd", "<cmd>Telescope lsp_definitions<cr>", { buffer = true })
   vim.keymap.set("n", "gi", "<cmd>Telescope lsp_implementations<cr>", { buffer = true })
   vim.keymap.set("n", "gr", "<cmd>Telescope lsp_references<cr>", { buffer = true })
+  vim.keymap.set("n", "gl", "<cmd>Telescope diagnostics<cr>", { buffer = true })
 end)
 
 lsp.ensure_installed({
