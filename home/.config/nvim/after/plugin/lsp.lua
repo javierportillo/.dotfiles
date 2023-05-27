@@ -58,13 +58,7 @@ local cmp_action = require("lsp-zero").cmp_action()
 require("luasnip.loaders.from_vscode").lazy_load()
 
 cmp.setup({
-  sources = {
-    { name = "path" },
-    { name = "nvim_lsp" },
-    { name = "nvim_lua" },
-    { name = "luasnip" },
-    { name = "buffer",  keyword_length = 5 },
-  },
+  preselect = cmp.PreselectMode.Item,
   mapping = {
     ["<CR>"] = cmp.mapping.confirm({ select = false }),
     ["<C-space>"] = cmp.mapping.complete(),
@@ -76,7 +70,6 @@ cmp.setup({
       require("luasnip").lsp_expand(args.body)
     end,
   },
-  preselect = "item",
   completion = {
     completeopt = "menu,menuone,noinsert"
   },
@@ -87,6 +80,13 @@ cmp.setup({
       maxwidth = 50,
       ellipsis_char = "...",
     }),
+  },
+  sources = {
+    { name = "path" },
+    { name = "nvim_lsp" },
+    { name = "nvim_lua" },
+    { name = "luasnip" },
+    { name = "buffer",  keyword_length = 5 },
   },
   view = {
     entries = { name = "native", selection_order = "near_cursor" },
