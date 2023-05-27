@@ -1,4 +1,5 @@
 local lsp = require("lsp-zero").preset({
+  name = 'minimal',
   float_border = false,
 })
 
@@ -10,6 +11,13 @@ lsp.on_attach(function(_, bufnr)
   vim.keymap.set("n", "gr", "<cmd>Telescope lsp_references<cr>", { buffer = true })
   vim.keymap.set("n", "gl", "<cmd>Telescope diagnostics<cr>", { buffer = true })
 end)
+
+lsp.set_sign_icons({
+  error = '✘',
+  warn = '▲',
+  hint = '⚑',
+  info = '»'
+})
 
 lsp.ensure_installed({
   "lua_ls",
