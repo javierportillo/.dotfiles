@@ -71,7 +71,7 @@ cmp.setup({
     end,
   },
   completion = {
-    completeopt = "menu,menuone,noinsert"
+    completeopt = "menu,preview,menuone,noinsert"
   },
   formatting = {
     fields = { "abbr", "kind", "menu" },
@@ -82,15 +82,38 @@ cmp.setup({
     }),
   },
   sources = {
-    { name = "path" },
-    { name = "nvim_lsp" },
+    { name = "nvim_lsp", group_index = 1 },
     { name = "nvim_lua" },
     { name = "luasnip" },
-    { name = "buffer",  keyword_length = 5 },
+    { name = "path" },
+    { name = "buffer",   keyword_length = 5, group_index = 2 },
   },
   view = {
-    entries = { name = "native", selection_order = "near_cursor" },
+    entries = {
+      name = "custom",
+      selection_order = "near_cursor"
+    },
   },
+  window = {
+    completion = cmp.config.window.bordered(),
+    documentation = cmp.config.window.bordered(),
+  },
+})
+
+cmp.setup.cmdline({ '/', '?' }, {
+  mapping = cmp.mapping.preset.cmdline(),
+  sources = {
+    { name = 'buffer' }
+  }
+})
+
+cmp.setup.cmdline(':', {
+  mapping = cmp.mapping.preset.cmdline(),
+  sources = cmp.config.sources({
+    { name = 'path' }
+  }, {
+    { name = 'cmdline' }
+  })
 })
 
 local null_ls = require('null-ls')
