@@ -46,5 +46,6 @@ echo "run asdf install on ~/ at your own risk (it takes long)"
 echo "i recommend commenting erlang and elixir and installing later"
 
 echo "Install LaTeX at your own risk (it's heavy, like 3GB download and 6GB on disk)"
+echo "Remember to Install a PDF viewer like sumatra"
 echo "run sudo apt install texlive-full"
 
