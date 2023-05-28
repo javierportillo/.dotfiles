@@ -1,6 +1,7 @@
 local function compileToPDF()
   local current_buffer = vim.fn.expand("%")
-  local command = "pdflatex " .. current_buffer
+  print("compiling to pdf: " .. current_buffer)
+  local command = "pdflatex -halt-on-error " .. current_buffer
   vim.fn.jobstart(command, {
     on_exit = function(_, code)
       if code ~= 0 then
