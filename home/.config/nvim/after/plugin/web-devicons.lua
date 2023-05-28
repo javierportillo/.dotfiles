@@ -15,6 +15,12 @@ require 'nvim-web-devicons'.setup {
       cterm_color = "68",
       name = "Dockerfile"
     },
+    tex = {
+      icon = "T",
+      color = "#3d6117",
+      cterm_color = "22",
+      name = "DevIconTex"
+    },
   },
   -- globally enable different highlight colors per icon (default to true)
   -- if set to false all icons will have the default icon's color
@@ -67,6 +73,12 @@ require 'nvim-web-devicons'.setup {
       icon = "",
       color = "#81e043",
       name = "Log"
+    },
+    ['tex'] = {
+      icon = "T",
+      color = "#3d6117",
+      cterm_color = "22",
+      name = "DevIconTex"
     },
   },
 }
