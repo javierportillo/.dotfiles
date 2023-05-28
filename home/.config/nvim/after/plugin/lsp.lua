@@ -46,7 +46,7 @@ lsp.format_mapping('<F3>', {
     ['dockerls'] = { 'dockerfile' },
     ['lua_ls'] = { 'lua' },
     ['eslint'] = { 'typescript' },
-    ['null-ls'] = { 'yaml', 'markdown', 'html', 'sh' },
+    ['null-ls'] = { 'yaml', 'markdown', 'html', 'sh', 'tex', 'bib'},
   }
 })
 
@@ -121,5 +121,7 @@ null_ls.setup({
   sources = {
     null_ls.builtins.formatting.prettierd,
     null_ls.builtins.formatting.beautysh,
+    null_ls.builtins.formatting.latexindent,
+    null_ls.builtins.formatting.bibclean,
   }
 })
