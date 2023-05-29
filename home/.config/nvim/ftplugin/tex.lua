@@ -29,3 +29,17 @@ end, { buffer = true  })
 
 
 vim.keymap.set("n", "<leader>tt", compileToPDF, { buffer = true  })
+
+vim.keymap.set("n", "<leader>tb", function ()
+  local file_name = vim.fn.expand("%:t:r")
+  local command = "biber " .. file_name
+  print("compiling bibliographic references...")
+  vim.fn.jobstart(command, {
+    on_exit = function(_, code)
+      if code ~= 0 then
+        print("biber could not compile ")
+      end
+    end
+  })
+end, {buffer = true})
+
