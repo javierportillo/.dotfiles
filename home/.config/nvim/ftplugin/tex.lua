@@ -25,12 +25,12 @@ vim.keymap.set("n", "<leader>tl", function()
       end
     end
   })
-end, { buffer = true  })
+end, { buffer = true })
 
 
-vim.keymap.set("n", "<leader>tt", compileToPDF, { buffer = true  })
+vim.keymap.set("n", "<leader>tt", compileToPDF, { buffer = true })
 
-vim.keymap.set("n", "<leader>tb", function ()
+vim.keymap.set("n", "<leader>tb", function()
   local file_name = vim.fn.expand("%:t:r")
   local command = "biber " .. file_name
   print("compiling bibliographic references...")
@@ -41,7 +41,6 @@ vim.keymap.set("n", "<leader>tb", function ()
       end
     end
   })
-end, {buffer = true})
+end, { buffer = true })
 
 vim.opt.wrap = true
-
