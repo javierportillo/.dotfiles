@@ -43,3 +43,5 @@ vim.keymap.set("n", "<leader>tb", function ()
   })
 end, {buffer = true})
 
+vim.opt.wrap = true
+
