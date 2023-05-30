@@ -6,6 +6,8 @@ local function compileToPDF()
     on_exit = function(_, code)
       if code ~= 0 then
         print("pdflatex could not compile this file: " .. code)
+      else
+        print("PDF compiled.")
       end
     end
   })
@@ -22,6 +24,8 @@ vim.keymap.set("n", "<leader>tl", function()
     on_exit = function(_, code)
       if code ~= 0 then
         print("SumatraPDF could not open this file: " .. code)
+      else
+        print("PDF compiled and opened in sumatra.")
       end
     end
   })
@@ -38,6 +42,8 @@ vim.keymap.set("n", "<leader>tb", function()
     on_exit = function(_, code)
       if code ~= 0 then
         print("biber could not compile ")
+      else
+        print("Biber compiled.")
       end
     end
   })
