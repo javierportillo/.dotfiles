@@ -14,7 +14,7 @@ require('telescope').setup {
   defaults = {
     vimgrep_arguments = {
       'rg',
-      '-.', -- search dotfiles
+      '--hidden',
       '--color=never',
       '--no-heading',
       '--with-filename',
@@ -26,7 +26,14 @@ require('telescope').setup {
   },
   pickers = {
     find_files = {
-      find_command = { "rg", "--files", "--hidden", "--glob", "!**/.git/*" },
+      find_command = {
+        "rg",
+        "--files",
+        "--smart-case",
+        "--hidden",
+        "--glob",
+        "!**/.git/*"
+      },
     },
   },
   extensions = {
