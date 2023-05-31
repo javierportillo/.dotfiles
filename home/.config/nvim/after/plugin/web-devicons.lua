@@ -80,5 +80,10 @@ require 'nvim-web-devicons'.setup {
       cterm_color = "22",
       name = "DevIconTex"
     },
+    ['xml'] = {
+      icon = "",
+      color = "#c4d520",
+      name = "DevIconXml"
+    },
   },
 }
