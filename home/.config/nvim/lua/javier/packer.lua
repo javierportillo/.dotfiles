@@ -75,4 +75,5 @@ return require('packer').startup(function(use)
   use 'RRethy/nvim-base16'
   use 'xiyaowong/transparent.nvim'
   use 'HiPhish/nvim-ts-rainbow2'
+  use 'norcalli/nvim-colorizer.lua'
 end)
