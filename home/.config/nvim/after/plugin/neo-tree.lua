@@ -244,8 +244,8 @@ require("neo-tree").setup({
     git_status = {
       symbols = {
         -- Change type
-        added     = "✚", -- NOTE: you can set any of these to an empty string to not show them
-        deleted   = "✖",
+        added     = "+", -- NOTE: you can set any of these to an empty string to not show them
+        deleted   = "x",
         modified  = "",
         renamed   = "",
         -- Status type
