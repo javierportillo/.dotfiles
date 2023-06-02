@@ -21,6 +21,14 @@ lsp.set_sign_icons({
 
 lsp.ensure_installed({
   "lua_ls",
+  "bashls",
+  "dockerls",
+  "eslint",
+  "marksman",
+  "texlab",
+  "tsserver",
+  "yamlls",
+  "prismals"
 })
 
 -- (Optional) Configure lua language server for neovim
