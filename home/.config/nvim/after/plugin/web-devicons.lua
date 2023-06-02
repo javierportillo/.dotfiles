@@ -85,5 +85,10 @@ require 'nvim-web-devicons'.setup {
       color = "#c4d520",
       name = "DevIconXml"
     },
+    ['prisma'] = {
+      icon = "",
+      color = "#ffffff",
+      name = "DevIconPrisma"
+    },
   },
 }
