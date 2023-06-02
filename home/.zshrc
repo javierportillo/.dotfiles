@@ -109,8 +109,6 @@ alias kn="kubens"
 alias ls="exa"
 alias la="exa -lah"
 
-alias bat="batcat"
-
 alias ip="ip --color=always"
 
 alias ns="nvim . -S"
