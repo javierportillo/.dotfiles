@@ -453,7 +453,7 @@ cursor:
 shell:
  program: wsl
  args:
-   - "--cd ~"
+   - "-d Arch --cd ~"
 
 # Startup directory
 #
