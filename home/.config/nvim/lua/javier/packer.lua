@@ -72,6 +72,7 @@ return require('packer').startup(function(use)
   use 'psliwka/vim-smoothie'
   use 'cohama/lexima.vim'
   use 'b0o/schemastore.nvim'
+  use 'windwp/nvim-projectconfig'
 
   use 'RRethy/nvim-base16'
   use 'xiyaowong/transparent.nvim'
