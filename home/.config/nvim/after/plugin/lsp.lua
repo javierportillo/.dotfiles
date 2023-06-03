@@ -14,9 +14,9 @@ end)
 
 lsp.set_sign_icons({
   error = 'x',
-  warn = '▲',
-  hint = '⚑',
-  info = '»'
+  warn = '!',
+  hint = 'i',
+  info = 'i'
 })
 
 lsp.ensure_installed({
