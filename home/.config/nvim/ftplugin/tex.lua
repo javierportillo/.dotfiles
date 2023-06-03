@@ -1,6 +1,5 @@
-local function compileToPDF()
+vim.api.nvim_create_user_command("TexCompile", function()
   local current_buffer = vim.fn.expand("%")
-  print("compiling to pdf: " .. current_buffer)
   local command = "pdflatex -halt-on-error " .. current_buffer
   vim.fn.jobstart(command, {
     on_exit = function(_, code)
@@ -11,10 +10,10 @@ local function compileToPDF()
       end
     end
   })
-end
+end, {})
 
-vim.keymap.set("n", "<leader>tl", function()
-  compileToPDF()
+vim.api.nvim_create_user_command("TexCompileAndOpen", function()
+  vim.cmd("TexCompile")
   local current_buffer = vim.fn.expand("%")
   local file_extension = vim.fn.expand("%:e")
   local pdf_file = current_buffer:gsub(file_extension .. "$", "pdf")
@@ -29,15 +28,11 @@ vim.keymap.set("n", "<leader>tl", function()
       end
     end
   })
-end, { buffer = true })
+end, {})
 
-
-vim.keymap.set("n", "<leader>tt", compileToPDF, { buffer = true })
-
-vim.keymap.set("n", "<leader>tb", function()
+vim.api.nvim_create_user_command("BibCompile", function()
   local file_name = vim.fn.expand("%:t:r")
   local command = "biber " .. file_name
-  print("compiling bibliographic references...")
   vim.fn.jobstart(command, {
     on_exit = function(_, code)
       if code ~= 0 then
@@ -47,6 +42,16 @@ vim.keymap.set("n", "<leader>tb", function()
       end
     end
   })
-end, { buffer = true })
+end, {})
+
+vim.api.nvim_create_autocmd("BufWritePost", {
+  group = vim.api.nvim_create_augroup("TexAutoCompile", { clear = true }),
+  pattern = "*.tex",
+  command = "TexCompile",
+})
+
+vim.keymap.set("n", "<leader>tl", "<cmd>TexCompileAndOpen", { buffer = true })
+vim.keymap.set("n", "<leader>tt", "<cmd>TexCompile", { buffer = true })
+vim.keymap.set("n", "<leader>tb", "<cmd>BibCompile", { buffer = true })
 
 vim.opt.wrap = true
