@@ -28,6 +28,7 @@ lsp.ensure_installed({
   "texlab",
   "tsserver",
   "yamlls",
+  "jsonls",
   "prismals"
 })
 
