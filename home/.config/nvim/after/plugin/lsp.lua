@@ -33,15 +33,26 @@ lsp.ensure_installed({
 })
 
 -- (Optional) Configure lua language server for neovim
-require("lspconfig").lua_ls.setup(lsp.nvim_lua_ls())
+local lspconfig = require("lspconfig")
 
-require("lspconfig").yamlls.setup({
+lspconfig.lua_ls.setup(lsp.nvim_lua_ls())
+
+lspconfig.yamlls.setup({
   settings = {
     yaml = {
-      schemas = {
-        ["https://raw.githubusercontent.com/compose-spec/compose-spec/master/schema/compose-spec.json"] = "/docker-compose.yml",
-        ["https://raw.githubusercontent.com/instrumenta/kubernetes-json-schema/master/v1.18.0-standalone-strict/all.json"] = "/*.k8s.yaml",
+      schemaStore = {
+        enable = false,
       },
+      schemas = require("schemastore").yaml.schemas(),
+    }
+  }
+})
+
+lspconfig.jsonls.setup({
+  settings = {
+    json = {
+      schemas = require("schemastore").json.schemas(),
+      validate = { enable = true },
     }
   }
 })
