@@ -73,6 +73,7 @@ return require('packer').startup(function(use)
   use 'cohama/lexima.vim'
   use 'b0o/schemastore.nvim'
   use 'windwp/nvim-projectconfig'
+  use 'rest-nvim/rest.nvim'
 
   use 'RRethy/nvim-base16'
   use 'xiyaowong/transparent.nvim'

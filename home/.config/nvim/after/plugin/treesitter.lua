@@ -13,7 +13,7 @@ vim.api.nvim_create_autocmd({ 'BufEnter', 'BufAdd', 'BufNew', 'BufNewFile', 'Buf
 
 require 'nvim-treesitter.configs'.setup {
   -- A list of parser names, or "all" (the five listed parsers should always be installed)
-  ensure_installed = { "javascript", "typescript", "elixir", "c", "lua", "vim", "vimdoc", "query" },
+  ensure_installed = { "javascript", "typescript", "elixir", "c", "lua", "vim", "vimdoc", "query", "http", "json" },
 
   -- Install parsers synchronously (only applied to `ensure_installed`)
   sync_install = false,
