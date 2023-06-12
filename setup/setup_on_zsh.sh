@@ -49,3 +49,5 @@ echo "Install LaTeX at your own risk (it's heavy, like 3GB download and 6GB on d
 echo "Remember to Install a PDF viewer like sumatra"
 echo "run sudo apt install texlive-full"
 
+# on WSL make a link to home on windows
+ln -s /mnt/c/Users/javie winhome 
