@@ -6,12 +6,12 @@ require("transparent").setup({
     'SignColumn', 'CursorLineNr', 'EndOfBuffer',
   },
   extra_groups = {
-    'NormalFloat',
+    --[[ 'NormalFloat',
     'TelescopeNormal',
     'TelescopePromptNormal',
     'TelescopePromptBorder',
     'TelescopeResultsBorder',
-    'TelescopePreviewBorder',
+    'TelescopePreviewBorder', ]]
   }, -- table: additional groups that should be cleared
   exclude_groups = {}, -- table: groups you don't want to clear
 })
