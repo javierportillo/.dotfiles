@@ -57,6 +57,11 @@ lspconfig.jsonls.setup({
   }
 })
 
+lspconfig.helm_ls.setup({
+  filetypes = { "helm" },
+  cmd = { "helm_ls", "serve" }
+})
+
 lsp.format_mapping('<F3>', {
   format_opts = {
     async = false,
@@ -66,7 +71,7 @@ lsp.format_mapping('<F3>', {
     ['dockerls'] = { 'dockerfile' },
     ['lua_ls'] = { 'lua' },
     ['eslint'] = { 'typescript' },
-    ['null-ls'] = { 'yaml', 'markdown', 'html', 'sh', 'tex', 'bib'},
+    ['null-ls'] = { 'yaml', 'markdown', 'html', 'sh', 'tex', 'bib' },
   }
 })
 
@@ -106,7 +111,7 @@ cmp.setup({
     { name = "nvim_lua" },
     { name = "luasnip" },
     { name = "path" },
-    { name = "buffer",   keyword_length = 5 },
+    { name = "buffer",  keyword_length = 5 },
   },
   view = {
     entries = {
