@@ -16,18 +16,19 @@ k9s:
     fullScreenLogs: false
     textWrap: false
     showTime: false
-  currentContext: docker-desktop
-  currentCluster: docker-desktop
+  currentContext: jobchain/dev0
+  currentCluster: arn:aws:eks:eu-west-2:106860803613:cluster/dev0
   clusters:
     arn:aws:eks:eu-west-2:106860803613:cluster/dev0:
       namespace:
-        active: demo-app
+        active: backend-mensajeria
         lockFavorites: false
         favorites:
+        - backend-mensajeria
         - demo-app
         - default
       view:
-        active: po
+        active: pod
       featureGates:
         nodeShell: false
       shellPod:
