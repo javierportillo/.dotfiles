@@ -70,8 +70,8 @@ lsp.format_mapping('<F3>', {
   servers = {
     ['dockerls'] = { 'dockerfile' },
     ['lua_ls'] = { 'lua' },
-    ['eslint'] = { 'typescript' },
-    ['null-ls'] = { 'yaml', 'markdown', 'html', 'sh', 'tex', 'bib' },
+    -- ['eslint'] = { 'typescript', 'typescriptreact', 'typescript.tsx' },
+    ['null-ls'] = { 'yaml', 'markdown', 'html', 'sh', 'tex', 'bib', 'typescript', 'typescriptreact', 'typescript.tsx' },
   }
 })
 
