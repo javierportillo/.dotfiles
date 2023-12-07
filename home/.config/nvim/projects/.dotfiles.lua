@@ -1,5 +1,5 @@
 vim.api.nvim_create_user_command("SyncAlacritty", function()
-  local command = "cd $HOME && rsync .dotfiles/home/.config/alacritty/alacritty.yml winhome/AppData/Roaming/alacritty"
+  local command = "cd $HOME && rsync .dotfiles/home/.config/alacritty/alacritty.yml winhome/AppData/Roaming/alacritty/"
   vim.fn.jobstart(command, {
     on_exit = function(_, code)
       if code ~= 0 then
