@@ -29,7 +29,8 @@ lsp.ensure_installed({
   "tsserver",
   "yamlls",
   "jsonls",
-  "prismals"
+  "prismals",
+  "volar",
 })
 
 -- (Optional) Configure lua language server for neovim
