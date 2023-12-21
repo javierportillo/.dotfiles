@@ -3,4 +3,5 @@ Session.vim
 home/.config/tmux/tmux.conf
 home/.config/tmux/plugins
 home/.config/thefuck/__pycache__/
+home/.config/nvim/plugin/packer_compiled.lua
 
