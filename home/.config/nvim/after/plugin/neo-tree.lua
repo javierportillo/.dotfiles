@@ -85,7 +85,8 @@ require("neo-tree").setup({
     -- padding = { left = 2, right = 0 },
     -- separator = "▕", -- can be string or table, see below
     -- separator = { left = "▏", right = "▕" },
-    separator = { left = "", right = "" },
+    -- separator = { left = "", right = "" },
+    separator = { left = "", right = "" },
     -- separator = { left = "/", right = "\\", override = nil },     -- |/  a  \/  b  \/  c  \...
     -- separator = { left = "/", right = "\\", override = "right" }, -- |/  a  \  b  \  c  \...
     -- separator = { left = "/", right = "\\", override = "left" },  -- |/  a  /  b  /  c  /...
