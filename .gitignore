@@ -5,3 +5,4 @@ home/.config/tmux/plugins
 home/.config/thefuck/__pycache__/
 home/.config/nvim/plugin/packer_compiled.lua
 home/.config/configstore/
+home/.tool-versions
