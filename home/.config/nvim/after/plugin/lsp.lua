@@ -29,7 +29,8 @@ lsp.ensure_installed({
   "tsserver",
   "yamlls",
   "jsonls",
-  "prismals"
+  "prismals",
+  "volar",
 })
 
 -- (Optional) Configure lua language server for neovim
@@ -71,7 +72,7 @@ lsp.format_mapping('<F3>', {
     ['dockerls'] = { 'dockerfile' },
     ['lua_ls'] = { 'lua' },
     -- ['eslint'] = { 'typescript', 'typescriptreact', 'typescript.tsx' },
-    ['null-ls'] = { 'yaml', 'markdown', 'html', 'sh', 'tex', 'bib', 'typescript', 'typescriptreact', 'typescript.tsx' },
+    ['null-ls'] = { 'yaml', 'markdown', 'html', 'sh', 'tex', 'bib', 'typescript', 'typescriptreact', 'typescript.tsx', 'vue' },
   }
 })
 
