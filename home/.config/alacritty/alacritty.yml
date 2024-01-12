@@ -131,7 +131,11 @@ font:
     #   - (macOS) Menlo
     #   - (Linux/BSD) monospace
     #   - (Windows) Consolas
-    family: ComicShannsMono Nerd Font
+    # family: ComicShannsMono Nerd Font
+    # family: CaskaydiaCove Nerd Font Mono 
+    # family: FiraCode Nerd Font Mono
+    # family: GeistMono Nerd Font Mono
+    family: JetBrainsMono Nerd Font Mono
 
     # The `style` can be specified to pick a specific face.
     style: Regular
