@@ -1,21 +1,34 @@
--- Pull in the wezterm API
 local wezterm = require 'wezterm'
 
--- This table will hold the configuration.
 local config = {}
-
-
--- In newer versions of wezterm, use the config_builder which will
--- help provide clearer error messages
 
 if wezterm.config_builder then
   config = wezterm.config_builder()
 end
 
--- This is where you actually apply your config choices
+config.color_scheme = 'tokyonight'
+config.colors = {
+  background = '#000015'
+}
 
--- For example, changing the color scheme:
-config.color_scheme = 'AdventureTime'
+-- config.font = wezterm.font 'ComicShannsMono Nerd Font'
+-- config.font = wezterm.font 'CaskaydiaCove Nerd Font Mono'
+-- config.font = wezterm.font 'FiraCode Nerd Font Mono'
+-- config.font = wezterm.font 'GeistMono Nerd Font Mono'
+config.font = wezterm.font 'JetBrainsMono Nerd Font Mono'
 
--- and finally, return the configuration to wezterm
+config.use_fancy_tab_bar = true
+config.hide_tab_bar_if_only_one_tab = true
+config.window_background_opacity = 0.8
+
+config.window_padding = {
+  left = 0,
+  right = 0,
+  top = 0,
+  bottom = 0,
+}
+
+-- Spawn the Arch wsl instance on startup
+config.default_domain = 'WSL:Arch'
+
 return config
