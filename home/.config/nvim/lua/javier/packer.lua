@@ -69,7 +69,6 @@ return require('packer').startup(function(use)
   use 'nvim-tree/nvim-web-devicons'
   use 'numToStr/Comment.nvim'
   use 'christoomey/vim-tmux-navigator'
-  use 'psliwka/vim-smoothie'
   use 'cohama/lexima.vim'
   use 'b0o/schemastore.nvim'
   use 'windwp/nvim-projectconfig'
