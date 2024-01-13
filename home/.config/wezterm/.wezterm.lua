@@ -20,6 +20,7 @@ config.font = wezterm.font 'JetBrainsMono Nerd Font Mono'
 config.use_fancy_tab_bar = true
 config.hide_tab_bar_if_only_one_tab = true
 config.window_background_opacity = 0.8
+config.text_background_opacity = 1.0
 
 config.window_padding = {
   left = 0,
