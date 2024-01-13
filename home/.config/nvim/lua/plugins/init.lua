@@ -1,9 +1,5 @@
 return {
   {
-    'nvim-treesitter/nvim-treesitter',
-  },
-
-  {
     'VonHeikemen/lsp-zero.nvim',
     branch = 'v2.x',
     dependencies = {
@@ -57,6 +53,5 @@ return {
 
   'RRethy/nvim-base16',
   'xiyaowong/transparent.nvim',
-  'HiPhish/nvim-ts-rainbow2',
   'norcalli/nvim-colorizer.lua',
 }
