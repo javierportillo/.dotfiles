@@ -173,6 +173,7 @@ return {
             hide_hidden = false, -- only works on Windows for hidden files/directories
             hide_by_name = {
               --"node_modules"
+              ".git"
             },
             hide_by_pattern = { -- uses glob style patterns
               --"*.meta",
