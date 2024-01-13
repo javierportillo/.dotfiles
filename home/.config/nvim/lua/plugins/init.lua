@@ -26,16 +26,6 @@ return {
     dependencies = { 'nvim-lua/plenary.nvim' },
   },
 
-  {
-    "nvim-neo-tree/neo-tree.nvim",
-    branch = "v2.x",
-    dependencies = {
-      "nvim-lua/plenary.nvim",
-      "nvim-tree/nvim-web-devicons",
-      "MunifTanjim/nui.nvim",
-    }
-  },
-
   'christoomey/vim-tmux-navigator',
   'theprimeagen/harpoon',
   'mbbill/undotree',
