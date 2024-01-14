@@ -33,8 +33,6 @@ return {
   'tpope/vim-obsession',
   'tpope/vim-surround',
   'nvim-lualine/lualine.nvim',
-  'nvim-tree/nvim-web-devicons',
-  'numToStr/Comment.nvim',
   'christoomey/vim-tmux-navigator',
   'cohama/lexima.vim',
   'b0o/schemastore.nvim',
