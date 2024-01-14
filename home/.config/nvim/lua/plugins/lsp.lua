@@ -33,6 +33,8 @@ return {
       local cmp_action = lsp_zero.cmp_action()
 
       cmp.setup({
+        preselect = 'item',
+        completion = { completeopt = 'menu,menuone,noinsert' },
         formatting = lsp_zero.cmp_format(),
         mapping = cmp.mapping.preset.insert({
           ["<CR>"] = cmp.mapping.confirm({ select = false }),
