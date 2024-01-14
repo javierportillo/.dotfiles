@@ -19,7 +19,7 @@ vim.api.nvim_create_autocmd("BufWritePost", {
 
 
 vim.api.nvim_create_user_command("SyncWezterm", function()
-  local command = "cd $HOME && rsync .dotfiles/home/.config/wezterm/.wezterm.lua winhome/"
+  local command = "cd $HOME && rsync .dotfiles/home/.config/wezterm/.wezterm.png winhome/ && rsync .dotfiles/home/.config/wezterm/.wezterm.lua winhome/"
   vim.fn.jobstart(command, {
     on_exit = function(_, code)
       if code ~= 0 then
@@ -27,7 +27,7 @@ vim.api.nvim_create_user_command("SyncWezterm", function()
       else
         print("synced wezterm to windows")
       end
-    end
+    end,
   })
 end, {})
 
