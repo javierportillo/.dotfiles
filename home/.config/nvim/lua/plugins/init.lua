@@ -30,7 +30,6 @@ return {
   'mbbill/undotree',
   'tpope/vim-obsession',
   'tpope/vim-surround',
-  'nvim-lualine/lualine.nvim',
   'christoomey/vim-tmux-navigator',
   'cohama/lexima.vim',
   'b0o/schemastore.nvim',
