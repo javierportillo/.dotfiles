@@ -33,7 +33,6 @@ return {
   'christoomey/vim-tmux-navigator',
   'cohama/lexima.vim',
   'b0o/schemastore.nvim',
-  'windwp/nvim-projectconfig',
 
   'xiyaowong/transparent.nvim',
 }
