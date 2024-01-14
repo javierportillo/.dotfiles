@@ -38,5 +38,4 @@ return {
 
   'RRethy/nvim-base16',
   'xiyaowong/transparent.nvim',
-  'norcalli/nvim-colorizer.lua',
 }
