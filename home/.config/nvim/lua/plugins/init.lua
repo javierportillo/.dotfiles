@@ -34,5 +34,4 @@ return {
   'cohama/lexima.vim',
   'b0o/schemastore.nvim',
 
-  'xiyaowong/transparent.nvim',
 }
