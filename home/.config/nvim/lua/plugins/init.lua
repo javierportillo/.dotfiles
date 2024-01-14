@@ -29,7 +29,6 @@ return {
   'christoomey/vim-tmux-navigator',
   'theprimeagen/harpoon',
   'mbbill/undotree',
-  'tpope/vim-fugitive',
   'tpope/vim-obsession',
   'tpope/vim-surround',
   'nvim-lualine/lualine.nvim',
