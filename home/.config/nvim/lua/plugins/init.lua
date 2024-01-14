@@ -36,6 +36,5 @@ return {
   'windwp/nvim-projectconfig',
   'rest-nvim/rest.nvim',
 
-  'RRethy/nvim-base16',
   'xiyaowong/transparent.nvim',
 }
