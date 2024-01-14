@@ -27,7 +27,6 @@ return {
   },
 
   'christoomey/vim-tmux-navigator',
-  'mbbill/undotree',
   'tpope/vim-obsession',
   'tpope/vim-surround',
   'christoomey/vim-tmux-navigator',
