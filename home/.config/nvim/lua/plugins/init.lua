@@ -34,7 +34,6 @@ return {
   'cohama/lexima.vim',
   'b0o/schemastore.nvim',
   'windwp/nvim-projectconfig',
-  'rest-nvim/rest.nvim',
 
   'xiyaowong/transparent.nvim',
 }
