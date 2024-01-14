@@ -1,7 +1,7 @@
 return {
   {
     'numToStr/Comment.nvim',
-    setup = function()
+    config = function()
       require("Comment").setup()
     end
   }
