@@ -7,6 +7,9 @@ return {
       "nvim-tree/nvim-web-devicons",
       "MunifTanjim/nui.nvim",
     },
+    keys = {
+      { '\\', '<cmd>Neotree toggle<cr>' },
+    },
     config = function()
       -- If you want icons for diagnostic errors, you'll need to define them somewhere:
       vim.fn.sign_define("DiagnosticSignError",
@@ -280,8 +283,6 @@ return {
           }
         }
       })
-
-      vim.cmd([[nnoremap \ :Neotree toggle<cr>]])
     end
   }
 }
