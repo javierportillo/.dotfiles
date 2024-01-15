@@ -20,6 +20,14 @@ return {
       vim.keymap.set('n', '<leader>fc', builtin.commands, {})
       vim.keymap.set('n', '<leader>fm', builtin.man_pages, {})
       vim.keymap.set('n', '<leader>fth', function() builtin.colorscheme({ enable_preview = true }) end, {})
+      vim.keymap.set('n', '<leader>fqf', builtin.quickfix, {})
+
+      -- LSP keybindings
+      vim.keymap.set('n', '<leader>gd', builtin.lsp_definitions, {})
+      vim.keymap.set('n', '<leader>go', builtin.lsp_type_definitions, {})
+      vim.keymap.set('n', '<leader>gi', builtin.lsp_implementations, {})
+      vim.keymap.set('n', '<leader>gr', builtin.lsp_references, {})
+      vim.keymap.set('n', '<leader>gp', builtin.diagnostics, {})
 
       require('telescope').setup {
         defaults = {
