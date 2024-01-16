@@ -4,6 +4,7 @@ return {
     dependencies = {
       'HiPhish/nvim-ts-rainbow2',
       'nvim-treesitter/nvim-treesitter-textobjects',
+      'windwp/nvim-ts-autotag',
     },
     build = ':TSUpdate',
     config = function()
@@ -99,6 +100,9 @@ return {
             -- and should return true of false
             include_surrounding_whitespace = true,
           },
+        },
+        autotag = {
+          enable = true,
         },
       }
     end
