@@ -1,4 +1,5 @@
 vim.g.mapleader = " "
+vim.g.netrw_banner = 0
 
 vim.opt.guicursor = ""
 
@@ -44,8 +45,6 @@ vim.opt.splitbelow = true
 vim.opt.splitright = true
 
 vim.opt.showmatch = true
-
-vim.g.netrw_banner = 0
 
 vim.opt.virtualedit = "block"
 

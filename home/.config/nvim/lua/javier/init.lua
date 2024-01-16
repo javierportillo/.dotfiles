@@ -1,5 +1,5 @@
-require("javier.set")
+require("javier.options")
 require("javier.remap")
 require("javier.highlightyanked")
-require("javier.lazy")
+require("javier.plugins")
 
