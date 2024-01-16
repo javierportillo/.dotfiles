@@ -5,6 +5,7 @@ return {
     dependencies = {
       'nvim-lua/plenary.nvim',
       'nvim-treesitter/nvim-treesitter',
+      'folke/trouble.nvim',
       {
         'nvim-telescope/telescope-fzf-native.nvim',
         build = 'make'
@@ -29,8 +30,14 @@ return {
       vim.keymap.set('n', '<leader>gr', builtin.lsp_references, {})
       vim.keymap.set('n', '<leader>gp', builtin.diagnostics, {})
 
+      local trouble = require('trouble.providers.telescope')
+
       require('telescope').setup {
         defaults = {
+          mappings = {
+            i = { ['<c-t>'] = trouble.open_with_trouble },
+            n = { ['<c-t>'] = trouble.open_with_trouble },
+          },
           vimgrep_arguments = {
             'rg',
             '--hidden',
