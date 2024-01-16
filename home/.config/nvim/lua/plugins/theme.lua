@@ -10,10 +10,8 @@ return {
         base00 = '#17191E',
         base01 = '#22262D',
         base02 = '#3C3F4C',
-        -- base03 = '#383A47',
-        base03 = '#555E70', -- increase brightness of comments
+        base03 = '#5F5E70', -- brightness of comments
         base04 = '#8B9CBE',
-        -- base05 = '#8B9CBE',
         base05 = '#B2BFD9',
         base06 = '#B2BFD9',
         base07 = '#F4F4F7',
