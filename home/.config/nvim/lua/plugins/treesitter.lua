@@ -2,7 +2,6 @@ return {
   {
     'nvim-treesitter/nvim-treesitter',
     dependencies = {
-      'HiPhish/nvim-ts-rainbow2',
       'nvim-treesitter/nvim-treesitter-textobjects',
       'windwp/nvim-ts-autotag',
     },
@@ -36,15 +35,6 @@ return {
           -- Using this option may slow down your editor, and you may see some duplicate highlights.
           -- Instead of true it can also be a list of languages
           additional_vim_regex_highlighting = false,
-        },
-        rainbow = {
-          enable = true,
-          -- list of languages you want to disable the plugin for
-          -- disable = { 'jsx', 'cpp' },
-          -- Which query to use for finding delimiters
-          query = 'rainbow-parens',
-          -- Highlight the entire buffer all at once
-          strategy = require('ts-rainbow').strategy.global,
         },
         incremental_selection = {
           enable = true,
@@ -108,5 +98,8 @@ return {
   },
   {
     'nvim-treesitter/nvim-treesitter-context',
-  }
+  },
+  {
+    'HiPhish/rainbow-delimiters.nvim',
+  },
 }
