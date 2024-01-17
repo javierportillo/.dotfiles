@@ -7,20 +7,26 @@ if wezterm.config_builder then
   config = wezterm.config_builder()
 end
 
-config.color_scheme = 'tokyonight'
+-- config.color_scheme = 'tokyonight'
+-- config.color_scheme = 'Black Metal (Venom) (base16)'
+-- config.color_scheme = 'Vice Dark (base16)'
+config.color_scheme = 'darkmoss (base16)'
 
 -- config.font = wezterm.font 'ComicShannsMono Nerd Font'
 -- config.font = wezterm.font 'CaskaydiaCove Nerd Font Mono'
 -- config.font = wezterm.font 'FiraCode Nerd Font Mono'
 -- config.font = wezterm.font 'GeistMono Nerd Font Mono'
-config.font = wezterm.font 'JetBrainsMono Nerd Font Mono'
+-- config.font = wezterm.font 'JetBrainsMono Nerd Font Mono'
+config.font = wezterm.font 'JetBrains Mono'
+
+config.font_size = 14
 
 config.use_fancy_tab_bar = true
 config.hide_tab_bar_if_only_one_tab = true
 
 config.background = {
   {
-    source = { Color = '#000015' },
+    source = { Color = '#000000' },
     width = '100%',
     height = '100%',
   },
@@ -128,3 +134,4 @@ config.key_tables = {
 }
 
 return config
+
