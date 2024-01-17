@@ -47,21 +47,21 @@ config.default_domain = 'WSL:Arch'
 -- Key bindings
 config.disable_default_key_bindings = true
 config.keys = {
-  { key = 'Tab',        mods = 'CTRL',           action = act.ActivateTabRelative(1) },
-  { key = 'Tab',        mods = 'SHIFT|CTRL',     action = act.ActivateTabRelative(-1) },
-  { key = 'C',          mods = 'SHIFT|CTRL',     action = act.CopyTo 'Clipboard' },
-  { key = 'F',          mods = 'SHIFT|CTRL',     action = act.Search 'CurrentSelectionOrEmptyString' },
-  { key = 'L',          mods = 'SHIFT|CTRL',     action = act.ShowDebugOverlay },
-  { key = 'N',          mods = 'SHIFT|CTRL',     action = act.SpawnWindow },
-  { key = 'P',          mods = 'SHIFT|CTRL',     action = act.ActivateCommandPalette },
-  { key = 'R',          mods = 'SHIFT|CTRL',     action = act.ReloadConfiguration },
-  { key = 'T',          mods = 'SHIFT|CTRL',     action = act.SpawnTab 'CurrentPaneDomain' },
-  { key = 'V',          mods = 'SHIFT|CTRL',     action = act.PasteFrom 'Clipboard' },
-  { key = 'W',          mods = 'SHIFT|CTRL',     action = act.CloseCurrentTab { confirm = false } },
-  { key = 'X',          mods = 'SHIFT|CTRL',     action = act.ActivateCopyMode },
-  { key = 'phys:Space', mods = 'SHIFT|CTRL',     action = act.QuickSelect },
-  { key = 'PageUp',     mods = 'SHIFT',          action = act.ScrollByPage(-1) },
-  { key = 'PageDown',   mods = 'SHIFT',          action = act.ScrollByPage(1) },
+  { key = 'Tab',        mods = 'CTRL',       action = act.ActivateTabRelative(1) },
+  { key = 'Tab',        mods = 'SHIFT|CTRL', action = act.ActivateTabRelative(-1) },
+  { key = 'C',          mods = 'SHIFT|CTRL', action = act.CopyTo 'Clipboard' },
+  { key = 'F',          mods = 'SHIFT|CTRL', action = act.Search 'CurrentSelectionOrEmptyString' },
+  { key = 'L',          mods = 'SHIFT|CTRL', action = act.ShowDebugOverlay },
+  { key = 'N',          mods = 'SHIFT|CTRL', action = act.SpawnWindow },
+  { key = 'P',          mods = 'SHIFT|CTRL', action = act.ActivateCommandPalette },
+  { key = 'R',          mods = 'SHIFT|CTRL', action = act.ReloadConfiguration },
+  { key = 'T',          mods = 'SHIFT|CTRL', action = act.SpawnTab 'CurrentPaneDomain' },
+  { key = 'V',          mods = 'SHIFT|CTRL', action = act.PasteFrom 'Clipboard' },
+  { key = 'W',          mods = 'SHIFT|CTRL', action = act.CloseCurrentTab { confirm = false } },
+  { key = 'X',          mods = 'SHIFT|CTRL', action = act.ActivateCopyMode },
+  { key = 'phys:Space', mods = 'SHIFT|CTRL', action = act.QuickSelect },
+  { key = 'PageUp',     mods = 'SHIFT',      action = act.ScrollByPage(-1) },
+  { key = 'PageDown',   mods = 'SHIFT',      action = act.ScrollByPage(1) },
 }
 
 config.key_tables = {
