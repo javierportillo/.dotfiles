@@ -7,3 +7,4 @@ erlang 25.3
 elixir 1.14.4-otp-25
 zoxide 0.9.1
 awscli 2.11.21
+python 3.12.1
