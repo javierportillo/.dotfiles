@@ -1,6 +1,8 @@
 [user]
 	name = Javier Portillo
 	email = javiermarquezportillo@gmail.com
+[checkout]
+  defaultRemote = origin
 [init]
 	defaultBranch = main
 [core]
