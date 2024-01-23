@@ -15,6 +15,7 @@ return {
                 work = "~/Documents/neorg/notes/work",
                 home = "~/Documents/neorg/notes/home",
               },
+              default_workspace = "home",
             },
           },
         },
