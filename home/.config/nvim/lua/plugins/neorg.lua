@@ -20,6 +20,10 @@ return {
           },
         },
       }
+      vim.keymap.set('n', '<leader>nwh', '<cmd>Neorg workspace home<cr>')
+      vim.keymap.set('n', '<leader>nww', '<cmd>Neorg workspace work<cr>')
+      vim.keymap.set('n', '<leader>nwi', '<cmd>Neorg index<cr>')
+      vim.keymap.set('n', '<leader>ncl', '<cmd>Neorg return<cr>')
     end,
   },
 }
