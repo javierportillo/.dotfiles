@@ -4,6 +4,7 @@
   "cmp-nvim-lsp": { "branch": "main", "commit": "5af77f54de1b16c34b23cba810150689a3a90312" },
   "harpoon": { "branch": "master", "commit": "ccae1b9bec717ae284906b0bf83d720e59d12b91" },
   "lazy.nvim": { "branch": "main", "commit": "96584866b9c5e998cbae300594d0ccfd0c464627" },
+  "lazygit.nvim": { "branch": "main", "commit": "1e08e3f5ac1152339690140e61a4a32b3bdc7de5" },
   "lexima.vim": { "branch": "master", "commit": "5513d686801993b40c55baa65602f79cd3cf3c77" },
   "lsp-zero.nvim": { "branch": "v3.x", "commit": "2d4b39bfbfd27d16db24af4ea566f81610207d69" },
   "lualine.nvim": { "branch": "master", "commit": "566b7036f717f3d676362742630518a47f132fff" },
