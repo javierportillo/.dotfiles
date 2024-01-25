@@ -17,9 +17,10 @@ config.color_scheme = 'darkmoss (base16)'
 -- config.font = wezterm.font 'FiraCode Nerd Font Mono'
 -- config.font = wezterm.font 'GeistMono Nerd Font Mono'
 -- config.font = wezterm.font 'JetBrainsMono Nerd Font Mono'
-config.font = wezterm.font 'JetBrains Mono'
+-- config.font = wezterm.font 'JetBrains Mono'
+config.font = wezterm.font 'Dank Mono'
 
-config.font_size = 14
+config.font_size = 13
 
 config.use_fancy_tab_bar = true
 config.hide_tab_bar_if_only_one_tab = true
