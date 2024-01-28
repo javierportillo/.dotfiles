@@ -10,7 +10,8 @@ end
 -- config.color_scheme = 'tokyonight'
 -- config.color_scheme = 'Black Metal (Venom) (base16)'
 -- config.color_scheme = 'Vice Dark (base16)'
-config.color_scheme = 'darkmoss (base16)'
+-- config.color_scheme = 'darkmoss (base16)'
+config.color_scheme = 'Atlas (base16)'
 
 -- config.font = wezterm.font 'ComicShannsMono Nerd Font'
 -- config.font = wezterm.font 'CaskaydiaCove Nerd Font Mono'
