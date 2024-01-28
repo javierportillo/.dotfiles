@@ -11,7 +11,9 @@ end
 -- config.color_scheme = 'Black Metal (Venom) (base16)'
 -- config.color_scheme = 'Vice Dark (base16)'
 -- config.color_scheme = 'darkmoss (base16)'
-config.color_scheme = 'Atlas (base16)'
+-- config.color_scheme = 'Atlas (base16)'
+-- config.color_scheme = 'Grayscale Dark (base16)'
+config.color_scheme = 'rose-pine-moon'
 
 -- config.font = wezterm.font 'ComicShannsMono Nerd Font'
 -- config.font = wezterm.font 'CaskaydiaCove Nerd Font Mono'
@@ -60,7 +62,7 @@ config.background = {
   },
   {
     source = { File = wezterm.config_dir .. '/.wezterm.png' },
-    opacity = 0.4,
+    opacity = 0.1,
   },
 }
 
