@@ -23,8 +23,34 @@ config.font = wezterm.font 'Dank Mono'
 
 config.font_size = 13
 
+config.window_decorations = "RESIZE"
+config.window_frame = {
+  inactive_titlebar_bg = "none",
+  active_titlebar_bg = "none",
+  font = config.font,
+  font_size = 11,
+}
+
 config.use_fancy_tab_bar = true
 config.hide_tab_bar_if_only_one_tab = true
+
+local colorscheme = wezterm.color.get_builtin_schemes()[config.color_scheme]
+config.colors = {
+  tab_bar = {
+    active_tab = {
+      bg_color = colorscheme.background,
+      fg_color = colorscheme.ansi[2],
+    },
+    inactive_tab = {
+      bg_color = colorscheme.background,
+      fg_color = colorscheme.ansi[7],
+    },
+    new_tab = {
+      bg_color = colorscheme.background,
+      fg_color = colorscheme.ansi[7],
+    },
+  },
+}
 
 config.background = {
   {
@@ -136,4 +162,3 @@ config.key_tables = {
 }
 
 return config
-
