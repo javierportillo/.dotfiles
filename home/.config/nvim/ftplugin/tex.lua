@@ -50,8 +50,8 @@ vim.api.nvim_create_autocmd("BufWritePost", {
   command = "TexCompile",
 })
 
-vim.keymap.set("n", "<leader>tl", "<cmd>TexCompileAndOpen", { buffer = true })
-vim.keymap.set("n", "<leader>tt", "<cmd>TexCompile", { buffer = true })
-vim.keymap.set("n", "<leader>tb", "<cmd>BibCompile", { buffer = true })
+vim.keymap.set("n", "<leader>tl", "<cmd>TexCompileAndOpen<cr>", { buffer = true })
+vim.keymap.set("n", "<leader>tt", "<cmd>TexCompile<cr>", { buffer = true })
+vim.keymap.set("n", "<leader>tb", "<cmd>BibCompile<cr>", { buffer = true })
 
 vim.opt.wrap = true
