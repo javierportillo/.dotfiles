@@ -25,7 +25,7 @@ config.font = wezterm.font 'Dank Mono'
 
 config.font_size = 13
 
--- config.window_decorations = "RESIZE"
+config.window_decorations = "RESIZE"
 config.window_frame = {
   inactive_titlebar_bg = "none",
   active_titlebar_bg = "none",
