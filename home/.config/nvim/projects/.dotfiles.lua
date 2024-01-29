@@ -36,3 +36,41 @@ vim.api.nvim_create_autocmd("BufWritePost", {
   pattern = ".wezterm.lua",
   command = "SyncWezterm",
 })
+
+vim.api.nvim_create_user_command("SyncKomorebi", function()
+  local command = "cd $HOME && rsync .dotfiles/home/.config/komorebi/komorebi.json winhome/"
+  vim.fn.jobstart(command, {
+    on_exit = function(_, code)
+      if code ~= 0 then
+          print("could not sync komorebi to windows")
+      else
+        print("synced komorebi to windows")
+      end
+    end,
+  })
+end, {})
+
+vim.api.nvim_create_autocmd("BufWritePost", {
+    group = vim.api.nvim_create_augroup("AutoSyncKomorebi", { clear = true }),
+  pattern = "komorebi.json",
+  command = "SyncKomorebi",
+})
+
+vim.api.nvim_create_user_command("SyncWhkd", function()
+  local command = "cd $HOME && rsync .dotfiles/home/.config/komorebi/whkdrc winhome/.config/"
+  vim.fn.jobstart(command, {
+    on_exit = function(_, code)
+      if code ~= 0 then
+          print("could not sync whkdr to windows")
+      else
+        print("synced whkdr to windows")
+      end
+    end,
+  })
+end, {})
+
+vim.api.nvim_create_autocmd("BufWritePost", {
+    group = vim.api.nvim_create_augroup("AutoSyncWhkd", { clear = true }),
+  pattern = "whkdrc",
+  command = "SyncWhkd",
+})
