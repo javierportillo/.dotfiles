@@ -28,22 +28,39 @@
   "monitors": [
     {
       "workspaces": [
-        { "name": "I", "layout": "HorizontalStack" },
-        { "name": "II", "layout": "HorizontalStack" }
+        {
+          "name": "I",
+          "layout": "Rows"
+        },
+        {
+          "name": "II",
+          "layout": "Rows"
+        }
       ]
     },
     {
       "workspaces": [
-        { "name": "I", "layout": "BSP" },
-        { "name": "II", "layout": "BSP" }
+        {
+          "name": "I",
+          "layout": "BSP"
+        },
+        {
+          "name": "II",
+          "layout": "BSP"
+        }
       ]
     },
     {
       "workspaces": [
-        { "name": "I", "layout": "BSP" },
-        { "name": "II", "layout": "BSP" }
+        {
+          "name": "I",
+          "layout": "BSP"
+        },
+        {
+          "name": "II",
+          "layout": "BSP"
+        }
       ]
     }
   ]
 }
-
