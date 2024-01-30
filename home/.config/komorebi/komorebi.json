@@ -6,6 +6,7 @@
   "alt_focus_hack": true,
   "default_workspace_padding": 10,
   "default_container_padding": 10,
+  "focus_follows_mouse": "Komorebi",
   "active_window_border": true,
   "active_window_border_colours": {
     "single": {
