@@ -61,6 +61,11 @@ alt + shift + 1         : komorebic send-to-workspace 0
 alt + shift + 2         : komorebic send-to-workspace 1
 alt + shift + 3         : komorebic send-to-workspace 2
 
+# Move windows across monitors
+alt + shift + 8         : komorebic move-to-monitor 0
+alt + shift + 9         : komorebic move-to-monitor 1
+alt + shift + 0         : komorebic move-to-monitor 2
+
 # App shortcuts - these require shell to be pwsh / powershell
 # The apps will be focused if open, or launched if not open
 ctrl + alt + shift + c  : if ($wshell.AppActivate('Chrome') -eq $False) { start chrome }
