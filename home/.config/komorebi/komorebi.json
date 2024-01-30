@@ -8,6 +8,13 @@
   "default_container_padding": 10,
   "focus_follows_mouse": "Komorebi",
   "active_window_border": true,
+  "manage_rules": [
+    {
+      "kind": "Title",
+      "id": "WhatsApp",
+      "matching_strategy":"Equals"
+    }
+  ],
   "active_window_border_colours": {
     "single": {
       "r": 66,
