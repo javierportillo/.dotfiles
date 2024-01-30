@@ -4,10 +4,12 @@
   "window_hiding_behaviour": "Cloak",
   "cross_monitor_move_behaviour": "Insert",
   "alt_focus_hack": true,
-  "default_workspace_padding": 10,
-  "default_container_padding": 10,
+  "default_workspace_padding": 6,
+  "default_container_padding": 6,
   "focus_follows_mouse": "Komorebi",
   "active_window_border": true,
+  "active_window_border_width": 5,
+  "active_window_border_offset": -5,
   "manage_rules": [
     {
       "kind": "Title",
