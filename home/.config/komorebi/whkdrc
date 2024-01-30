@@ -70,6 +70,6 @@ alt + shift + 0         : komorebic move-to-monitor 2
 # The apps will be focused if open, or launched if not open
 ctrl + alt + shift + c  : if ($wshell.AppActivate('Chrome') -eq $False) { start chrome }
 ctrl + alt + shift + f  : if ($wshell.AppActivate('Files') -eq $False) { start Files }
-ctrl + alt + shift + p  : if ($wshell.AppActivate('powershell') -eq $False) { start powershell }
+ctrl + alt + shift + t  : if ($wshell.AppActivate((Write-Output (Get-Process -Name "WindowsTerminal").Id)) -eq $False) { start wt }
 ctrl + alt + shift + z  : if ($wshell.AppActivate((Write-Output (Get-Process -Name "wezterm-gui").Id)) -eq $False) { start wezterm-gui.exe }
 
