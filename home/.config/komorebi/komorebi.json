@@ -8,9 +8,21 @@
   "default_container_padding": 10,
   "active_window_border": true,
   "active_window_border_colours": {
-    "single": { "r": 66, "g": 165, "b": 245 },
-    "stack": { "r": 256, "g": 165, "b": 66 },
-    "monocle": { "r": 255, "g": 51, "b": 153 }
+    "single": {
+      "r": 66,
+      "g": 165,
+      "b": 245
+    },
+    "stack": {
+      "r": 256,
+      "g": 165,
+      "b": 66
+    },
+    "monocle": {
+      "r": 255,
+      "g": 51,
+      "b": 153
+    }
   },
   "monitors": [
     {
