@@ -36,14 +36,20 @@
   },
   "monitors": [
     {
+      "work_area_offset": {
+        "top": 730,
+        "bottom": 730,
+        "right": 0,
+        "left": 0
+      },
       "workspaces": [
         {
           "name": "I",
-          "layout": "Rows"
+          "layout": "HorizontalStack"
         },
         {
           "name": "II",
-          "layout": "Rows"
+          "layout": "HorizontalStack"
         }
       ]
     },
