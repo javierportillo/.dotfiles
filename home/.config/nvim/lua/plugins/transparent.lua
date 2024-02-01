@@ -2,7 +2,7 @@ return {
   {
     'xiyaowong/transparent.nvim',
     opts = {
-      exclude = {
+      exclude_groups = {
         "CursorLine",
       },
     },
