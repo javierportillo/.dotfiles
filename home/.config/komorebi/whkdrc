@@ -72,4 +72,5 @@ ctrl + alt + shift + c  : if ($wshell.AppActivate('Chrome') -eq $False) { start 
 ctrl + alt + shift + f  : if ($wshell.AppActivate('Files') -eq $False) { start Files }
 ctrl + alt + shift + t  : if ($wshell.AppActivate((Write-Output (Get-Process -Name "WindowsTerminal").Id)) -eq $False) { start wt }
 ctrl + alt + shift + z  : if ($wshell.AppActivate((Write-Output (Get-Process -Name "wezterm-gui").Id)) -eq $False) { start wezterm-gui.exe }
+ctrl + alt + shift + d  : if ($wshell.AppActivate('Discord') -eq $False) { Start-Process (Join-Path $env:LOCALAPPDATA "Discord\Update.exe") -ArgumentList "--processStart Discord.exe" }
 
