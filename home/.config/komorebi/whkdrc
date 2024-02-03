@@ -43,6 +43,8 @@ alt + q                 : komorebic close
 # Window manager options
 alt + shift + r         : komorebic retile
 alt + p                 : komorebic toggle-pause
+alt + back              : komorebic manage
+alt + shift + back      : komorebic unmanage
 
 # Layouts
 alt + x                 : komorebic flip-layout horizontal
