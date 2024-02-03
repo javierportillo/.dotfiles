@@ -74,3 +74,22 @@ vim.api.nvim_create_autocmd("BufWritePost", {
   pattern = "whkdrc",
   command = "SyncWhkd",
 })
+
+vim.api.nvim_create_user_command("SyncApplications", function()
+  local command = "cd $HOME && rsync .dotfiles/home/.config/komorebi/applications.yaml winhome/"
+  vim.fn.jobstart(command, {
+    on_exit = function(_, code)
+      if code ~= 0 then
+          print("could not sync applications to windows")
+      else
+        print("synced applications to windows")
+      end
+    end,
+  })
+end, {})
+
+vim.api.nvim_create_autocmd("BufWritePost", {
+    group = vim.api.nvim_create_augroup("AutoSyncApplications", { clear = true }),
+  pattern = "applications.yaml",
+  command = "SyncApplications",
+})

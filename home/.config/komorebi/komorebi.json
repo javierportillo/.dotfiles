@@ -9,13 +9,6 @@
   "active_window_border": true,
   "active_window_border_width": 5,
   "active_window_border_offset": -5,
-  "manage_rules": [
-    {
-      "kind": "Title",
-      "id": "WhatsApp",
-      "matching_strategy":"Equals"
-    }
-  ],
   "active_window_border_colours": {
     "single": {
       "r": 66,
