@@ -19,7 +19,8 @@ vim.api.nvim_create_autocmd("BufWritePost", {
 
 
 vim.api.nvim_create_user_command("SyncWezterm", function()
-  local command = "cd $HOME && rsync .dotfiles/home/.config/wezterm/.wezterm.png winhome/ && rsync .dotfiles/home/.config/wezterm/.wezterm.lua winhome/"
+  local command =
+  "cd $HOME && rsync .dotfiles/home/.config/wezterm/.wezterm.png winhome/ && rsync .dotfiles/home/.config/wezterm/.wezterm.lua winhome/"
   vim.fn.jobstart(command, {
     on_exit = function(_, code)
       if code ~= 0 then
@@ -42,7 +43,7 @@ vim.api.nvim_create_user_command("SyncKomorebi", function()
   vim.fn.jobstart(command, {
     on_exit = function(_, code)
       if code ~= 0 then
-          print("could not sync komorebi to windows")
+        print("could not sync komorebi to windows")
       else
         print("synced komorebi to windows")
       end
@@ -51,7 +52,7 @@ vim.api.nvim_create_user_command("SyncKomorebi", function()
 end, {})
 
 vim.api.nvim_create_autocmd("BufWritePost", {
-    group = vim.api.nvim_create_augroup("AutoSyncKomorebi", { clear = true }),
+  group = vim.api.nvim_create_augroup("AutoSyncKomorebi", { clear = true }),
   pattern = "komorebi.json",
   command = "SyncKomorebi",
 })
@@ -61,7 +62,7 @@ vim.api.nvim_create_user_command("SyncWhkd", function()
   vim.fn.jobstart(command, {
     on_exit = function(_, code)
       if code ~= 0 then
-          print("could not sync whkdr to windows")
+        print("could not sync whkdr to windows")
       else
         print("synced whkdr to windows")
       end
@@ -70,7 +71,7 @@ vim.api.nvim_create_user_command("SyncWhkd", function()
 end, {})
 
 vim.api.nvim_create_autocmd("BufWritePost", {
-    group = vim.api.nvim_create_augroup("AutoSyncWhkd", { clear = true }),
+  group = vim.api.nvim_create_augroup("AutoSyncWhkd", { clear = true }),
   pattern = "whkdrc",
   command = "SyncWhkd",
 })
@@ -80,7 +81,7 @@ vim.api.nvim_create_user_command("SyncApplications", function()
   vim.fn.jobstart(command, {
     on_exit = function(_, code)
       if code ~= 0 then
-          print("could not sync applications to windows")
+        print("could not sync applications to windows")
       else
         print("synced applications to windows")
       end
@@ -89,7 +90,7 @@ vim.api.nvim_create_user_command("SyncApplications", function()
 end, {})
 
 vim.api.nvim_create_autocmd("BufWritePost", {
-    group = vim.api.nvim_create_augroup("AutoSyncApplications", { clear = true }),
+  group = vim.api.nvim_create_augroup("AutoSyncApplications", { clear = true }),
   pattern = "applications.yaml",
   command = "SyncApplications",
 })
