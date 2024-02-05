@@ -80,8 +80,8 @@ bars:
       center: false
     blur_effect:
       enabled: false
-      acrylic: false
-      dark: false
+      acrylic: true
+      dark: true
     window_flags:
       always_on_top: false
       windows_app_bar: true
@@ -97,7 +97,7 @@ bars:
       left:   ["komorebi_workspaces", "komorebi_active_layout", "active_window"]
       center: ["clock"]
         #right:  ["explorer_button", "wifi", "cpu", "memory", "battery"]
-      right:  ["explorer_button", "wifi", "cpu", "memory"]
+      right:  ["cpu", "memory"]
 
 # widgets:
   # my-clock-widget:
@@ -369,7 +369,7 @@ widgets:
       label_no_window: ""
       max_length: 48
       max_length_ellipsis: "..."
-      monitor_exclusive: true
+      monitor_exclusive: false
 
   battery:
     type: "yasb.battery.BatteryWidget"
@@ -381,7 +381,7 @@ widgets:
     options:
         label: "{%H:%M:%S %Z}"
         label_alt: "{%d-%m-%y %H:%M:%S %Z}"
-        timezones: ["Europe/London", "America/New_York"]
+        timezones: ["America/El_Salvador"]
         callbacks:
           on_middle: "exec explorer.exe shell:Appsfolder\\Microsoft.WindowsAlarms_8wekyb3d8bbwe!App"
           on_right: "next_timezone"
@@ -407,8 +407,8 @@ widgets:
   memory:
     type: "yasb.memory.MemoryWidget"
     options:
-        label: "\uf538 {virtual_mem_free}"
-        label_alt: "\uf538 {virtual_mem_percent}%"
+        label: "\udb80\udf5b {virtual_mem_free}"
+        label_alt: "\udb80\udf5b {virtual_mem_percent}%"
         update_interval: 5000
         callbacks:
           on_right: "exec cmd /c Taskmgr"
@@ -428,12 +428,12 @@ widgets:
       hide_if_offline: false
       label: "{icon}"
       layout_icons:
-        bsp: "[\\\\]"
-        columns: "[||]"
-        rows: "[==]"
-        vertical_stack: "[V]="
-        horizontal_stack: "[H]="
-        ultrawide_vertical_stack: "||="
+        bsp: "[BSP]"
+        columns: "[ROW]"
+        rows: "[COL]"
+        vertical_stack: "[VSTK]"
+        horizontal_stack: "[HSTK]"
+        ultrawide_vertical_stack: "UW"
         monocle: "[M]"
         maximised: "[X]"
         floating: "><>"

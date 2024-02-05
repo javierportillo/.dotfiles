@@ -1,14 +1,15 @@
 * {
     /* Bar measurement icons: https://github.com/and3rson/graph-bars-font */
     /* Icon set: https://fontawesome.com/v5.15/how-to-use/on-the-desktop/setup/getting-started */
-    font-family: 'Courier New', 'Bars', 'Font Awesome 5 Free';
+    /* font-family: 'Courier New', 'Bars', 'Font Awesome 5 Free'; */
+    font-family: 'JetBrainsMono Nerd Font Mono';
     font-size: 14px;
-    color: #f2e5bc;
+    color: #f2f2f2;
 }
 
 .bar {
     background: rgba(29, 32, 33, 0.3);
-    border: 1px solid #504945;
+    border: 1px solid #505050;
     padding: 0 5px;
 }
 
@@ -33,13 +34,13 @@
 }
 
 .ws-btn:hover {
-    color: #fbf1c7;
+    color: #fbfbfb;
     font-weight: bold;
 }
 
 .ws-btn.populated {
     border-color: rgba(168, 153, 132, 1.0);
-    color: #ebdbb2;
+    color: #ebebeb;
 }
 
 .ws-btn.active {
@@ -50,13 +51,13 @@
 .custom-widget {
     padding: 2px 6px;
     font-size: 14px;
-    background: #bdae93;
+    background: #bdbdbd;
 }
 .custom-widget .icon {
   font-size: 13px;
 }
 .custom-widget:hover {
-  background: #fbf1c7;
+  background: #fbfbfb;
 }
 .custom-widget .icon.icon-left {
     margin-right: 5px;
@@ -91,7 +92,7 @@
 }
 
 .cpu-widget .label {
-  background: #d3869b;
+  background: #aaaaaa;
 }
 
 .battery-widget .label.status-critical {
@@ -124,7 +125,7 @@
   background: #fe8019;
 }
 .memory-widget .label.status-high {
-  background: #cc241d;
+  background: #fb4040;
 }
 .active-window-widget {
   margin-left: 5px;
@@ -139,7 +140,7 @@
 }
 
 .komorebi-active-layout .label {
-  color: #fbf1c7;
+  color: #fbfbfb;
   margin: -4px 2px 2px 8px;
   font-family: Hack;
 }
