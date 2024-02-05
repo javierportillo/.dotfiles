@@ -94,3 +94,29 @@ vim.api.nvim_create_autocmd("BufWritePost", {
   pattern = "applications.yaml",
   command = "SyncApplications",
 })
+
+vim.api.nvim_create_user_command("SyncYasb", function()
+  local command =
+  "cd $HOME && rsync .dotfiles/home/.config/yasb/yasb.yaml winhome/.yasb/config.yaml && rsync .dotfiles/home/.config/yasb/yasb.css winhome/.yasb/styles.css"
+  vim.fn.jobstart(command, {
+    on_exit = function(_, code)
+      if code ~= 0 then
+        print("could not sync yasb to windows")
+      else
+        print("synced yasb to windows")
+      end
+    end,
+  })
+end, {})
+
+vim.api.nvim_create_autocmd("BufWritePost", {
+  group = vim.api.nvim_create_augroup("AutoSyncYasb", { clear = true }),
+  pattern = "yasb.yaml",
+  command = "SyncYasb",
+})
+
+vim.api.nvim_create_autocmd("BufWritePost", {
+  group = vim.api.nvim_create_augroup("AutoSyncYasbCSS", { clear = true }),
+  pattern = "yasb.css",
+  command = "SyncYasb",
+})
