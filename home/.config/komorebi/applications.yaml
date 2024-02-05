@@ -852,6 +852,10 @@
     kind: Exe
     id: OpenRGB.exe
     matching_strategy: Equals
+  floating_identifiers:
+  - kind: Exe
+    id: OpenRGB.exe
+    matching_strategy: Equals
   options:
   - tray_and_multi_window
 - name: Paradox Launcher
