@@ -8,8 +8,7 @@
 }
 
 .bar {
-    background: rgba(29, 32, 33, 0.3);
-    border: 1px solid #505050;
+    background: rgba(29, 32, 33, 0);
     padding: 0 5px;
 }
 
@@ -26,8 +25,8 @@
 }
 .ws-btn {
     padding: 5px;
-    background: rgba(60, 56, 54, 0.4);
-    border: 1px solid rgba(168, 153, 132, 0.4);
+    background: rgba(60, 60, 60, 0.4);
+    border: 1px solid rgba(168, 168, 168, 0.4);
     margin: 2px 1px;
     font-size: 12px;
     border-radius: 3px;
@@ -39,12 +38,12 @@
 }
 
 .ws-btn.populated {
-    border-color: rgba(168, 153, 132, 1.0);
+    border-color: rgba(168, 168, 168, 1.0);
     color: #ebebeb;
 }
 
 .ws-btn.active {
-    background: rgba(251, 241, 199, 0.85);
+    background: rgba(251, 251, 251, 0.85);
     color: #121212;
 }
 
