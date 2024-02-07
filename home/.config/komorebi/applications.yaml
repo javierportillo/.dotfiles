@@ -1491,9 +1491,4 @@
   - kind: Exe
     id: ueli.exe
     matching_strategy: Equals
-- name: WhatsApp
-  identifier:
-    kind: Title
-    id: WhatsApp
-    matching_strategy: Equals
 
