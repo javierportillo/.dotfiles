@@ -15,3 +15,4 @@ export COLORTERM="truecolor"
 # fzf default options
 export FZF_DEFAULT_OPTS="--color=16"
 
+. "$HOME/.cargo/env"
