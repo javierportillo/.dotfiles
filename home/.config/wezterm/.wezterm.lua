@@ -25,6 +25,7 @@ config.font = wezterm.font 'Dank Mono'
 
 config.font_size = 13
 
+config.adjust_window_size_when_changing_font_size = false
 config.window_decorations = "RESIZE"
 config.window_frame = {
   inactive_titlebar_bg = "none",
@@ -98,6 +99,9 @@ config.keys = {
   { key = 'phys:Space', mods = 'SHIFT|CTRL', action = act.QuickSelect },
   { key = 'PageUp',     mods = 'SHIFT',      action = act.ScrollByPage(-1) },
   { key = 'PageDown',   mods = 'SHIFT',      action = act.ScrollByPage(1) },
+  { key = '=',          mods = 'CTRL',       action = act.IncreaseFontSize },
+  { key = '-',          mods = 'CTRL',       action = act.DecreaseFontSize },
+  { key = '0',          mods = 'CTRL',       action = act.ResetFontSize },
 }
 
 config.key_tables = {
