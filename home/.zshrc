@@ -112,6 +112,7 @@ alias la="exa -lah"
 alias ip="ip --color=always"
 
 alias ns="nvim . -S"
+alias nv="nvim ."
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
