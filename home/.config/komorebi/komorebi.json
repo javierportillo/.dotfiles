@@ -26,49 +26,7 @@
       "b": 153
     }
   },
-  "monitor_index_preferences": {
-    "0": {
-      "left": 3840,
-      "top": 0,
-      "right": 1080,
-      "bottom": 1920
-    },
-    "1": {
-      "left": -2560,
-      "top": 0,
-      "right": 2560,
-      "bottom": 1440
-    },
-    "2": {
-      "left": 0,
-      "top": 0,
-      "right": 3840,
-      "bottom": 2160
-    }
-  },
   "monitors": [
-    {
-      "work_area_offset": {
-        "left": 0,
-        "top": 730,
-        "right": 0,
-        "bottom": 730
-      },
-      "workspaces": [
-        {
-          "name": "I",
-          "layout": "HorizontalStack"
-        },
-        {
-          "name": "II",
-          "layout": "HorizontalStack"
-        },
-        {
-          "name": "III",
-          "layout": "HorizontalStack"
-        }
-      ]
-    },
     {
       "workspaces": [
         {
