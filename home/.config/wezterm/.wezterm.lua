@@ -60,7 +60,7 @@ config.background = {
     source = { Color = '#000000' },
     width = '100%',
     height = '100%',
-    opacity = 0.85,
+    opacity = 0.9,
   },
   {
     source = { File = wezterm.config_dir .. '/.wezterm.png' },
