@@ -68,11 +68,3 @@ alt + shift + 8         : komorebic move-to-monitor 0
 alt + shift + 9         : komorebic move-to-monitor 1
 alt + shift + 0         : komorebic move-to-monitor 2
 
-# App shortcuts - these require shell to be pwsh / powershell
-# The apps will be focused if open, or launched if not open
-ctrl + alt + shift + c  : if ($wshell.AppActivate('Chrome') -eq $False) { start chrome }
-ctrl + alt + shift + f  : if ($wshell.AppActivate('Files') -eq $False) { start Files }
-ctrl + alt + shift + t  : if ($wshell.AppActivate((Write-Output (Get-Process -Name "WindowsTerminal").Id)) -eq $False) { start wt }
-ctrl + alt + shift + z  : if ($wshell.AppActivate((Write-Output (Get-Process -Name "wezterm-gui").Id)) -eq $False) { start wezterm-gui.exe }
-ctrl + alt + shift + d  : if ($wshell.AppActivate('Discord') -eq $False) { Start-Process (Join-Path $env:LOCALAPPDATA "Discord\Update.exe") -ArgumentList "--processStart Discord.exe" }
-
