@@ -33,7 +33,14 @@
       "workspaces": [
         {
           "name": "I",
-          "layout": "BSP"
+          "layout": "BSP",
+          "initial_workspace_rules": [
+            {
+              "id": "chrome.exe",
+              "kind": "Exe",
+              "matching_strategy": "Equals"
+            }
+          ]
         },
         {
           "name": "II",
@@ -49,7 +56,39 @@
       "workspaces": [
         {
           "name": "I",
-          "layout": "BSP"
+          "layout": "BSP",
+          "initial_workspace_rules": [
+            {
+              "id": "YouTube",
+              "kind": "Title",
+              "matching_strategy": "Contains"
+            },
+            {
+              "id": "Pomodor",
+              "kind": "Title",
+              "matching_strategy": "Contains"
+            },
+            {
+              "id": "WhatsApp",
+              "kind": "Title",
+              "matching_strategy": "Contains"
+            },
+            {
+              "id": "Discord.exe",
+              "kind": "Exe",
+              "matching_strategy": "Equals"
+            },
+            {
+              "id": "Slack.exe",
+              "kind": "Exe",
+              "matching_strategy": "Equals"
+            },
+            {
+              "id": "Obsidian.exe",
+              "kind": "Exe",
+              "matching_strategy": "Equals"
+            }
+          ]
         },
         {
           "name": "II",
