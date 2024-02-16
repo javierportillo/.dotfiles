@@ -7,23 +7,21 @@
   "default_workspace_padding": 6,
   "default_container_padding": 6,
   "active_window_border": true,
-  "active_window_border_width": 5,
-  "active_window_border_offset": -5,
   "active_window_border_colours": {
     "single": {
-      "r": 66,
-      "g": 165,
-      "b": 245
+      "r": 156,
+      "g": 207,
+      "b": 216
     },
     "stack": {
-      "r": 256,
-      "g": 165,
-      "b": 66
+      "r": 246,
+      "g": 193,
+      "b": 119
     },
     "monocle": {
-      "r": 255,
-      "g": 51,
-      "b": 153
+      "r": 235,
+      "g": 188,
+      "b": 186
     }
   },
   "monitors": [
