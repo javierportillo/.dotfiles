@@ -59,9 +59,9 @@ alt + 3                 : komorebic focus-workspace 2
 # Move windows across workspaces
 # I like to send more than move to workspace
 # and then switch myself
-alt + shift + 1         : komorebic send-to-workspace 0
-alt + shift + 2         : komorebic send-to-workspace 1
-alt + shift + 3         : komorebic send-to-workspace 2
+alt + shift + 1         : komorebic move-to-workspace 0
+alt + shift + 2         : komorebic move-to-workspace 1
+alt + shift + 3         : komorebic move-to-workspace 2
 
 # Move windows across monitors
 alt + shift + 0         : komorebic move-to-monitor 0
