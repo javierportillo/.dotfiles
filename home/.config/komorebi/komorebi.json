@@ -18,24 +18,7 @@
       "workspaces": [
         {
           "name": "Primary",
-          "layout": "BSP",
-          "initial_workspace_rules": [
-            {
-              "id": "chrome.exe",
-              "kind": "Exe",
-              "matching_strategy": "Equals"
-            },
-            {
-              "id": "wezterm-gui.exe",
-              "kind": "Exe",
-              "matching_strategy": "Equals"
-            },
-            {
-              "id": "WindowsTerminal.exe",
-              "kind": "Exe",
-              "matching_strategy": "Equals"
-            }
-          ]
+          "layout": "BSP"
         },
         {
           "name": "Other",
@@ -47,40 +30,11 @@
       "workspaces": [
         {
           "name": "Secondary",
-          "layout": "Grid",
-          "workspace_rules": [
-            {
-              "id": "Pomodor",
-              "kind": "Title",
-              "matching_strategy": "Contains"
-            },
-            {
-              "id": "Obsidian.exe",
-              "kind": "Exe",
-              "matching_strategy": "Equals"
-            }
-          ]
+          "layout": "Grid"
         },
         {
           "name": "Chat",
-          "layout": "Grid",
-          "initial_workspace_rules": [
-            {
-              "id": "WhatsApp",
-              "kind": "Title",
-              "matching_strategy": "Contains"
-            },
-            {
-              "id": "Discord.exe",
-              "kind": "Exe",
-              "matching_strategy": "Equals"
-            },
-            {
-              "id": "Slack.exe",
-              "kind": "Exe",
-              "matching_strategy": "Equals"
-            }
-          ]
+          "layout": "Grid"
         }
       ]
     }
