@@ -17,42 +17,54 @@
     {
       "workspaces": [
         {
-          "name": "I",
+          "name": "Primary",
           "layout": "BSP",
           "initial_workspace_rules": [
             {
               "id": "chrome.exe",
               "kind": "Exe",
               "matching_strategy": "Equals"
+            },
+            {
+              "id": "wezterm-gui.exe",
+              "kind": "Exe",
+              "matching_strategy": "Equals"
+            },
+            {
+              "id": "WindowsTerminal.exe",
+              "kind": "Exe",
+              "matching_strategy": "Equals"
             }
           ]
         },
         {
-          "name": "II",
-          "layout": "BSP"
-        },
-        {
-          "name": "III",
-          "layout": "BSP"
+          "name": "Other",
+          "layout": "Grid"
         }
       ]
     },
     {
       "workspaces": [
         {
-          "name": "I",
+          "name": "Secondary",
           "layout": "Grid",
-          "initial_workspace_rules": [
-            {
-              "id": "YouTube",
-              "kind": "Title",
-              "matching_strategy": "Contains"
-            },
+          "workspace_rules": [
             {
               "id": "Pomodor",
               "kind": "Title",
               "matching_strategy": "Contains"
             },
+            {
+              "id": "Obsidian.exe",
+              "kind": "Exe",
+              "matching_strategy": "Equals"
+            }
+          ]
+        },
+        {
+          "name": "Chat",
+          "layout": "Grid",
+          "initial_workspace_rules": [
             {
               "id": "WhatsApp",
               "kind": "Title",
@@ -67,21 +79,8 @@
               "id": "Slack.exe",
               "kind": "Exe",
               "matching_strategy": "Equals"
-            },
-            {
-              "id": "Obsidian.exe",
-              "kind": "Exe",
-              "matching_strategy": "Equals"
             }
           ]
-        },
-        {
-          "name": "II",
-          "layout": "Grid"
-        },
-        {
-          "name": "III",
-          "layout": "Grid"
         }
       ]
     }
