@@ -4,11 +4,13 @@
   "default_workspace_padding": 0,
   "default_container_padding": 0,
   "active_window_border": true,
+  "active_window_border_style": "Square",
   "active_window_border_colours": {
     "single": "#9CCFD8",
     "stack": "#F6C177",
     "monocle": "#EBBCBA"
   },
+  "border_width": 4,
   "display_index_preferences": {
     "0": "DELA0EC-5&33963ada&0&UID176385",
     "1": "DELA199-5&33963ada&0&UID176387"
@@ -38,5 +40,15 @@
         }
       ]
     }
-  ]
+  ],
+  "stackbar": {
+    "height": 25,
+    "mode": "OnStack",
+    "tabs": {
+      "width": 200,
+      "focused_text": "#00a542",
+      "unfocused_text": "#b3b3b3",
+      "background": "#141414"
+    }
+  }
 }
