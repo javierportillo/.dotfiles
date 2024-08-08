@@ -1,5 +1,6 @@
 set hidden true
-set drawbox true
+set ignorecase true
+set drawbox false
 set icons true
 
 cmd mkdir ${{
@@ -11,7 +12,7 @@ cmd mkdir ${{
 cmd mkfile ${{
   printf "File name: "
   read ans
-  $EDITOR $ans
+  touch $ans
 }}
 
 cmd chmod ${{
@@ -23,3 +24,5 @@ cmd chmod ${{
     chmod $ans $file
   done
 }}
+
+map x delete
