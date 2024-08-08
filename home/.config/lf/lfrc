@@ -25,4 +25,10 @@ cmd chmod ${{
   done
 }}
 
+cmd WinExplorerHere ${{
+  explorer.exe `wslpath -w "$PWD"`
+}}
+
 map x delete
+map W WinExplorerHere
+
