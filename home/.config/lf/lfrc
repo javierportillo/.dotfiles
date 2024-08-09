@@ -29,6 +29,11 @@ cmd WinExplorerHere ${{
   explorer.exe `wslpath -w "$PWD"`
 }}
 
+cmd LazyGit ${{
+  lazygit
+}}
+
 map x delete
 map W WinExplorerHere
+map Q LazyGit
 
