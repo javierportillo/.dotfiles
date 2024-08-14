@@ -7,21 +7,26 @@ if wezterm.config_builder then
   config = wezterm.config_builder()
 end
 
--- config.color_scheme = 'tokyonight'
 -- config.color_scheme = 'Black Metal (Venom) (base16)'
 -- config.color_scheme = 'Vice Dark (base16)'
 -- config.color_scheme = 'darkmoss (base16)'
 -- config.color_scheme = 'Atlas (base16)'
 -- config.color_scheme = 'Grayscale Dark (base16)'
-config.color_scheme = 'rose-pine-moon'
+-- config.color_scheme = 'rose-pine-moon'
+-- config.color_scheme = 'tokyonight_night'
+-- config.color_scheme = 'Dark Violet (base16)'
+config.color_scheme = 'darkmoss (base16)'
 
 -- config.font = wezterm.font 'ComicShannsMono Nerd Font'
 -- config.font = wezterm.font 'CaskaydiaCove Nerd Font Mono'
 -- config.font = wezterm.font 'FiraCode Nerd Font Mono'
 -- config.font = wezterm.font 'GeistMono Nerd Font Mono'
 -- config.font = wezterm.font 'JetBrainsMono Nerd Font Mono'
--- config.font = wezterm.font 'JetBrains Mono'
-config.font = wezterm.font 'Dank Mono'
+config.font = wezterm.font 'JetBrains Mono'
+-- config.font = wezterm.font 'Dank Mono'
+
+-- check for ligatures:
+-- => -> == === !=
 
 config.font_size = 13
 
@@ -75,7 +80,7 @@ config.window_padding = {
   bottom = 0,
 }
 
-config.animation_fps = 30
+config.animation_fps = 60
 config.scrollback_lines = 5000
 config.window_close_confirmation = 'NeverPrompt'
 
