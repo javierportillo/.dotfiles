@@ -1,16 +1,25 @@
 {
   "$schema": "https://raw.githubusercontent.com/LGUG2Z/komorebi/master/schema.json",
+  "animation": {
+    "enabled": true,
+    "duration": 250,
+    "fps": 60,
+    "style": "EaseInOutSine"
+  },
   "app_specific_configuration_path": "$Env:USERPROFILE/applications.yaml",
-  "default_workspace_padding": 0,
-  "default_container_padding": 0,
-  "active_window_border": true,
-  "active_window_border_style": "Square",
-  "active_window_border_colours": {
+  "border": true,
+  "border_colours": {
     "single": "#9CCFD8",
     "stack": "#F6C177",
-    "monocle": "#EBBCBA"
+    "monocle": "#EBBCBA",
+    "unfocused": "#aaaaaa"
   },
+  "border_implementation": "Komorebi",
+  "border_style": "System",
   "border_width": 4,
+  "border_offset": -1,
+  "default_workspace_padding": 4,
+  "default_container_padding": 4,
   "display_index_preferences": {
     "0": "DELA0EC-5&33963ada&0&UID176385",
     "1": "DELA199-5&33963ada&0&UID176387"
@@ -42,13 +51,18 @@
     }
   ],
   "stackbar": {
-    "height": 25,
+    "height": 20,
+    "label": "Title",
     "mode": "OnStack",
     "tabs": {
-      "width": 200,
-      "focused_text": "#00a542",
+      "focused_text": "#9CCFD8",
       "unfocused_text": "#b3b3b3",
-      "background": "#141414"
+      "background": "#202020",
+      "font_family": "Dank Code",
+      "font_size": 20
     }
-  }
+  },
+  "transparency": false,
+  "transparency_alpha": 245,
+  "window_hiding_behaviour": "Cloak"
 }
