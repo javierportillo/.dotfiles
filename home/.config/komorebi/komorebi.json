@@ -9,14 +9,14 @@
   "app_specific_configuration_path": "$Env:USERPROFILE/applications.yaml",
   "border": true,
   "border_colours": {
-    "single": "#9CCFD8",
+    "single": "#50F020",
     "stack": "#F6C177",
-    "monocle": "#EBBCBA",
-    "unfocused": "#aaaaaa"
+    "monocle": "#FBAAAA",
+    "unfocused": "#a0a0c0"
   },
   "border_implementation": "Komorebi",
-  "border_style": "System",
-  "border_width": 4,
+  "border_style": "Square",
+  "border_width": 6,
   "border_offset": -1,
   "default_workspace_padding": 4,
   "default_container_padding": 4,
@@ -26,6 +26,13 @@
   },
   "monitors": [
     {
+      "window_based_work_area_offset_limit": 1,
+      "window_based_work_area_offset": {
+        "top": 0,
+        "bottom": 0,
+        "left": 300,
+        "right": 600
+      },
       "workspaces": [
         {
           "name": "Primary",
@@ -55,11 +62,11 @@
     "label": "Title",
     "mode": "OnStack",
     "tabs": {
-      "focused_text": "#9CCFD8",
+      "focused_text": "#50F020",
       "unfocused_text": "#b3b3b3",
       "background": "#202020",
-      "font_family": "Dank Code",
-      "font_size": 20
+      "font_family": "JetBrains Mono",
+      "font_size": 16
     }
   },
   "transparency": false,
