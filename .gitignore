@@ -7,3 +7,4 @@ home/.config/nvim/plugin/packer_compiled.lua
 home/.config/lazygit/state.yml
 home/.config/configstore/
 home/.tool-versions
+home/.config/gcloud
