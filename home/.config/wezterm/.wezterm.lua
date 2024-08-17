@@ -7,15 +7,17 @@ if wezterm.config_builder then
   config = wezterm.config_builder()
 end
 
--- config.color_scheme = 'Black Metal (Venom) (base16)'
 -- config.color_scheme = 'Vice Dark (base16)'
--- config.color_scheme = 'darkmoss (base16)'
+-- config.color_scheme = 'Black Metal (Venom) (base16)'
 -- config.color_scheme = 'Atlas (base16)'
 -- config.color_scheme = 'Grayscale Dark (base16)'
--- config.color_scheme = 'rose-pine-moon'
+config.color_scheme = 'Rosé Pine Moon (Gogh)'
 -- config.color_scheme = 'tokyonight_night'
+-- config.color_scheme = 'Outrun Dark (base16)'
+-- config.color_scheme = 'Gotham (terminal.sexy)'
 -- config.color_scheme = 'Dark Violet (base16)'
-config.color_scheme = 'darkmoss (base16)'
+-- config.color_scheme = 'darkmoss (base16)'
+-- config.color_scheme = 'Silk Dark (base16)'
 
 -- config.font = wezterm.font 'ComicShannsMono Nerd Font'
 -- config.font = wezterm.font 'CaskaydiaCove Nerd Font Mono'
@@ -60,12 +62,15 @@ config.colors = {
   },
 }
 
+config.window_background_opacity = 0
+config.win32_system_backdrop = 'Acrylic'
+
 config.background = {
   {
-    source = { Color = '#000000' },
+    source = { Color = '#04040D' },
     width = '100%',
     height = '100%',
-    opacity = 0.9,
+    opacity = 0.75
   },
   {
     source = { File = wezterm.config_dir .. '/.wezterm.png' },
