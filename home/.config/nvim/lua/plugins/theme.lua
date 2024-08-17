@@ -16,6 +16,7 @@ return {
       })
 
       vim.cmd [[colorscheme rose-pine]]
+      vim.fn.matchadd('Colorcolumn', [[\%81v]], 100)
     end
   },
   {
