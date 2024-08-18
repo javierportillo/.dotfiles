@@ -8,3 +8,4 @@ home/.config/lazygit/state.yml
 home/.config/configstore/
 home/.tool-versions
 home/.config/gcloud
+home/.config/go/telemetry/local
