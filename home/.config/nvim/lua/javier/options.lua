@@ -35,11 +35,22 @@ vim.opt.scrolloff = 4
 vim.opt.signcolumn = "yes"
 vim.opt.isfname:append("@-@")
 
-vim.opt.updatetime = 50
+vim.opt.updatetime = 250
+-- Decrease mapped sequence wait time
+-- Displays which-key popup sooner
+vim.opt.timeoutlen = 300
+
+-- Sets how neovim will display certain whitespace characters in the editor.
+--  See `:help 'list'`
+--  and `:help 'listchars'`
+vim.opt.list = true
+vim.opt.listchars = { tab = '» ', trail = '·', nbsp = '␣' }
+
 
 vim.opt.cursorline = true
 
--- vim.opt.equalalways = false -- make splits keep their size when others close
+-- make splits keep their size when others close
+-- vim.opt.equalalways = false
 
 vim.opt.showmode = false
 
@@ -49,4 +60,3 @@ vim.opt.splitright = true
 vim.opt.showmatch = true
 
 vim.opt.virtualedit = "block"
-
