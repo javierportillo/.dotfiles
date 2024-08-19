@@ -7,9 +7,25 @@ return {
       'windwp/nvim-ts-autotag',
     },
     config = function()
-      require 'nvim-treesitter.configs'.setup({
+      ---@diagnostic disable-next-line: missing-fields
+      require('nvim-treesitter.configs').setup({
         -- A list of parser names, or 'all' (the five listed parsers should always be installed)
-        ensure_installed = { 'javascript', 'typescript', 'elixir', 'c', 'lua', 'vim', 'vimdoc', 'query', 'http', 'json' },
+        ensure_installed = {
+          'javascript',
+          'typescript',
+          'elixir',
+          'c',
+          'lua',
+          'vim',
+          'vimdoc',
+          'query',
+          'http',
+          'json',
+          'xml',
+          'graphql',
+        },
+
+        ignore_install = {},
 
         -- Install parsers synchronously (only applied to `ensure_installed`)
         sync_install = false,
@@ -85,7 +101,7 @@ return {
           enable = true,
         },
       })
-    end
+    end,
   },
   {
     'nvim-treesitter/nvim-treesitter-context',
