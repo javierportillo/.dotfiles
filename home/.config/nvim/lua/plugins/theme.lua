@@ -6,12 +6,12 @@ return {
       require('rose-pine').setup({
         dark_variant = 'moon',
         highlight_groups = {
-          TelescopeBorder = { fg = "highlight_high", bg = "none" },
-          TelescopeNormal = { bg = "none" },
-          TelescopePromptNormal = { bg = "base" },
-          TelescopeResultsNormal = { fg = "subtle", bg = "none" },
-          TelescopeSelection = { fg = "text", bg = "base" },
-          TelescopeSelectionCaret = { fg = "rose", bg = "rose" },
+          TelescopeBorder = { fg = 'highlight_high', bg = 'none' },
+          TelescopeNormal = { bg = 'none' },
+          TelescopePromptNormal = { bg = 'base' },
+          TelescopeResultsNormal = { fg = 'subtle', bg = 'none' },
+          TelescopeSelection = { fg = 'text', bg = 'base' },
+          TelescopeSelectionCaret = { fg = 'rose', bg = 'rose' },
         },
       })
 
@@ -35,7 +35,7 @@ return {
       -- vim.cmd [[colorscheme base16-silk-dark]]
 
       -- fix the vertical split lines
-      vim.api.nvim_set_hl(0, "VertSplit", { fg = "grey", bg = "NONE" })
+      vim.api.nvim_set_hl(0, 'VertSplit', { fg = 'grey', bg = 'NONE' })
     end
   }
 }

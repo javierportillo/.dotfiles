@@ -1,5 +1,5 @@
-vim.g.mapleader = " "
-vim.g.maplocalleader = " "
+vim.g.mapleader = ' '
+vim.g.maplocalleader = ' '
 
 -- mouse sopport
 vim.opt.mouse = 'a'
@@ -20,22 +20,22 @@ vim.opt.wrap = false
 
 vim.opt.swapfile = false
 vim.opt.backup = false
-vim.opt.undodir = vim.fn.stdpath("data") .. "/undodir"
+vim.opt.undodir = vim.fn.stdpath('data') .. '/undodir'
 vim.opt.undofile = true
 
 vim.opt.hlsearch = false
 vim.opt.incsearch = true
 vim.opt.ignorecase = true
 -- live substitution preview on a split
-vim.opt.inccommand = "split"
+vim.opt.inccommand = 'split'
 vim.opt.smartcase = true
 vim.opt.breakindent = true
 
 vim.opt.termguicolors = true
 
 vim.opt.scrolloff = 10
-vim.opt.signcolumn = "yes"
-vim.opt.isfname:append("@-@")
+vim.opt.signcolumn = 'yes'
+vim.opt.isfname:append('@-@')
 
 vim.opt.updatetime = 250
 -- Decrease mapped sequence wait time
@@ -47,7 +47,6 @@ vim.opt.timeoutlen = 300
 --  and `:help 'listchars'`
 vim.opt.list = true
 vim.opt.listchars = { tab = '» ', trail = '·', nbsp = '␣' }
-
 
 vim.opt.cursorline = true
 
@@ -64,4 +63,4 @@ vim.opt.splitright = true
 vim.opt.showmatch = true
 
 -- visual block select all the block even on empty space and not just where text is
-vim.opt.virtualedit = "block"
+vim.opt.virtualedit = 'block'

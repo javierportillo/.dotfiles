@@ -1,24 +1,15 @@
 return {
   {
     'nvim-treesitter/nvim-treesitter',
+    build = ':TSUpdate',
     dependencies = {
       'nvim-treesitter/nvim-treesitter-textobjects',
       'windwp/nvim-ts-autotag',
     },
-    build = ':TSUpdate',
     config = function()
-      vim.api.nvim_create_autocmd({ 'BufEnter', 'BufAdd', 'BufNew', 'BufNewFile', 'BufWinEnter' }, {
-        group = vim.api.nvim_create_augroup('TS_FOLD_WORKAROUND', {}),
-        callback = function()
-          vim.opt.foldmethod = 'expr'
-          vim.opt.foldexpr   = 'nvim_treesitter#foldexpr()'
-          vim.opt.foldenable = false
-        end
-      })
-
-      require 'nvim-treesitter.configs'.setup {
-        -- A list of parser names, or "all" (the five listed parsers should always be installed)
-        ensure_installed = { "javascript", "typescript", "elixir", "c", "lua", "vim", "vimdoc", "query", "http", "json" },
+      require 'nvim-treesitter.configs'.setup({
+        -- A list of parser names, or 'all' (the five listed parsers should always be installed)
+        ensure_installed = { 'javascript', 'typescript', 'elixir', 'c', 'lua', 'vim', 'vimdoc', 'query', 'http', 'json' },
 
         -- Install parsers synchronously (only applied to `ensure_installed`)
         sync_install = false,
@@ -39,10 +30,10 @@ return {
         incremental_selection = {
           enable = true,
           keymaps = {
-            init_selection = "<leader>v", -- set to `false` to disable one of the mappings
-            node_incremental = "<TAB>",
+            init_selection = '<leader>v', -- set to `false` to disable one of the mappings
+            node_incremental = '<TAB>',
             scope_incremental = false,
-            node_decremental = "<S-TAB>",
+            node_decremental = '<S-TAB>',
           },
         },
         indent = {
@@ -57,14 +48,14 @@ return {
 
             keymaps = {
               -- You can use the capture groups defined in textobjects.scm
-              ["af"] = "@function.outer",
-              ["if"] = "@function.inner",
-              ["ac"] = "@class.outer",
+              ['af'] = '@function.outer',
+              ['if'] = '@function.inner',
+              ['ac'] = '@class.outer',
               -- You can optionally set descriptions to the mappings (used in the desc parameter of
               -- nvim_buf_set_keymap) which plugins like which-key display
-              ["ic"] = { query = "@class.inner", desc = "Select inner part of a class region" },
+              ['ic'] = { query = '@class.inner', desc = 'Select inner part of a class region' },
               -- You can also use captures from other query groups like `locals.scm`
-              ["as"] = { query = "@scope", query_group = "locals", desc = "Select language scope" },
+              ['as'] = { query = '@scope', query_group = 'locals', desc = 'Select language scope' },
             },
             -- You can choose the select mode (default is charwise 'v')
             --
@@ -93,7 +84,7 @@ return {
         autotag = {
           enable = true,
         },
-      }
+      })
     end
   },
   {
