@@ -1,6 +1,7 @@
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 
+-- mouse sopport
 vim.opt.mouse = 'a'
 
 vim.g.netrw_banner = 0
@@ -25,13 +26,14 @@ vim.opt.undofile = true
 vim.opt.hlsearch = false
 vim.opt.incsearch = true
 vim.opt.ignorecase = true
+-- live substitution preview on a split
 vim.opt.inccommand = "split"
 vim.opt.smartcase = true
 vim.opt.breakindent = true
 
 vim.opt.termguicolors = true
 
-vim.opt.scrolloff = 4
+vim.opt.scrolloff = 10
 vim.opt.signcolumn = "yes"
 vim.opt.isfname:append("@-@")
 
@@ -52,11 +54,14 @@ vim.opt.cursorline = true
 -- make splits keep their size when others close
 -- vim.opt.equalalways = false
 
+-- dont show mode, it's already on the statusline
 vim.opt.showmode = false
 
 vim.opt.splitbelow = true
 vim.opt.splitright = true
 
+-- highlight matching paren
 vim.opt.showmatch = true
 
+-- visual block select all the block even on empty space and not just where text is
 vim.opt.virtualedit = "block"

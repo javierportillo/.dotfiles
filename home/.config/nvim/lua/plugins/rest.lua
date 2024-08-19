@@ -2,7 +2,7 @@ return {
   {
     'rest-nvim/rest.nvim',
     config = function()
-      require("rest-nvim").setup({
+      require('rest-nvim').setup({
         -- Open request results in a horizontal split
         result_split_horizontal = true,
         -- Keep the http file buffer above|left when split horizontal|vertical
@@ -28,9 +28,9 @@ return {
           -- executables or functions for formatting response body [optional]
           -- set them to false if you want to disable them
           formatters = {
-            json = "jq",
+            json = 'jq',
             --[[ html = function(body)
-        return vim.fn.system({ "tidy", "-i", "-q", "-" }, body)
+        return vim.fn.system({ 'tidy', '-i', '-q', '-' }, body)
       end ]]
             html = false,
           },
@@ -45,9 +45,9 @@ return {
 
       vim.api.nvim_create_autocmd('BufEnter', {
         group = vim.api.nvim_create_augroup('RestNvimAUGroup', { clear = true }),
-        pattern = "*.http",
+        pattern = '*.http',
         callback = function()
-          vim.keymap.set("n", "<leader>h", "<Plug>RestNvim")
+          vim.keymap.set('n', '<leader>h', '<Plug>RestNvim', { desc = 'Run HTTP Request' })
         end
       })
     end

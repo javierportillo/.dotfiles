@@ -1,3 +1,4 @@
+-- Fix sync clipboard to register + and * when on wsl
 if vim.fn.has('wsl') then
   vim.g.clipboard = {
     name = 'WSLClipboard',

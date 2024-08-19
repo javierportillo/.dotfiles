@@ -1,7 +1,8 @@
 return {
   {
+    -- High performace color highlighter
     'norcalli/nvim-colorizer.lua',
-    config = function ()
+    config = function()
       require("colorizer").setup()
     end,
   }
