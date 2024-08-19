@@ -113,6 +113,7 @@ alias ip="ip --color=always"
 
 alias ns="nvim . -S"
 alias nv="nvim ."
+alias nk='NVIM_APPNAME="nvim-kickstart" nvim'
 
 alias gg="lazygit"
 
