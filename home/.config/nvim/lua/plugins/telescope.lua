@@ -50,13 +50,13 @@ return {
       vim.keymap.set('n', '<leader>gr', builtin.lsp_references, { desc = 'Find LSP References' })
       vim.keymap.set('n', '<leader>gp', builtin.diagnostics, { desc = 'Find LSP Diagnostics' })
 
-      local trouble = require('trouble.providers.telescope')
+      local open_with_trouble = require('trouble.sources.telescope').open
 
       require('telescope').setup {
         defaults = {
           mappings = {
-            i = { ['<c-t>'] = trouble.open_with_trouble },
-            n = { ['<c-t>'] = trouble.open_with_trouble },
+            i = { ['<c-t>'] = open_with_trouble },
+            n = { ['<c-t>'] = open_with_trouble },
           },
           vimgrep_arguments = {
             'rg',
