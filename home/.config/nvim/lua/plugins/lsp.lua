@@ -1,5 +1,5 @@
 return {
-    {
+  {
     -- `lazydev` configures Lua LSP for your Neovim config, runtime and plugins
     -- used for completion, annotations and signatures of Neovim apis
     'folke/lazydev.nvim',
@@ -27,7 +27,7 @@ return {
 
       -- Allows extra capabilities provided by nvim-cmp
       'hrsh7th/nvim-cmp',
-      'hrsh7th/cmp-nvim-lsp'
+      'hrsh7th/cmp-nvim-lsp',
     },
     config = function()
       --  This function gets run when an LSP attaches to a particular buffer.
@@ -192,5 +192,13 @@ return {
         },
       })
     end,
+  },
+  {
+    'pmizio/typescript-tools.nvim',
+    dependencies = {
+      'nvim-lua/plenary.nvim',
+      'neovim/nvim-lspconfig',
+    },
+    opts = {},
   },
 }
