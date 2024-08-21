@@ -19,29 +19,39 @@ return {
           -- `friendly-snippets` contains a variety of premade snippets.
           --    See the README about individual language/framework/plugin snippets:
           --    https://github.com/rafamadriz/friendly-snippets
-          -- {
-          --   'rafamadriz/friendly-snippets',
-          --   config = function()
-          --     require('luasnip.loaders.from_vscode').lazy_load()
-          --   end,
-          -- },
+          {
+            'rafamadriz/friendly-snippets',
+            config = function()
+              require('luasnip.loaders.from_vscode').lazy_load()
+            end,
+          },
         },
       },
       'saadparwaiz1/cmp_luasnip',
+      'onsails/lspkind.nvim',
 
       -- Adds other completion capabilities.
       --   nvim-cmp does not ship with all sources by default. They are split
       --   into multiple repos for maintenance purposes.
       'hrsh7th/cmp-nvim-lsp',
       'hrsh7th/cmp-path',
+      'hrsh7th/cmp-buffer',
     },
     config = function()
+      local luasnip = require('luasnip')
+      -- Load snippet files
+      for _, ft_path in ipairs(vim.api.nvim_get_runtime_file('lua/javier/snippets/*.lua', true)) do
+        loadfile(ft_path)()
+      end
+
+      local lspkind = require('lspkind')
+      lspkind.init({})
+
       -- See `:help cmp`
       local cmp = require('cmp')
-      local luasnip = require('luasnip')
-      luasnip.config.setup({})
 
       cmp.setup({
+        -- Enable luasnip to handle snippet expansion for nvim-cmp
         snippet = {
           expand = function(args)
             luasnip.lsp_expand(args.body)
@@ -109,6 +119,19 @@ return {
           { name = 'nvim_lsp' },
           { name = 'luasnip' },
           { name = 'path' },
+          { name = 'buffer' },
+        },
+        ---@diagnostic disable-next-line: missing-fields
+        formatting = {
+          format = lspkind.cmp_format({
+            mode = 'symbol_text',
+            show_labelDetails = true,
+            ellipsis_char = '…',
+            ---@diagnostic disable-next-line: unused-local
+            before = function(entry, vim_entry)
+              return vim_entry
+            end,
+          }),
         },
       })
     end,
