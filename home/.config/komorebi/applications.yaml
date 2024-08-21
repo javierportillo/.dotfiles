@@ -1491,4 +1491,13 @@
   - kind: Exe
     id: ueli.exe
     matching_strategy: Equals
+- name: Phone Link
+  identifier:
+    kind: Exe
+    id: PhoneExperienceHost.exe
+    matching_strategy: Equals
+  float_identifiers:
+  - kind: Exe
+    id: PhoneExperienceHost.exe
+    matching_strategy: Equals
 
