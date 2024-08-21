@@ -197,8 +197,12 @@ return {
 
       -- Diagnostics configuration
       vim.diagnostic.config({
+        underline = true,
+        virtual_text = true,
+        signs = true,
         float = {
-          source = 'if_many',
+          source = true,
+          show_header = true,
         },
       })
     end,
