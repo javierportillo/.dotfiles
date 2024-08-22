@@ -70,3 +70,5 @@ sudo apt install build-essential autoconf m4 libncurses5-dev libwxgtk3.0-gtk3-de
 echo "from here on, continue on zsh"
 chsh -s $(which zsh)
 
+echo "install delta for paging git diffs"
+sudo pacman -S git-delta
