@@ -15,3 +15,7 @@ vim.keymap.set({ 'n', 'v' }, ':', ';')
 
 -- Paste last thing yanked, not deleted
 vim.keymap.set({ 'n', 'v' }, ',p', [["0p]], { desc = 'Paste last yank' })
+
+-- Tab Management
+vim.keymap.set('n', '<leader>tn', '<CMD>tabnew<CR>', { desc = 'Open New Tab' })
+vim.keymap.set('n', '<leader>tq', '<CMD>tabclose<CR>', { desc = 'Close Current Tab' })
