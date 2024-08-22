@@ -135,3 +135,7 @@ eval "$(pyenv init -)"
 # Workaround for slowness in pasting text
 zstyle ':bracketed-paste-magic' active-widgets '.self-*'
 
+# enables Atuin
+# eval "$(atuin init zsh)"
+zvm_after_init_commands+=(eval "$(atuin init zsh)")
+

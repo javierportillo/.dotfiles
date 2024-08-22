@@ -72,3 +72,6 @@ chsh -s $(which zsh)
 
 echo "install delta for paging git diffs"
 sudo pacman -S git-delta
+
+echo "isntall atuin for <C-r> command line history for zsh"
+sudo pacman -S atuin
