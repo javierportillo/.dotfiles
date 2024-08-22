@@ -58,7 +58,11 @@ return {
           -- Jump to the type of the word under cursor.
           --   Useful when you're nto sure what type a variable is and you want to see
           --   the definition of its *type*, not where it was *defined*.
-          map('gT', builtin.lsp_type_definitions, '[G]oto [T]ype Definition')
+          map('gO', builtin.lsp_type_definitions, '[G]oto [T]ype Definition')
+
+          -- WARN: This is not Goto Definition, this is Goto Declaration.
+          --   For example, in C this would take you to the header.
+          map('gD', vim.lsp.buf.declaration, '[G]oto [D]eclaration')
 
           -- Fuzzy find all the symbols in your current document.
           --   Symbols are things like variables, functions, types, etc.
@@ -71,12 +75,11 @@ return {
           -- or a suggestion from your LSP for this to activate.
           map('<leader>ca', vim.lsp.buf.code_action, '[C]ode [A]ction')
 
-          -- WARN: This is not Goto Definition, this is Goto Declaration.
-          --   For example, in C this would take you to the header.
-          map('gD', vim.lsp.buf.declaration, '[G]oto [D]eclaration')
-
+          -- DIAGNOSTICS
           -- Open Diagnostics floating window
-          map('<leader>p', vim.diagnostic.open_float, 'Open Diagnostic Window')
+          map('<leader>p', vim.diagnostic.open_float, 'Display Line Diagnostics')
+          -- Find Workspace Diagnostics
+          map('<leader>gp', builtin.diagnostics, '[G]oto Workspace Diagnostics')
 
           -- The following two autocommands are used to highlight references of the
           -- word under your cursor when your cursor rests there for a little while.

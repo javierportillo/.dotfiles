@@ -16,7 +16,7 @@ return {
         build = 'make',
         cond = function()
           return vim.fn.executable('make') == 1
-        end
+        end,
       },
     },
     config = function()
@@ -43,16 +43,9 @@ return {
         }))
       end, { desc = '[/] Fuzzy find this buffer' })
 
-      -- LSP keybindings
-      vim.keymap.set('n', '<leader>gd', builtin.lsp_definitions, { desc = 'Find LSP Definitions' })
-      vim.keymap.set('n', '<leader>go', builtin.lsp_type_definitions, { desc = 'Find LSP Type Defs' })
-      vim.keymap.set('n', '<leader>gi', builtin.lsp_implementations, { desc = 'Find LSP Implementations' })
-      vim.keymap.set('n', '<leader>gr', builtin.lsp_references, { desc = 'Find LSP References' })
-      vim.keymap.set('n', '<leader>gp', builtin.diagnostics, { desc = 'Find LSP Diagnostics' })
-
       local open_with_trouble = require('trouble.sources.telescope').open
 
-      require('telescope').setup {
+      require('telescope').setup({
         defaults = {
           mappings = {
             i = { ['<c-t>'] = open_with_trouble },
@@ -73,33 +66,33 @@ return {
         pickers = {
           find_files = {
             find_command = {
-              "rg",
-              "--files",
-              "--smart-case",
-              "--hidden",
-              "--glob",
-              "!**/.git/*"
+              'rg',
+              '--files',
+              '--smart-case',
+              '--hidden',
+              '--glob',
+              '!**/.git/*',
             },
           },
         },
         extensions = {
           fzf = {
-            fuzzy = true,                   -- false will only do exact matching
+            fuzzy = true, -- false will only do exact matching
             override_generic_sorter = true, -- override the generic sorter
-            override_file_sorter = true,    -- override the file sorter
-            case_mode = "smart_case",       -- or "ignore_case" or "respect_case"
+            override_file_sorter = true, -- override the file sorter
+            case_mode = 'smart_case', -- or "ignore_case" or "respect_case"
             -- the default case_mode is "smart_case"
           },
           ['ui-select'] = {
             require('telescope.themes').get_dropdown(),
           },
         },
-      }
+      })
 
       -- To get fzf loaded and working with telescope, you need to call
       -- load_extension, somewhere after setup function:
       require('telescope').load_extension('fzf')
       require('telescope').load_extension('ui-select')
-    end
+    end,
   },
 }
