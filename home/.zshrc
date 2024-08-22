@@ -129,9 +129,12 @@ if [ -f '/home/javier/google-cloud-sdk/completion.zsh.inc' ]; then . '/home/javi
 
 
 # pyenv stuff
-export PYENV_ROOT="$HOME/.pyenv"
-[[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
-eval "$(pyenv init -)"
+# WARN: ENABLE ONLY WHEN USING IT
+# This eval is too slow
+
+# export PYENV_ROOT="$HOME/.pyenv"
+# [[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
+# eval "$(pyenv init -)"
 
 # Workaround for slowness in pasting text
 zstyle ':bracketed-paste-magic' active-widgets '.self-*'
