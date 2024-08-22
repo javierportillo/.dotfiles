@@ -106,6 +106,13 @@ return {
               luasnip.jump(-1)
             end
           end, { 'i', 's' }),
+          -- Select within a list of options
+          -- This is useful for choise nodes
+          ['<C-k>'] = cmp.mapping(function()
+            if luasnip.choice_active() then
+              luasnip.change_choice()
+            end
+          end, { 'i', 's' }),
 
           -- For more advanced Luasnip keymaps (e.g. selecting choice nodes, expansion) see:
           --    https://github.com/L3MON4D3/LuaSnip?tab=readme-ov-file#keymaps
