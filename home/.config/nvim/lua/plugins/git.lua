@@ -19,6 +19,11 @@ return {
     },
   },
   {
+    'lewis6991/gitsigns.nvim',
+    event = 'VimEnter',
+    config = true,
+  },
+  {
     'NeogitOrg/neogit',
     event = 'VimEnter',
     dependencies = {
