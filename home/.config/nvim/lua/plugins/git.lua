@@ -20,6 +20,7 @@ return {
   },
   {
     'NeogitOrg/neogit',
+    event = 'VimEnter',
     dependencies = {
       'nvim-lua/plenary.nvim', -- required
       'sindrets/diffview.nvim', -- optional - Diff integration
@@ -328,6 +329,8 @@ return {
           },
         },
       })
+
+      vim.keymap.set('n', '<leader>gn', '<CMD>Neogit<CR>', { desc = 'Open NeoGit' })
     end,
   },
 }
