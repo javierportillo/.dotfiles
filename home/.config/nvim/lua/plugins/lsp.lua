@@ -37,8 +37,8 @@ return {
       vim.api.nvim_create_autocmd('LspAttach', {
         group = vim.api.nvim_create_augroup('kickstart-lsp-attach', { clear = true }),
         callback = function(event)
-          local map = function(keys, func, desc)
-            vim.keymap.set('n', keys, func, { buffer = event.buf, desc = 'LSP: ' .. desc })
+          local map = function(keys, func, desc, modes)
+            vim.keymap.set(modes or 'n', keys, func, { buffer = event.buf, desc = 'LSP: ' .. desc })
           end
 
           local builtin = require('telescope.builtin')
@@ -70,6 +70,10 @@ return {
 
           -- Rename the variable under the cursor.
           map('<leader>rn', vim.lsp.buf.rename, '[R]e[n]ame')
+
+          -- Display signature information of the type symbol under the cursor in
+          -- a floating window.
+          map('<C-K>', vim.lsp.buf.signature_help, 'Display Signature Help', 'i')
 
           -- Execute a code action, usually your cursor needs to be on top of an error
           -- or a suggestion from your LSP for this to activate.
