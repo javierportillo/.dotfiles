@@ -108,7 +108,7 @@ return {
           end, { 'i', 's' }),
           -- Select within a list of options
           -- This is useful for choise nodes
-          ['<C-k>'] = cmp.mapping(function()
+          ['<C-j>'] = cmp.mapping(function()
             if luasnip.choice_active() then
               luasnip.change_choice()
             end
