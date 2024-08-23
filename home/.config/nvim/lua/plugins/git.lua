@@ -336,6 +336,14 @@ return {
       })
 
       vim.keymap.set('n', '<leader>gn', '<CMD>Neogit<CR>', { desc = 'Open NeoGit' })
+
+      -- Fix buffer not updating after some operations
+      local group = vim.api.nvim_create_augroup('NeoGit', { clear = true })
+      vim.api.nvim_create_autocmd({ 'FocusGained', 'BufEnter', 'CursorHold' }, {
+        desc = 'Refresh buffers after Neogit Operations',
+        group = group,
+        command = 'silent! checktime  %',
+      })
     end,
   },
 }
