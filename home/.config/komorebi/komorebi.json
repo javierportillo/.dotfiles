@@ -2,8 +2,8 @@
   "$schema": "https://raw.githubusercontent.com/LGUG2Z/komorebi/master/schema.json",
   "animation": {
     "enabled": true,
-    "duration": 250,
-    "fps": 60,
+    "duration": 300,
+    "fps": 120,
     "style": "EaseInOutSine"
   },
   "app_specific_configuration_path": "$Env:USERPROFILE/applications.yaml",
