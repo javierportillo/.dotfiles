@@ -1500,4 +1500,26 @@
   - kind: Exe
     id: PhoneExperienceHost.exe
     matching_strategy: Equals
-
+- name: Messenger
+  identifier:
+    kind: Title
+    id: Messenger
+    matching_strategy: StartsWith
+  options:
+  - tray_and_multi_window
+  - force
+  float_identifiers:
+  - kind: Title
+    id: Messenger
+    matching_strategy: StartsWith
+- name: WhatsApp Desktop App
+  identifier:
+    kind: Title
+    id: WhatsApp
+    matching_strategy: StartsWith
+  options:
+  - tray_and_multi_window
+  float_identifiers:
+  - kind: Title
+    id: Voice call
+    matching_strategy: StartsWith
