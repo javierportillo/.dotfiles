@@ -852,7 +852,7 @@
     kind: Exe
     id: OpenRGB.exe
     matching_strategy: Equals
-  floating_identifiers:
+  float_identifiers:
   - kind: Exe
     id: OpenRGB.exe
     matching_strategy: Equals
