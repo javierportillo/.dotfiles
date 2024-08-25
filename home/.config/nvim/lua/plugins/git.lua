@@ -109,7 +109,7 @@ return {
           show_head_commit_hash = true,
           recent_commit_count = 10,
           HEAD_padding = 10,
-          HEAD_folded = true,
+          HEAD_folded = false,
           mode_padding = 3,
           mode_text = {
             M = 'modified',
