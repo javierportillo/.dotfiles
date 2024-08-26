@@ -24,11 +24,23 @@ config.color_scheme = 'Rosé Pine Moon (Gogh)'
 -- config.font = wezterm.font('FiraCode Nerd Font Mono')
 -- config.font = wezterm.font('GeistMono Nerd Font Mono')
 -- config.font = wezterm.font 'JetBrainsMono Nerd Font Mono'
-config.font = wezterm.font('JetBrains Mono')
+-- config.font = wezterm.font('JetBrains Mono')
 -- config.font = wezterm.font('Dank Mono')
+
+config.font = wezterm.font_with_fallback({
+  'JetBrains Mono',
+  'Symbols Nerd Font Mono',
+  'Unicode BMP Fallback SIL',
+}, { weight = 'Regular' })
+
+config.use_cap_height_to_scale_fallback_fonts = true
 
 -- check for ligatures:
 -- => -> == === !=
+-- check for similar symbols
+-- [il1|, oO0, dqp]
+-- check for parens
+-- () {} []
 
 config.font_size = 13
 
