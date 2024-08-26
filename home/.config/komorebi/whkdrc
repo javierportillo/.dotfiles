@@ -66,10 +66,10 @@ alt + shift + 1         : komorebic move-to-workspace 0
 alt + shift + 2         : komorebic move-to-workspace 1
 alt + shift + 3         : komorebic move-to-workspace 2
 
-ctrl + shift + alt + r : komorebic move-to-named-workspace Primary
-ctrl + shift + alt + e : komorebic move-to-named-workspace Secondary
-ctrl + shift + alt + w : komorebic move-to-named-workspace Chat
-ctrl + shift + alt + q : komorebic move-to-named-workspace Other
+ctrl + shift + alt + r : komorebic send-to-named-workspace Primary
+ctrl + shift + alt + e : komorebic send-to-named-workspace Secondary
+ctrl + shift + alt + w : komorebic send-to-named-workspace Chat
+ctrl + shift + alt + q : komorebic send-to-named-workspace Other
 
 # Move windows across monitors
 alt + shift + 0         : komorebic move-to-monitor 0
