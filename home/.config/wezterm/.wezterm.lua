@@ -31,7 +31,7 @@ config.font = wezterm.font_with_fallback({
   'JetBrains Mono',
   'Symbols Nerd Font Mono',
   'Unicode BMP Fallback SIL',
-}, { weight = 'Regular' })
+})
 
 config.use_cap_height_to_scale_fallback_fonts = true
 
