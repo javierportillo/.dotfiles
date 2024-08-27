@@ -42,11 +42,35 @@
       "workspaces": [
         {
           "name": "Primary",
-          "layout": "BSP"
+          "layout": "BSP",
+          "initial_workspace_rules": [
+            {
+              "id": "wezterm-gui.exe",
+              "kind": "Exe",
+              "matching_strategy": "Equals"
+            },
+            {
+              "id": "WindowsTerminal.exe",
+              "kind": "Exe",
+              "matching_strategy": "Equals"
+            }
+          ]
         },
         {
           "name": "Other",
-          "layout": "Grid"
+          "layout": "Grid",
+          "initial_workspace_rules": [
+            {
+              "id": "Netflix",
+              "kind": "Title",
+              "matching_strategy": "Equals"
+            },
+            {
+              "id": "Spotify.exe",
+              "kind": "Exe",
+              "matching_strategy": "Equals"
+            }
+          ]
         }
       ]
     },
@@ -54,11 +78,45 @@
       "workspaces": [
         {
           "name": "Secondary",
-          "layout": "Grid"
+          "layout": "Grid",
+          "initial_workspace_rules": [
+            {
+              "id": "zen.exe",
+              "kind": "Exe",
+              "matching_strategy": "Equals"
+            },
+            {
+              "id": "Obsidian.exe",
+              "kind": "Exe",
+              "matching_strategy": "Equals"
+            },
+            {
+              "id": "explorer.exe",
+              "kind": "Exe",
+              "matching_strategy": "Equals"
+            }
+          ]
         },
         {
           "name": "Chat",
-          "layout": "Grid"
+          "layout": "Grid",
+          "initial_workspace_rules": [
+            {
+              "id": "WhatsApp",
+              "kind": "Title",
+              "matching_strategy": "Equals"
+            },
+            {
+              "id": "Discord.exe",
+              "kind": "Exe",
+              "matching_strategy": "Equals"
+            },
+            {
+              "id": "Messenger.exe",
+              "kind": "Exe",
+              "matching_strategy": "Equals"
+            }
+          ]
         }
       ]
     }
