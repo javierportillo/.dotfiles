@@ -72,6 +72,10 @@ COMPLETION_WAITING_DOTS="true"
 # Would you like to use another custom folder than $ZSH/custom?
 # ZSH_CUSTOM=/path/to/new-custom-folder
 
+# Do the zsh-vi-mode initialization when the script is sourced (i.e. Initialize instantly)
+# This is a fix for conflicting zsh-vi-mode and fzf keybindings not working correctly
+ZVM_INIT_MODE=sourcing
+
 # Which plugins would you like to load?
 # Standard plugins can be found in $ZSH/plugins/
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
@@ -117,6 +121,8 @@ alias nk='NVIM_APPNAME="nvim-kickstart" nvim'
 
 alias gg="lazygit"
 
+alias fzf="fzf --layout reverse --height ~40% --border --tmux center"
+
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
@@ -138,7 +144,10 @@ if [ -f '/home/javier/google-cloud-sdk/completion.zsh.inc' ]; then . '/home/javi
 # Workaround for slowness in pasting text
 zstyle ':bracketed-paste-magic' active-widgets '.self-*'
 
+# Set up fzf key bindings and fuzzy completion
+source <(fzf --zsh)
+
 # enables Atuin
-# eval "$(atuin init zsh)"
-zvm_after_init_commands+=(eval "$(atuin init zsh)")
+eval "$(atuin init zsh --disable-ctrl-r)"
+# zvm_after_init_commands+=(eval "$(atuin init zsh)")
 
