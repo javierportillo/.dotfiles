@@ -78,8 +78,7 @@ COMPLETION_WAITING_DOTS="true"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 # zsh-syntax-highlighting should be the last one!!!!!!!!!!!!!!!
-# plugins=(aliases asdf colored-man-pages docker-compose docker git zoxide zsh-autosuggestions zsh-vi-mode fast-syntax-highlighting)
-plugins=(aliases asdf docker-compose docker git zoxide zsh-autosuggestions zsh-vi-mode)
+plugins=(aliases asdf colored-man-pages docker-compose docker git zoxide zsh-autosuggestions zsh-vi-mode fast-syntax-highlighting)
 
 source $ZSH/oh-my-zsh.sh
 
