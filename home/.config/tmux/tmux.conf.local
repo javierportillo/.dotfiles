@@ -150,8 +150,8 @@ tmux_conf_theme_mode_bg="$tmux_conf_theme_colour_3"
 tmux_conf_theme_mode_attr="bold"
 
 # status line style (the space in the middle of other objects and empty space between left & right sections)
-tmux_conf_theme_status_fg="$tmux_conf_theme_colour_4"
-tmux_conf_theme_status_bg="$tmux_conf_theme_colour_16"
+tmux_conf_theme_status_fg="colour233"
+tmux_conf_theme_status_bg="colour233"
 tmux_conf_theme_status_attr="none"
 
 # terminal title
@@ -165,7 +165,7 @@ tmux_conf_theme_status_attr="none"
 #     - #{username}
 #     - #{username_ssh}
 # tmux_conf_theme_terminal_title="#h ☉ #S ● #I #W"
-tmux_conf_theme_terminal_title="#S ✨ #I #W"
+tmux_conf_theme_terminal_title="#S 🌟 #I #W"
 
 # window status style (style for window tabs; not current nor last visited tab)
 #   - built-in variables are:
@@ -177,8 +177,8 @@ tmux_conf_theme_terminal_title="#S ✨ #I #W"
 #     - #{hostname_full_ssh}
 #     - #{username}
 #     - #{username_ssh}
-tmux_conf_theme_window_status_fg="$tmux_conf_theme_colour_16"
-tmux_conf_theme_window_status_bg="$tmux_conf_theme_colour_0"
+tmux_conf_theme_window_status_fg="colour239"
+tmux_conf_theme_window_status_bg="colour234"
 tmux_conf_theme_window_status_attr="none"
 tmux_conf_theme_window_status_format="#I #W#{?#{||:#{windw_bell_flag},#{window_zoomed_flag}}, ,}#{?window_bell_flag,!,}#{?window_zoomed_flag,Z,}"
 # tmux_conf_theme_window_status_format="#{circled_window_index} #W#{?#{||:#{window_bell_flag},#{window_zoomed_flag}}, ,}#{?window_bell_flag,!,}#{?window_zoomed_flag,Z,}"
@@ -194,16 +194,16 @@ tmux_conf_theme_window_status_format="#I #W#{?#{||:#{windw_bell_flag},#{window_z
 #     - #{hostname_full_ssh}
 #     - #{username}
 #     - #{username_ssh}
-tmux_conf_theme_window_status_current_fg="$tmux_conf_theme_colour_16"
-tmux_conf_theme_window_status_current_bg="$tmux_conf_theme_colour_14"
-tmux_conf_theme_window_status_current_attr="bold"
+tmux_conf_theme_window_status_current_fg="colour2"
+tmux_conf_theme_window_status_current_bg="colour0"
+tmux_conf_theme_window_status_current_attr="none"
 tmux_conf_theme_window_status_current_format="#I #W#{?#{||:#{window_bell_flag},#{window_zoomed_flag}}, ,}#{?window_bell_flag,!,}#{?window_zoomed_flag,Z,}"
 #tmux_conf_theme_window_status_current_format="#{circled_window_index} #W#{?#{||:#{window_bell_flag},#{window_zoomed_flag}}, ,}#{?window_bell_flag,!,}#{?window_zoomed_flag,Z,}"
 #tmux_conf_theme_window_status_current_format="#I #W#{?#{||:#{window_bell_flag},#{window_zoomed_flag}}, ,}#{?window_bell_flag,🔔,}#{?window_zoomed_flag,🔍,}"
 
 # window activity status style (style for not-current windows that have activity; logs, etc)
-tmux_conf_theme_window_status_activity_fg="$tmux_conf_theme_colour_16"
-tmux_conf_theme_window_status_activity_bg="$tmux_conf_theme_colour_3"
+tmux_conf_theme_window_status_activity_fg="colour242"
+tmux_conf_theme_window_status_activity_bg="colour235"
 tmux_conf_theme_window_status_activity_attr="underscore"
 
 # window bell status style (style for inactive window with bell/alert condition)
@@ -212,8 +212,8 @@ tmux_conf_theme_window_status_bell_bg="default"
 tmux_conf_theme_window_status_bell_attr="blink,bold"
 
 # window last status style (style for last visited window tab)
-tmux_conf_theme_window_status_last_fg="$tmux_conf_theme_colour_16"
-tmux_conf_theme_window_status_last_bg="$tmux_conf_theme_colour_10"
+tmux_conf_theme_window_status_last_fg="colour239"
+tmux_conf_theme_window_status_last_bg="colour234"
 tmux_conf_theme_window_status_last_attr="none"
 
 # status left/right sections separators
@@ -249,18 +249,20 @@ tmux_conf_theme_right_separator_sub=""
 #     - #{uptime_s}
 #     - #{username}
 #     - #{username_ssh}
-tmux_conf_theme_status_left=" ✨ #S "
-tmux_conf_theme_status_right=" #{prefix}#{mouse}#{pairing}#{synchronized} | #{username}#{root} | #{hostname} "
+tmux_conf_theme_status_left=" ★ #S "
+tmux_conf_theme_status_right=" #{prefix} #{mouse} | #{username}#{root} | #{hostname_full} "
+
+tmux_conf_theme_edge_fg="colour4"
 
 # status left style
-tmux_conf_theme_status_left_fg="$tmux_conf_theme_colour_1"
-tmux_conf_theme_status_left_bg="$tmux_conf_theme_colour_16"
+tmux_conf_theme_status_left_fg="$tmux_conf_theme_edge_fg"
+tmux_conf_theme_status_left_bg="colour235"
 tmux_conf_theme_status_left_attr="none"
 
 # status right style
-tmux_conf_theme_status_right_fg="$tmux_conf_theme_colour_14,$tmux_conf_theme_colour_16"
-tmux_conf_theme_status_right_bg="$tmux_conf_theme_colour_16,$tmux_conf_theme_colour_14"
-tmux_conf_theme_status_right_attr="none,none"
+tmux_conf_theme_status_right_fg="$tmux_conf_theme_edge_fg,$tmux_conf_theme_edge_fg,$tmux_conf_theme_edge_fg"
+tmux_conf_theme_status_right_bg="colour233,colour234,colour235"
+tmux_conf_theme_status_right_attr="none,none,none"
 
 # pairing indicator
 tmux_conf_theme_pairing="󰂱"
@@ -276,7 +278,7 @@ tmux_conf_theme_prefix_attr="none"
 
 # mouse indicator
 tmux_conf_theme_mouse=""
-tmux_conf_theme_mouse_fg="none"
+tmux_conf_theme_mouse_fg="colour0"
 tmux_conf_theme_mouse_bg="none"
 tmux_conf_theme_mouse_attr="none"
 
@@ -344,8 +346,7 @@ tmux_conf_theme_clock_style="24"
 #   - disabled
 # on macOS, this requires installing reattach-to-user-namespace, see README.md
 # on Linux, this requires xsel, xclip or wl-copy
-tmux_conf_copy_to_os_clipboard=false
-
+tmux_conf_copy_to_os_clipboard=true
 
 # -- user customizations -------------------------------------------------------
 # this is the place to override or undo settings
@@ -375,7 +376,7 @@ bind C-a send-prefix
 set -g status-position top
 
 # clear screen
-bind -n M-BSpace send-keys C-l \; run 'sleep 0.2' \; clear-history
+# bind -n C-Esc send-keys C-l \; run 'sleep 0.2' \; clear-history
 
 # TMUX NVIM ZenMode Integration
 set-option -g allow-passthrough on
@@ -426,6 +427,12 @@ bind x kill-pane # skip prompt
 
 ## TMUX NAVIGATOR (integrates with neovim)
 set -g @plugin 'christoomey/vim-tmux-navigator'
+
+# Easily open URLs with fzf
+set -g @fzf-url-bind '='
+set -g @fzf-url-fzf-options '--layout reverse --height ~40% --border --tmux center --multi'
+set -g @fzf-url-open "cmd.exe /c start"
+set -g @plugin 'wfxr/tmux-fzf-url'
 
 # set -g @plugin 'tmux-plugins/tmux-resurrect'
 # set -g @resurrect-strategy-vim 'session'
