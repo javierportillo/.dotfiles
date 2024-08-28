@@ -123,9 +123,6 @@ alias gg="lazygit"
 
 alias fzf="fzf --layout reverse --height ~40% --border --tmux center"
 
-# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
-
 # The next line updates PATH for the Google Cloud SDK.
 if [ -f '/home/javier/google-cloud-sdk/path.zsh.inc' ]; then . '/home/javier/google-cloud-sdk/path.zsh.inc'; fi
 
@@ -151,3 +148,5 @@ source <(fzf --zsh)
 eval "$(atuin init zsh --disable-ctrl-r)"
 # zvm_after_init_commands+=(eval "$(atuin init zsh)")
 
+# To customize prompt, run `p10k configure` or edit ~/.dotfiles/home/.p10k.zsh.
+[[ ! -f ~/.dotfiles/home/.p10k.zsh ]] || source ~/.dotfiles/home/.p10k.zsh

@@ -14,5 +14,6 @@ export COLORTERM="truecolor"
 
 # fzf default options
 export FZF_DEFAULT_OPTS="--color=16"
+export ZSH_CUSTOM="$HOME/.oh-my-zsh/custom"
 
 . "$HOME/.cargo/env"
