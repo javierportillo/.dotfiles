@@ -431,7 +431,7 @@ set -g @plugin 'christoomey/vim-tmux-navigator'
 # Easily open URLs with fzf
 set -g @fzf-url-bind '='
 set -g @fzf-url-fzf-options '--layout reverse --height ~40% --border --tmux center --multi'
-set -g @fzf-url-open "cmd.exe /c start"
+set -g @fzf-url-open "xdg-open"
 set -g @plugin 'wfxr/tmux-fzf-url'
 
 # set -g @plugin 'tmux-plugins/tmux-resurrect'
