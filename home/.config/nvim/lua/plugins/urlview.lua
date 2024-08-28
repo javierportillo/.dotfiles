@@ -2,6 +2,10 @@ return {
   {
     'axieax/urlview.nvim',
     event = 'VimEnter',
+    keys = {
+      { '<leader>rr', '<cmd>UrlView buffer<cr>', desc = 'Find URLs in Buffer' },
+      { '<leader>rl', '<cmd>UrlView lazy<cr>', desc = 'Find URLs in Lazy Conf.' },
+    },
     config = function()
       require('urlview').setup({
         -- Prompt title (`<context> <default_title>`, e.g. `Buffer Links:`)
