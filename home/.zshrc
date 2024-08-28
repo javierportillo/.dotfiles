@@ -82,7 +82,7 @@ ZVM_INIT_MODE=sourcing
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 # zsh-syntax-highlighting should be the last one!!!!!!!!!!!!!!!
-plugins=(aliases asdf colored-man-pages docker-compose docker git zoxide zsh-autosuggestions zsh-vi-mode fast-syntax-highlighting)
+plugins=(aliases asdf colored-man-pages docker-compose docker git zoxide zsh-autosuggestions zsh-vi-mode autoupdate fast-syntax-highlighting)
 
 source $ZSH/oh-my-zsh.sh
 
