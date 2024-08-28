@@ -101,6 +101,21 @@ export LANG=en_US.UTF-8
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
 
+# History
+HISTZISE=5000
+HISTFILE=~/.zsh_history
+SAVEHIST=$HISTZISE
+HISTDUP=erease
+setopt appendhistory
+setopt sharehistory
+setopt hist_ignore_space
+setopt hist_ignore_all_dups
+setopt hist_save_no_dups
+setopt hist_find_no_dups
+
+bindkey '^p' history-search-backward
+bindkey '^n' history-search-forward
+
 # Set personal aliases, overriding those provided by oh-my-zsh libs,
 # plugins, and themes. Aliases can be placed here, though oh-my-zsh
 # users are encouraged to define aliases within the ZSH_CUSTOM folder.
