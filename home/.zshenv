@@ -16,6 +16,6 @@ export EDITOR="nvim"
 export COLORTERM="truecolor"
 
 # fzf default options
-export FZF_DEFAULT_OPTS="--color=16"
+export FZF_DEFAULT_OPTS='--layout reverse --height ~40% --border --tmux center'
 
 . "$HOME/.cargo/env"
