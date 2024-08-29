@@ -30,6 +30,8 @@ return {
         javascript = { 'prettierd' },
         typescript = { 'prettierd' },
         yaml = { 'yamlfmt' },
+        toml = { 'taplo' },
+        json = { 'jq' },
         -- Conform can also run multiple formatters sequentially
         -- python = { "isort", "black" },
         --
