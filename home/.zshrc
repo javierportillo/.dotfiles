@@ -96,9 +96,13 @@ zinit wait lucid light-mode for \
     atclone"_fix-omz-plugin" OMZP::docker-compose
 
 zinit wait lucid light-mode for \
-    atinit"zicompinit; zicdreplay" zdharma-continuum/fast-syntax-highlighting \
-    atload"!_zsh_autosuggest_start" zsh-users/zsh-autosuggestions \
-    blockf atpull"zinit creinstall -q ." zsh-users/zsh-completions \
+    atinit"zicompinit; zicdreplay" \
+        zdharma-continuum/fast-syntax-highlighting \
+    atload"!_zsh_autosuggest_start; \
+            bindkey '^f' autosuggest-accept" \
+        zsh-users/zsh-autosuggestions \
+    blockf atpull"zinit creinstall -q ." \
+        zsh-users/zsh-completions
 
 # For Alias Finder
 zstyle ':omz:plugins:alias-finder' autoload yes # disabled by default
@@ -112,22 +116,22 @@ bindkey '^p' history-search-backward
 bindkey '^n' history-search-forward
 
 # ALIASES
-
+# kubernetes
 alias k="kubectl"
 alias kx="kubectx"
 alias kn="kubens"
 
+# exa
 alias ls="exa"
 alias ll="exa -lh"
 alias la="exa -lah"
 
-alias ip="ip --color=always"
-
+# neovim
 alias ns="nvim . -S"
 alias nv="nvim ."
 alias nk='NVIM_APPNAME="nvim-kickstart" nvim'
 
 alias gg="lazygit"
-
 alias dc="docker compose"
+alias ip="ip --color=always"
 
