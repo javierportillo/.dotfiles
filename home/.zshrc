@@ -83,23 +83,22 @@ _fix-omz-plugin() {
 }
 
 ## PLUGINS
-# plugins=(aliases asdf colored-man-pages docker-compose docker git zoxide zsh-autosuggestions zsh-vi-mode autoupdate fast-syntax-highlighting)
 zinit wait lucid light-mode for \
-    atinit"ZINIT[COMPINIT_OPTS]=-C; zicompinit; zicdreplay" zdharma-continuum/fast-syntax-highlighting \
-    blockf atpull"zinit creinstall -q ." zsh-users/zsh-completions \
-    atload"!_zsh_autosuggest_start" zsh-users/zsh-autosuggestions \
+    OMZP::git \
+    OMZP::zoxide \
     OMZL::git.zsh \
     OMZL::history.zsh \
-    OMZP::git \
-    OMZP::asdf \
-    OMZP::zoxide \
+    blockf OMZP::asdf \
     OMZP::alias-finder \
     OMZP::colored-man-pages \
     OMZP::command-not-found \
     atclone"_fix-omz-plugin" OMZP::aliases \
-    blockf atclone"_fix-omz-plugin" OMZP::docker \
-    blockf atclone"_fix-omz-plugin" OMZP::docker-compose
+    atclone"_fix-omz-plugin" OMZP::docker-compose
 
+zinit wait lucid light-mode for \
+    atinit"zicompinit; zicdreplay" zdharma-continuum/fast-syntax-highlighting \
+    atload"!_zsh_autosuggest_start" zsh-users/zsh-autosuggestions \
+    blockf atpull"zinit creinstall -q ." zsh-users/zsh-completions \
 
 # For Alias Finder
 zstyle ':omz:plugins:alias-finder' autoload yes # disabled by default
