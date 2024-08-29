@@ -15,6 +15,9 @@ if [ -f '/home/javier/google-cloud-sdk/completion.zsh.inc' ]; then . '/home/javi
 # Workaround for slowness in pasting text
 zstyle ':bracketed-paste-magic' active-widgets '.self-*'
 
+# Completion case insensitive
+zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
+
 # Set up fzf key bindings and fuzzy completion
 source <(fzf --zsh)
 
