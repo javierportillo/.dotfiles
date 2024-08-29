@@ -107,6 +107,7 @@ zstyle ':omz:plugins:alias-finder' longer yes # disabled by default
 zstyle ':omz:plugins:alias-finder' exact yes # disabled by default
 zstyle ':omz:plugins:alias-finder' cheaper yes # disabled by default
 
+# KEYBINDS
 # History
 bindkey '^p' history-search-backward
 bindkey '^n' history-search-forward
@@ -118,6 +119,7 @@ alias kx="kubectx"
 alias kn="kubens"
 
 alias ls="exa"
+alias ll="exa -lh"
 alias la="exa -lah"
 
 alias ip="ip --color=always"
