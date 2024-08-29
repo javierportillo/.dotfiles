@@ -116,7 +116,7 @@ tmux_conf_theme_window_bg="default"
 tmux_conf_theme_highlight_focused_pane=false
 
 # focused pane colours:
-tmux_conf_theme_focused_pane_bg="$tmux_conf_theme_colour_16"
+tmux_conf_theme_focused_pane_bg="colour235"
 
 # pane border style, possible values are:
 #   - thin (default)
@@ -124,29 +124,26 @@ tmux_conf_theme_focused_pane_bg="$tmux_conf_theme_colour_16"
 tmux_conf_theme_pane_border_style=thin
 
 # pane borders colours:
-tmux_conf_theme_pane_border="$tmux_conf_theme_colour_16"
-tmux_conf_theme_pane_active_border="$tmux_conf_theme_colour_2"
-%if #{>=:#{version},3.2}
-tmux_conf_theme_pane_active_border="#{?pane_in_mode,$tmux_conf_theme_colour_3,#{?synchronize-panes,$tmux_conf_theme_colour_1,$tmux_conf_theme_colour_2}}"
-%endif
+tmux_conf_theme_pane_border="colour0"
+tmux_conf_theme_pane_active_border="colour4"
 
 # pane indicator colours (when you hit <prefix> + q)
-tmux_conf_theme_pane_indicator="$tmux_conf_theme_colour_4"
-tmux_conf_theme_pane_active_indicator="$tmux_conf_theme_colour_4"
+tmux_conf_theme_pane_indicator="colour4"
+tmux_conf_theme_pane_active_indicator="colour4"
 
 # status line style (when <prefix> :)
-tmux_conf_theme_message_fg="$tmux_conf_theme_colour_4"
-tmux_conf_theme_message_bg="terminal"
+tmux_conf_theme_message_fg="colour4"
+tmux_conf_theme_message_bg="default"
 tmux_conf_theme_message_attr="bold"
 
 # status line command style (<prefix> : Escape)
-tmux_conf_theme_message_command_fg="$tmux_conf_theme_colour_16"
-tmux_conf_theme_message_command_bg="$tmux_conf_theme_colour_4"
+tmux_conf_theme_message_command_fg="colour16"
+tmux_conf_theme_message_command_bg="colour4"
 tmux_conf_theme_message_command_attr="bold"
 
 # window modes style (on copy mode, or when viewing session list or copy buffer list)
-tmux_conf_theme_mode_fg="$tmux_conf_theme_colour_16"
-tmux_conf_theme_mode_bg="$tmux_conf_theme_colour_3"
+tmux_conf_theme_mode_fg="colour235"
+tmux_conf_theme_mode_bg="colour3"
 tmux_conf_theme_mode_attr="bold"
 
 # status line style (the space in the middle of other objects and empty space between left & right sections)
@@ -216,11 +213,17 @@ tmux_conf_theme_window_status_last_fg="colour239"
 tmux_conf_theme_window_status_last_bg="colour234"
 tmux_conf_theme_window_status_last_attr="none"
 
+# # status left/right sections separators
+# tmux_conf_theme_left_separator_main=""
+# tmux_conf_theme_left_separator_sub=""
+# tmux_conf_theme_right_separator_main=""
+# tmux_conf_theme_right_separator_sub=""
+
 # status left/right sections separators
-tmux_conf_theme_left_separator_main=""
-tmux_conf_theme_left_separator_sub=""
-tmux_conf_theme_right_separator_main=""
-tmux_conf_theme_right_separator_sub=""
+tmux_conf_theme_left_separator_main=""
+tmux_conf_theme_left_separator_sub=""
+tmux_conf_theme_right_separator_main=""
+tmux_conf_theme_right_separator_sub=""
 
 # status left/right content:
 #   - separate main sections with "|"
