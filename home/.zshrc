@@ -134,4 +134,5 @@ alias nk='NVIM_APPNAME="nvim-kickstart" nvim'
 alias gg="lazygit"
 alias dc="docker compose"
 alias ip="ip --color=always"
+alias ff='fzf --layout reverse --height ~40% --border --tmux center'
 

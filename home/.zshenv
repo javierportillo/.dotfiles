@@ -1,6 +1,6 @@
 typeset -U PATH path
 
-export PATH=$HOME/bin:$HOME/.local/bin:/usr/local/bin:$PATH:/snap/bin
+export PATH=$HOME/bin:$HOME/.local/bin:/usr/local/bin:$PATH:/snap/bin:$HOME/.config/tmux/plugins/tmux-session-wizard/bin
 export LANG=en_US.UTF-8
 
 # XDG Paths
@@ -14,8 +14,5 @@ export LESSHISTFILE="-"
 # other
 export EDITOR="nvim"
 export COLORTERM="truecolor"
-
-# fzf default options
-export FZF_DEFAULT_OPTS='--layout reverse --height ~40% --border --tmux center'
 
 . "$HOME/.cargo/env"
