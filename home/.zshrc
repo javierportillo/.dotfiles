@@ -1,131 +1,112 @@
-# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
-# Initialization code that may require console input (password prompts, [y/n]
-# confirmations, etc.) must go above this block; everything else may go below.
-if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
-  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+PS1="READY > "
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/home/javier/google-cloud-sdk/path.zsh.inc' ]; then . '/home/javier/google-cloud-sdk/path.zsh.inc'; fi
+# The next line enables shell command completion for gcloud.
+if [ -f '/home/javier/google-cloud-sdk/completion.zsh.inc' ]; then . '/home/javier/google-cloud-sdk/completion.zsh.inc'; fi
+
+# pyenv stuff
+# WARN: ENABLE ONLY WHEN USING IT
+# This eval is too slow
+# export PYENV_ROOT="$HOME/.pyenv"
+# [[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
+# eval "$(pyenv init -)"
+
+# Workaround for slowness in pasting text
+zstyle ':bracketed-paste-magic' active-widgets '.self-*'
+
+# Set up fzf key bindings and fuzzy completion
+source <(fzf --zsh)
+
+# enables Atuin
+eval "$(atuin init zsh --disable-ctrl-r)"
+
+# Start StarShip
+eval "$(starship init zsh)"
+
+### Added by Zinit's installer
+if [[ ! -f $HOME/.local/share/zinit/zinit.git/zinit.zsh ]]; then
+    print -P "%F{33} %F{220}Installing %F{33}ZDHARMA-CONTINUUM%F{220} Initiative Plugin Manager (%F{33}zdharma-continuum/zinit%F{220})…%f"
+    command mkdir -p "$HOME/.local/share/zinit" && command chmod g-rwX "$HOME/.local/share/zinit"
+    command git clone https://github.com/zdharma-continuum/zinit "$HOME/.local/share/zinit/zinit.git" && \
+        print -P "%F{33} %F{34}Installation successful.%f%b" || \
+        print -P "%F{160} The clone has failed.%f%b"
 fi
 
-# If you come from bash you might have to change your $PATH.
-export PATH=$HOME/bin:$HOME/.local/bin:/usr/local/bin:$PATH:/snap/bin
+source "$HOME/.local/share/zinit/zinit.git/zinit.zsh"
+autoload -Uz _zinit
+(( ${+_comps} )) && _comps[zinit]=_zinit
 
-# This is the recommended way of loading zsh-completions
-# as just adding it to `plugins` will lead to a double
-# hit in performace.
-fpath+=${ZSH_CUSTOM:-${ZSH:-~/.oh-my-zsh}/custom}/plugins/zsh-completions/src
+# Load a few important annexes, without Turbo
+# (this is currently required for annexes)
+zinit light-mode for \
+    zdharma-continuum/zinit-annex-as-monitor \
+    zdharma-continuum/zinit-annex-bin-gem-node \
+    zdharma-continuum/zinit-annex-patch-dl \
+    zdharma-continuum/zinit-annex-rust
 
-# Path to your oh-my-zsh installation.
-export ZSH="$HOME/.oh-my-zsh"
+### End of Zinit's installer chunk
 
-# Set name of the theme to load --- if set to "random", it will
-# load a random theme each time oh-my-zsh is loaded, in which case,
-# to know which specific one was loaded, run: echo $RANDOM_THEME
-# See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-ZSH_THEME="powerlevel10k/powerlevel10k"
+# Workaround for github stopping the support for svn
+# so now I can't use svn ice anymore
+setopt RE_MATCH_PCRE   # _fix-omz-plugin function uses this regex style
 
-# Set list of themes to pick from when loading at random
-# Setting this variable when ZSH_THEME=random will cause zsh to load
-# a theme from this variable instead of looking in $ZSH/themes/
-# If set to an empty array, this variable will have no effect.
-# ZSH_THEME_RANDOM_CANDIDATES=( "robbyrussell" "agnoster" )
+# Workaround for zinit issue#504: remove subversion dependency. Function clones all files in plugin
+# directory (on github) that might be useful to zinit snippet directory. Should only be invoked
+# via zinit atclone"_fix-omz-plugin"
+_fix-omz-plugin() {
+  if [[ ! -f ._zinit/teleid ]] then return 0; fi
+  if [[ ! $(cat ._zinit/teleid) =~ "^OMZP::.*" ]] then return 0; fi
+  local OMZP_NAME=$(cat ._zinit/teleid | sed -n 's/OMZP:://p')
+  git clone --quiet --no-checkout --depth=1 --filter=tree:0 https://github.com/ohmyzsh/ohmyzsh
+  cd ohmyzsh
+  git sparse-checkout set --no-cone plugins/$OMZP_NAME
+  git checkout --quiet
+  cd ..
+  local OMZP_PATH="ohmyzsh/plugins/$OMZP_NAME"
+  local file
+  for file in $(ls -a ohmyzsh/plugins/$OMZP_NAME); do
+    if [[ $file == '.' ]] then continue; fi
+    if [[ $file == '..' ]] then continue; fi
+    if [[ $file == '.gitignore' ]] then continue; fi
+    if [[ $file == 'README.md' ]] then continue; fi
+    if [[ $file == "$OMZP_NAME.plugin.zsh" ]] then continue; fi
+    cp -r $OMZP_PATH/$file $file
+  done
+  rm -rf ohmyzsh
+}
 
-# Uncomment the following line to use case-sensitive completion.
-CASE_SENSITIVE="false"
+## PLUGINS
+# plugins=(aliases asdf colored-man-pages docker-compose docker git zoxide zsh-autosuggestions zsh-vi-mode autoupdate fast-syntax-highlighting)
+zinit wait lucid light-mode for \
+    atinit"ZINIT[COMPINIT_OPTS]=-C; zicompinit; zicdreplay" zdharma-continuum/fast-syntax-highlighting \
+    blockf atpull"zinit creinstall -q ." zsh-users/zsh-completions \
+    atload"!_zsh_autosuggest_start" zsh-users/zsh-autosuggestions \
+    OMZL::git.zsh \
+    OMZL::history.zsh \
+    OMZP::git \
+    OMZP::asdf \
+    OMZP::zoxide \
+    OMZP::alias-finder \
+    OMZP::colored-man-pages \
+    OMZP::command-not-found \
+    atclone"_fix-omz-plugin" OMZP::aliases \
+    blockf atclone"_fix-omz-plugin" OMZP::docker \
+    blockf atclone"_fix-omz-plugin" OMZP::docker-compose
 
-# Uncomment the following line to use hyphen-insensitive completion.
-# Case-sensitive completion must be off. _ and - will be interchangeable.
-# HYPHEN_INSENSITIVE="true"
 
-# Uncomment one of the following lines to change the auto-update behavior
-# zstyle ':omz:update' mode disabled  # disable automatic updates
-# zstyle ':omz:update' mode auto      # update automatically without asking
-# zstyle ':omz:update' mode reminder  # just remind me to update when it's time
-
-# Uncomment the following line to change how often to auto-update (in days).
-# zstyle ':omz:update' frequency 13
-
-# Uncomment the following line if pasting URLs and other text is messed up.
-# DISABLE_MAGIC_FUNCTIONS="true"
-
-# Uncomment the following line to disable colors in ls.
-# DISABLE_LS_COLORS="true"
-
-# Uncomment the following line to disable auto-setting terminal title.
-# DISABLE_AUTO_TITLE="true"
-
-# Uncomment the following line to enable command auto-correction.
-# ENABLE_CORRECTION="true"
-
-# Uncomment the following line to display red dots whilst waiting for completion.
-# You can also set it to another string to have that shown instead of the default red dots.
-# e.g. COMPLETION_WAITING_DOTS="%F{yellow}waiting...%f"
-# Caution: this setting can cause issues with multiline prompts in zsh < 5.7.1 (see #5765)
-COMPLETION_WAITING_DOTS="true"
-
-# Uncomment the following line if you want to disable marking untracked files
-# under VCS as dirty. This makes repository status check for large repositories
-# much, much faster.
-# DISABLE_UNTRACKED_FILES_DIRTY="true"
-
-# Uncomment the following line if you want to change the command execution time
-# stamp shown in the history command output.
-# You can set one of the optional three formats:
-# "mm/dd/yyyy"|"dd.mm.yyyy"|"yyyy-mm-dd"
-# or set a custom format using the strftime function format specifications,
-# see 'man strftime' for details.
-# HIST_STAMPS="mm/dd/yyyy"
-
-# Would you like to use another custom folder than $ZSH/custom?
-# ZSH_CUSTOM=/path/to/new-custom-folder
-
-# Do the zsh-vi-mode initialization when the script is sourced (i.e. Initialize instantly)
-# This is a fix for conflicting zsh-vi-mode and fzf keybindings not working correctly
-ZVM_INIT_MODE=sourcing
-
-# Which plugins would you like to load?
-# Standard plugins can be found in $ZSH/plugins/
-# Custom plugins may be added to $ZSH_CUSTOM/plugins/
-# Example format: plugins=(rails git textmate ruby lighthouse)
-# Add wisely, as too many plugins slow down shell startup.
-# zsh-syntax-highlighting should be the last one!!!!!!!!!!!!!!!
-plugins=(aliases asdf colored-man-pages docker-compose docker git zoxide zsh-autosuggestions zsh-vi-mode autoupdate fast-syntax-highlighting)
-
-source $ZSH/oh-my-zsh.sh
-
-# User configuration
-
-# export MANPATH="/usr/local/man:$MANPATH"
-
-# You may need to manually set your language environment
-export LANG=en_US.UTF-8
-
-# Compilation flags
-# export ARCHFLAGS="-arch x86_64"
+# For Alias Finder
+zstyle ':omz:plugins:alias-finder' autoload yes # disabled by default
+zstyle ':omz:plugins:alias-finder' longer yes # disabled by default
+zstyle ':omz:plugins:alias-finder' exact yes # disabled by default
+zstyle ':omz:plugins:alias-finder' cheaper yes # disabled by default
 
 # History
-HISTZISE=5000
-HISTFILE=~/.zsh_history
-SAVEHIST=$HISTZISE
-HISTDUP=erease
-setopt appendhistory
-setopt sharehistory
-setopt hist_ignore_space
-setopt hist_ignore_all_dups
-setopt hist_save_no_dups
-setopt hist_find_no_dups
-
 bindkey '^p' history-search-backward
 bindkey '^n' history-search-forward
 
-# Set personal aliases, overriding those provided by oh-my-zsh libs,
-# plugins, and themes. Aliases can be placed here, though oh-my-zsh
-# users are encouraged to define aliases within the ZSH_CUSTOM folder.
-# For a full list of active aliases, run `alias`.
-#
-# Example aliases
-# alias zshconfig="mate ~/.zshrc"
-# alias ohmyzsh="mate ~/.oh-my-zsh"
+# ALIASES
 
-alias dc="docker compose"
 alias k="kubectl"
 alias kx="kubectx"
 alias kn="kubens"
@@ -143,30 +124,3 @@ alias gg="lazygit"
 
 alias fzf="fzf --layout reverse --height ~40% --border --tmux center"
 
-# The next line updates PATH for the Google Cloud SDK.
-if [ -f '/home/javier/google-cloud-sdk/path.zsh.inc' ]; then . '/home/javier/google-cloud-sdk/path.zsh.inc'; fi
-
-# The next line enables shell command completion for gcloud.
-if [ -f '/home/javier/google-cloud-sdk/completion.zsh.inc' ]; then . '/home/javier/google-cloud-sdk/completion.zsh.inc'; fi
-
-
-# pyenv stuff
-# WARN: ENABLE ONLY WHEN USING IT
-# This eval is too slow
-
-# export PYENV_ROOT="$HOME/.pyenv"
-# [[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
-# eval "$(pyenv init -)"
-
-# Workaround for slowness in pasting text
-zstyle ':bracketed-paste-magic' active-widgets '.self-*'
-
-# Set up fzf key bindings and fuzzy completion
-source <(fzf --zsh)
-
-# enables Atuin
-eval "$(atuin init zsh --disable-ctrl-r)"
-# zvm_after_init_commands+=(eval "$(atuin init zsh)")
-
-# To customize prompt, run `p10k configure` or edit ~/.dotfiles/home/.p10k.zsh.
-[[ ! -f ~/.dotfiles/home/.p10k.zsh ]] || source ~/.dotfiles/home/.p10k.zsh

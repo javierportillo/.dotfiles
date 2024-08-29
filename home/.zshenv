@@ -1,5 +1,8 @@
 typeset -U PATH path
 
+export PATH=$HOME/bin:$HOME/.local/bin:/usr/local/bin:$PATH:/snap/bin
+export LANG=en_US.UTF-8
+
 # XDG Paths
 export XDG_DATA_HOME=${XDG_DATA_HOME:="$HOME/.local/share"}
 export XDG_CACHE_HOME=${XDG_CACHE_HOME:="$HOME/.cache"}
@@ -14,6 +17,5 @@ export COLORTERM="truecolor"
 
 # fzf default options
 export FZF_DEFAULT_OPTS="--color=16"
-export ZSH_CUSTOM="$HOME/.oh-my-zsh/custom"
 
 . "$HOME/.cargo/env"
