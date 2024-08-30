@@ -3,6 +3,7 @@ vim.g.maplocalleader = ' '
 
 -- mouse sopport
 vim.opt.mouse = 'a'
+vim.opt.guicursor = 'a:blinkon1,n:block,i-ci-ve:ver25,r-cr-o:hor20'
 
 vim.g.netrw_banner = 0
 
