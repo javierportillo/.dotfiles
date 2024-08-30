@@ -25,32 +25,41 @@ config.color_scheme = 'Rosé Pine Moon (Gogh)'
 
 -- config.font = wezterm.font('ComicShannsMono Nerd Font')
 -- config.font = wezterm.font('CaskaydiaCove Nerd Font Mono')
--- config.font = wezterm.font('FiraCode Nerd Font Mono')
 -- config.font = wezterm.font('GeistMono Nerd Font Mono')
--- config.font = wezterm.font 'JetBrainsMono Nerd Font Mono'
--- config.font = wezterm.font('JetBrains Mono')
 -- config.font = wezterm.font('Dank Mono')
+-- config.font = wezterm.font('Monaspace Krypton')
 
-config.font = wezterm.font_with_fallback({
-  'JetBrains Mono',
-  -- 'Symbols Nerd Font Mono',
-  -- 'Unicode BMP Fallback SIL',
+-- config.font = wezterm.font({
+--   family = 'FiraCode Nerd Font Mono',
+--   harfbuzz_features = { 'cv01', 'cv02', 'cv30', 'cv27', 'cv31' },
+-- })
+
+config.font = wezterm.font({
+  family = 'JetBrains Mono',
+  harfbuzz_features = { 'ss01', 'cv18' },
 })
-config.font_size = 12
-config.use_cap_height_to_scale_fallback_fonts = true
-config.line_height = 1.1
 
--- check for ligatures:
--- => -> == === !=
--- check for similar symbols
--- [il1|, oO0, dqp]
--- check for parens
--- () {} []
+-- config.font = wezterm.font_with_fallback({
+--   'JetBrains Mono',
+--   'Symbols Nerd Font Mono',
+--   'Unicode BMP Fallback SIL',
+-- })
+
+config.font_size = 12
+config.use_cap_height_to_scale_fallback_fonts = false
+config.freetype_load_flags = 'FORCE_AUTOHINT'
+
+-- AlphaNum:  0123456789 abcdefghijklmnopqrstuvwxyz ABCDEFGHIJKLMNOPQRSTUVWXYZ
+-- Ligatures: => -> == === != !== <= >= /= .- []
+-- Similar:   il1 oO0 dqp ;:
+-- Parens:    () {} []
+-- Symbols:   !@#$%^&*-_=+\|/''""``~.,
+-- Fractions: 1/2 1/3
 
 -- [[ WINDOW ]]
 
 config.adjust_window_size_when_changing_font_size = false
-config.window_decorations = 'NONE'
+config.window_decorations = 'RESIZE'
 config.window_frame = {
   inactive_titlebar_bg = 'none',
   active_titlebar_bg = 'none',
