@@ -7,6 +7,8 @@ if wezterm.config_builder then
   config = wezterm.config_builder()
 end
 
+-- [[ THEMES ]]
+
 -- config.color_scheme = 'Vice Dark (base16)'
 -- config.color_scheme = 'Black Metal (Venom) (base16)'
 -- config.color_scheme = 'Atlas (base16)'
@@ -18,6 +20,8 @@ config.color_scheme = 'Rosé Pine Moon (Gogh)'
 -- config.color_scheme = 'Dark Violet (base16)'
 -- config.color_scheme = 'darkmoss (base16)'
 -- config.color_scheme = 'Silk Dark (base16)'
+
+-- [[ FONTS ]]
 
 -- config.font = wezterm.font('ComicShannsMono Nerd Font')
 -- config.font = wezterm.font('CaskaydiaCove Nerd Font Mono')
@@ -32,8 +36,9 @@ config.font = wezterm.font_with_fallback({
   -- 'Symbols Nerd Font Mono',
   -- 'Unicode BMP Fallback SIL',
 })
-
+config.font_size = 12
 config.use_cap_height_to_scale_fallback_fonts = true
+config.line_height = 1.1
 
 -- check for ligatures:
 -- => -> == === !=
@@ -42,16 +47,52 @@ config.use_cap_height_to_scale_fallback_fonts = true
 -- check for parens
 -- () {} []
 
-config.font_size = 13
+-- [[ WINDOW ]]
 
 config.adjust_window_size_when_changing_font_size = false
-config.window_decorations = 'RESIZE'
+config.window_decorations = 'NONE'
 config.window_frame = {
   inactive_titlebar_bg = 'none',
   active_titlebar_bg = 'none',
   font = config.font,
   font_size = 11,
 }
+
+config.window_background_opacity = 0
+config.win32_system_backdrop = 'Acrylic'
+config.background = {
+  {
+    source = {
+      Gradient = {
+        preset = 'Viridis',
+        orientation = { Linear = { angle = -45.0 } },
+      },
+    },
+    width = '100%',
+    height = '100%',
+    opacity = 0.25,
+  },
+  {
+    -- source = { Color = '#04040D' }, -- Blue tint
+    source = { Color = '#000000' },
+    width = '100%',
+    height = '100%',
+    opacity = 0.6,
+  },
+  {
+    source = { File = wezterm.config_dir .. '/.wezterm.png' },
+    opacity = 0,
+  },
+}
+
+config.window_padding = {
+  left = 0,
+  right = 0,
+  top = 0,
+  bottom = 0,
+}
+
+-- [[ TABS ]]
 
 config.use_fancy_tab_bar = true
 config.hide_tab_bar_if_only_one_tab = true
@@ -74,37 +115,50 @@ config.colors = {
   },
 }
 
-config.window_background_opacity = 0
-config.win32_system_backdrop = 'Acrylic'
+-- [[ CURSOR ]]
 
-config.background = {
-  {
-    source = { Color = '#04040D' },
-    width = '100%',
-    height = '100%',
-    opacity = 0.75,
-  },
-  {
-    source = { File = wezterm.config_dir .. '/.wezterm.png' },
-    opacity = 0,
-  },
-}
+config.cursor_blink_rate = 800
+config.cursor_blink_ease_in = 'Linear'
+config.cursor_blink_ease_out = 'Linear'
 
-config.window_padding = {
-  left = 0,
-  right = 0,
-  top = 0,
-  bottom = 0,
-}
-
-config.animation_fps = 60
-config.scrollback_lines = 5000
-config.window_close_confirmation = 'NeverPrompt'
+-- [[ BEHAVIOR ]]
 
 -- Spawn the Arch wsl instance on startup
 config.default_domain = 'WSL:Arch'
 
--- Key bindings
+config.animation_fps = 60
+config.max_fps = 60
+config.scrollback_lines = 5000
+config.warn_about_missing_glyphs = false
+config.window_close_confirmation = 'NeverPrompt'
+
+-- [[ EVENTS ]]
+
+wezterm.on('user-var-changed', function(window, pane, name, value)
+  local overrides = window:get_config_overrides() or {}
+  if name == 'ZEN_MODE' then
+    local incremental = value:find('+')
+    local number_value = tonumber(value)
+    if incremental ~= nil then
+      while number_value > 0 do
+        window:perform_action(wezterm.action.IncreaseFontSize, pane)
+        number_value = number_value - 1
+      end
+      overrides.enable_tab_bar = false
+    elseif number_value < 0 then
+      window:perform_action(wezterm.action.ResetFontSize, pane)
+      overrides.font_size = nil
+      overrides.enable_tab_bar = true
+    else
+      overrides.font_size = number_value
+      overrides.enable_tab_bar = false
+    end
+  end
+  window:set_config_overrides(overrides)
+end)
+
+-- [[ KEY BINDINGS ]]
+
 config.disable_default_key_bindings = true
 config.keys = {
   { key = 'Tab', mods = 'CTRL', action = act.ActivateTabRelative(1) },
@@ -193,28 +247,5 @@ config.key_tables = {
     { key = 'DownArrow', mods = 'NONE', action = act.CopyMode('NextMatch') },
   },
 }
-
-wezterm.on('user-var-changed', function(window, pane, name, value)
-  local overrides = window:get_config_overrides() or {}
-  if name == 'ZEN_MODE' then
-    local incremental = value:find('+')
-    local number_value = tonumber(value)
-    if incremental ~= nil then
-      while number_value > 0 do
-        window:perform_action(wezterm.action.IncreaseFontSize, pane)
-        number_value = number_value - 1
-      end
-      overrides.enable_tab_bar = false
-    elseif number_value < 0 then
-      window:perform_action(wezterm.action.ResetFontSize, pane)
-      overrides.font_size = nil
-      overrides.enable_tab_bar = true
-    else
-      overrides.font_size = number_value
-      overrides.enable_tab_bar = false
-    end
-  end
-  window:set_config_overrides(overrides)
-end)
 
 return config
