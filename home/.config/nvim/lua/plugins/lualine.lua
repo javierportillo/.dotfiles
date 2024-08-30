@@ -8,12 +8,16 @@ return {
         icons_enabled = true,
         theme = 'auto',
         component_separators = {
-          left = '',
-          right = '',
+          -- left = '',
+          -- right = '',
+          left = '',
+          right = '',
         },
         section_separators = {
-          left = '',
-          right = '',
+          -- left = '',
+          -- right = '',
+          left = '',
+          right = '',
         },
         disabled_filetypes = {
           statusline = { 'neo-tree' },
