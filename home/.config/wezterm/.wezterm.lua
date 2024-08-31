@@ -31,7 +31,7 @@ config.color_scheme = 'Rosé Pine Moon (Gogh)'
 
 config.font = wezterm.font({
   family = 'Fira Code',
-  harfbuzz_features = { 'cv01', 'cv02', 'ss01', 'ss05', 'ss03', 'cv31', 'cv30', 'cv25', 'cv27' },
+  harfbuzz_features = { 'cv01', 'cv02', 'ss01', 'ss05', 'ss03', 'cv31', 'cv30', 'cv25', 'cv27', 'cv29' },
 })
 
 -- config.font = wezterm.font({
@@ -52,7 +52,7 @@ config.freetype_load_flags = 'FORCE_AUTOHINT'
 -- AlphaNum:  0123456789 abcdefghijklmnopqrstuvwxyz ABCDEFGHIJKLMNOPQRSTUVWXYZ
 -- Ligatures: => -> == === != !== <= >= /= .- []
 -- Similar:   il1 oO0 dqp ;:
--- Parens:    () {} []
+-- Parens:    () {} [] ({})
 -- Symbols:   !@#$%^&*-_=+\|/''""``~.,
 -- Fractions: 1/2 1/3
 
