@@ -29,15 +29,15 @@ config.color_scheme = 'Rosé Pine Moon (Gogh)'
 -- config.font = wezterm.font('Dank Mono')
 -- config.font = wezterm.font('Monaspace Krypton')
 
--- config.font = wezterm.font({
---   family = 'FiraCode Nerd Font Mono',
---   harfbuzz_features = { 'cv01', 'cv02', 'cv30', 'cv27', 'cv31' },
--- })
-
 config.font = wezterm.font({
-  family = 'JetBrains Mono',
-  harfbuzz_features = { 'ss01', 'cv18' },
+  family = 'Fira Code',
+  harfbuzz_features = { 'cv01', 'cv02', 'ss01', 'ss05', 'ss03', 'cv31', 'cv30', 'cv25', 'cv27' },
 })
+
+-- config.font = wezterm.font({
+--   family = 'JetBrains Mono',
+--   harfbuzz_features = { 'ss01', 'cv18' },
+-- })
 
 -- config.font = wezterm.font_with_fallback({
 --   'JetBrains Mono',
@@ -46,7 +46,7 @@ config.font = wezterm.font({
 -- })
 
 config.font_size = 12
-config.use_cap_height_to_scale_fallback_fonts = false
+config.use_cap_height_to_scale_fallback_fonts = true
 config.freetype_load_flags = 'FORCE_AUTOHINT'
 
 -- AlphaNum:  0123456789 abcdefghijklmnopqrstuvwxyz ABCDEFGHIJKLMNOPQRSTUVWXYZ
