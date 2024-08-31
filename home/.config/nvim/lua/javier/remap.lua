@@ -24,3 +24,6 @@ vim.keymap.set('n', '<leader>tq', '<CMD>tabclose<CR>', { desc = 'Close Current T
 vim.keymap.set('n', '<leader>mc', '<CMD>Gdiffsplit!<CR>', { desc = 'Open Merge Conflict' })
 vim.keymap.set('n', '<leader>dgh', '<CMD>diffget //2<CR>', { desc = 'Fetch Hunk From HEAD' })
 vim.keymap.set('n', '<leader>dgt', '<CMD>diffget //3<CR>', { desc = 'Fetch Hunk From Target' })
+
+-- Get digraphs back cause <c-k> is already used to show function signatures
+vim.keymap.set('i', '<c-u>', '<c-k>', { desc = 'Insert a Digraph' })
