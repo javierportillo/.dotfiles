@@ -27,3 +27,6 @@ vim.keymap.set('n', '<leader>dgt', '<CMD>diffget //3<CR>', { desc = 'Fetch Hunk 
 
 -- Get digraphs back cause <c-k> is already used to show function signatures
 vim.keymap.set('i', '<c-u>', '<c-k>', { desc = 'Insert a Digraph' })
+
+-- Clear last search highlights
+vim.keymap.set('n', '<leader><ESC>', '<cmd>noh<cr>', { desc = 'Clear last search highlights' })
