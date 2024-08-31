@@ -1,4 +1,5 @@
 require('javier.options')
+require('javier.utils')
 require('javier.remap')
 require('javier.highlightyanked')
 require('javier.wslclipboard')
