@@ -22,13 +22,18 @@ return {
       'WhoIsSethDaniel/mason-tool-installer.nvim',
 
       -- Useful status updates for LSP
-      { 'j-hui/fidget.nvim', opts = { notification = { window = { winblend = 0 } } } },
+      -- Now being handled by Noice
+      -- { 'j-hui/fidget.nvim', opts = { notification = { window = { winblend = 0 } } } },
 
       -- Allows extra capabilities provided by nvim-cmp
       'hrsh7th/nvim-cmp',
       'hrsh7th/cmp-nvim-lsp',
+      'smjonas/inc-rename.nvim',
     },
     config = function()
+      -- Incremental Rename
+      require('inc_rename').setup({})
+
       --  This function gets run when an LSP attaches to a particular buffer.
       --    That is to say, every time a new file is opened that is associated with
       --    an lsp (for example, opening `main.rs` is associated with `rust_analyzer`) this
@@ -36,8 +41,9 @@ return {
       vim.api.nvim_create_autocmd('LspAttach', {
         group = vim.api.nvim_create_augroup('kickstart-lsp-attach', { clear = true }),
         callback = function(event)
-          local map = function(keys, func, desc, modes)
-            vim.keymap.set(modes or 'n', keys, func, { buffer = event.buf, desc = 'LSP: ' .. desc })
+          local map = function(keys, func, desc, modes, opts)
+            local options = vim.tbl_extend('force', { buffer = event.buf, desc = 'LSP: ' .. desc }, opts or {})
+            vim.keymap.set(modes or 'n', keys, func, options)
           end
 
           local builtin = require('telescope.builtin')
@@ -68,11 +74,14 @@ return {
           map('<leader>ds', builtin.lsp_document_symbols, '[D]ocument [S]ymbols')
 
           -- Rename the variable under the cursor.
-          map('<leader>rn', vim.lsp.buf.rename, '[R]e[n]ame')
+          map('<leader>rn', function()
+            return ':IncRename ' .. vim.fn.expand('<cword>')
+          end, '[R]e[n]ame', 'n', { expr = true })
 
           -- Display signature information of the type symbol under the cursor in
           -- a floating window.
-          map('<C-K>', vim.lsp.buf.signature_help, 'Display Signature Help', 'i')
+          -- NOTE: handled by Noice
+          -- map('<C-K>', vim.lsp.buf.signature_help, 'Display Signature Help', 'i')
 
           -- Execute a code action, usually your cursor needs to be on top of an error
           -- or a suggestion from your LSP for this to activate.

@@ -42,7 +42,6 @@ return {
         lualine_b = { 'fancy_branch', 'fancy_diff', 'fancy_diagnostics' },
         lualine_c = { { 'filename', path = 4 } },
         lualine_x = {
-          'fancy_searchcount',
           'fancy_macro',
           'encoding',
           'fileformat',

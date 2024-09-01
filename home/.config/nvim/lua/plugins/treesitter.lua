@@ -23,6 +23,10 @@ return {
           'json',
           'xml',
           'graphql',
+          'regex',
+          'bash',
+          'markdown',
+          'markdown_inline',
         },
 
         ignore_install = {},

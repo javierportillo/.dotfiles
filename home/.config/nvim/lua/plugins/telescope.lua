@@ -31,6 +31,7 @@ return {
       vim.keymap.set('n', '<leader>fc', builtin.commands, { desc = '[F]ind [C]ommands' })
       vim.keymap.set('n', '<leader>fm', builtin.man_pages, { desc = '[F]ind [M]an Pages' })
       vim.keymap.set('n', '<leader>fqf', builtin.quickfix, { desc = '[F]ind [Q]uick[F]ix' })
+      vim.keymap.set('n', '<leader>fms', '<cmd>Telescope noice<cr>', { desc = '[F]ind [M]e[s]sages' })
 
       vim.keymap.set('n', '<leader>fth', function()
         builtin.colorscheme({ enable_preview = true })
@@ -93,6 +94,7 @@ return {
       -- load_extension, somewhere after setup function:
       require('telescope').load_extension('fzf')
       require('telescope').load_extension('ui-select')
+      require('telescope').load_extension('noice')
     end,
   },
 }
