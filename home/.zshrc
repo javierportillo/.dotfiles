@@ -127,8 +127,7 @@ alias ll="exa -lh"
 alias la="exa -lah"
 
 # neovim
-alias ns="nvim . -S"
-alias nv="nvim ."
+alias nv="nvim"
 alias nk='NVIM_APPNAME="nvim-kickstart" nvim'
 
 alias gg="lazygit"

@@ -65,3 +65,6 @@ vim.opt.showmatch = true
 
 -- visual block select all the block even on empty space and not just where text is
 vim.opt.virtualedit = 'block'
+
+-- for rmagatti/auto-session
+vim.opt.sessionoptions = 'blank,buffers,curdir,folds,help,tabpages,winsize,winpos,terminal,localoptions'
