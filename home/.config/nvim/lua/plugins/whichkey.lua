@@ -2,9 +2,11 @@
 return {
   {
     'folke/which-key.nvim',
-    event = 'VimEnter', -- run before UI elements are loaoded
+    event = 'VeryLazy', -- run before UI elements are loaoded
     config = function()
-      require('which-key').setup()
+      require('which-key').setup({
+        preset = 'helix',
+      })
 
       require('which-key').add({
         { '<leader>f', group = '[F]ind', mode = { 'n' } },
