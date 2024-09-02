@@ -3,6 +3,4 @@ return {
   'christoomey/vim-tmux-navigator',
   -- Auto shiftwidth and expandtab by file contents
   'tpope/vim-sleuth',
-  -- Auto close parens () {} [] "", etc
-  'cohama/lexima.vim',
 }
