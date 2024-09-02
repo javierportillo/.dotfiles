@@ -26,7 +26,11 @@ return {
             right = '',
           },
           disabled_filetypes = {
-            statusline = { 'neo-tree' },
+            statusline = {
+              'neo-tree',
+              'DiffviewFiles',
+              'NeogitStatus',
+            },
             winbar = {},
           },
           ignore_focus = {},
