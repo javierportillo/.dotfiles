@@ -17,8 +17,8 @@ vim.keymap.set({ 'n', 'v' }, ':', ';')
 vim.keymap.set({ 'n', 'v' }, ',p', [["0p]], { desc = 'Paste last yank' })
 
 -- Tab Management
-vim.keymap.set('n', '<leader>tn', '<CMD>tabnew<CR>', { desc = 'Open New Tab' })
-vim.keymap.set('n', '<leader>tq', '<CMD>tabclose<CR>', { desc = 'Close Current Tab' })
+vim.keymap.set('n', 'tn', '<CMD>tabnew<CR>', { desc = 'Open New Tab' })
+vim.keymap.set('n', 'tq', '<CMD>tabclose<CR>', { desc = 'Close Current Tab' })
 
 -- Merge Conflict Resolution
 vim.keymap.set('n', '<leader>mc', '<CMD>Gdiffsplit!<CR>', { desc = 'Open Merge Conflict' })
