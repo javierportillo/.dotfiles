@@ -20,7 +20,19 @@ return {
   {
     'lewis6991/gitsigns.nvim',
     event = 'VimEnter',
-    config = true,
+    config = function()
+      require('gitsigns').setup({
+        on_attach = function(bufnr)
+          print('attached to buf' .. bufnr)
+          vim.keymap.set('n', '<leader>Ga', function()
+            vim.cmd.Gitsigns('stage_hunk')
+          end, { desc = 'Stage Hunk', buffer = bufnr })
+          vim.keymap.set('n', '<leader>Gr', function()
+            vim.cmd.Gitsigns('undo_stage_hunk')
+          end, { desc = 'Stage Hunk', buffer = bufnr })
+        end,
+      })
+    end,
   },
   {
     'NeogitOrg/neogit',
