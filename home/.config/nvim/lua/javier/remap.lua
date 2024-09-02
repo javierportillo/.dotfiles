@@ -30,3 +30,6 @@ vim.keymap.set('i', '<c-u>', '<c-k>', { desc = 'Insert a Digraph' })
 
 -- Clear last search highlights
 vim.keymap.set('n', '<leader><ESC>', '<cmd>noh<cr>', { desc = 'Clear last search highlights' })
+
+-- Zoom In on Split (Go back with <c-w> =)
+vim.keymap.set('n', '<c-w>z', '<c-w>_<c-w>|', { desc = 'Zoom this split' })
