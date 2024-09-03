@@ -15,18 +15,19 @@ return {
         },
       })
 
-      vim.cmd [[colorscheme rose-pine]]
+      vim.cmd([[colorscheme rose-pine]])
       vim.fn.matchadd('Colorcolumn', [[\%81v]], 100)
-    end
+    end,
   },
   {
     'RRethy/nvim-base16',
-    _config = function()
+    enabled = false,
+    config = function()
       -- vim.cmd [[colorscheme base16-vice]]
       -- vim.cmd [[colorscheme base16-black-metal-venom]]
       -- vim.cmd [[colorscheme base16-atlas]]
       -- vim.cmd [[colorscheme base16-grayscale-dark]]
-      vim.cmd [[colorscheme base16-rose-pine-moon]]
+      vim.cmd([[colorscheme base16-rose-pine-moon]])
       -- vim.cmd [[colorscheme base16-tokyo-night-terminal-dark]]
       -- vim.cmd [[colorscheme base16-outrun-dark]]
       -- vim.cmd [[colorscheme base16-gotham]]
@@ -36,6 +37,29 @@ return {
 
       -- fix the vertical split lines
       vim.api.nvim_set_hl(0, 'VertSplit', { fg = 'grey', bg = 'NONE' })
-    end
-  }
+    end,
+  },
+  {
+    'mawkler/modicator.nvim',
+    dependencies = 'rose-pine', -- Add your colorscheme plugin here
+    event = 'VeryLazy',
+    init = function()
+      -- These are required for Modicator to work
+      vim.o.cursorline = true
+      vim.o.number = true
+      vim.o.termguicolors = true
+    end,
+    opts = {
+      -- Warn if any required option above is missing. May emit false positives
+      -- if some other plugin modifies them, which in that case you can just
+      -- ignore. Feel free to remove this line after you've gotten Modicator to
+      -- work properly.
+      show_warnings = true,
+      integration = {
+        lualine = {
+          mode_section = 'a',
+        },
+      },
+    },
+  },
 }
