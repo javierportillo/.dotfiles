@@ -1,7 +1,16 @@
 return {
   {
+    'folke/tokyonight.nvim',
+    lazy = false,
+    priority = 1000,
+    config = function()
+      vim.cmd([[colorscheme tokyonight-moon]])
+    end,
+  },
+  {
     'rose-pine/neovim',
     name = 'rose-pine',
+    enabled = false,
     config = function()
       require('rose-pine').setup({
         dark_variant = 'moon',
@@ -41,7 +50,7 @@ return {
   },
   {
     'mawkler/modicator.nvim',
-    dependencies = 'rose-pine', -- Add your colorscheme plugin here
+    dependencies = 'folke/tokyonight.nvim', -- WARN: Add your colorscheme plugin here
     event = 'VeryLazy',
     init = function()
       -- These are required for Modicator to work

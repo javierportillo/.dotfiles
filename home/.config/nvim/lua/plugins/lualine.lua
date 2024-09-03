@@ -12,7 +12,7 @@ return {
       require('lualine').setup({
         options = {
           icons_enabled = true,
-          theme = 'auto',
+          theme = 'tokyonight-moon',
           component_separators = {
             -- left = '',
             -- right = '',
