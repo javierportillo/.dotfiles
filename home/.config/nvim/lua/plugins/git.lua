@@ -23,7 +23,6 @@ return {
     config = function()
       require('gitsigns').setup({
         on_attach = function(bufnr)
-          print('attached to buf' .. bufnr)
           vim.keymap.set('n', '<leader>Ga', function()
             vim.cmd.Gitsigns('stage_hunk')
           end, { desc = 'Stage Hunk', buffer = bufnr })
