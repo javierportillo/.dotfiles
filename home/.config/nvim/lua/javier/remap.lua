@@ -29,3 +29,6 @@ vim.keymap.set('n', '<leader><ESC>', '<cmd>noh<cr>', { desc = 'Clear last search
 
 -- Zoom In on Split (Go back with <c-w> =)
 vim.keymap.set('n', '<c-w>z', '<c-w>_<c-w>|', { desc = 'Zoom this split' })
+
+-- Save with leader
+vim.keymap.set('n', '<leader>w', '<cmd>wa<cr>', { desc = 'Save All' })
