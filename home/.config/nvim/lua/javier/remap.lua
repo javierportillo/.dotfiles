@@ -9,10 +9,6 @@ vim.keymap.set({ 'n', 'v' }, '<leader>y', [["+y]], { desc = 'Yank to System Clip
 -- Stop vim from freezing
 vim.keymap.set('n', 'Q', '<nop>')
 
--- Swap ; for : in visual and normal
-vim.keymap.set({ 'n', 'v' }, ';', ':')
-vim.keymap.set({ 'n', 'v' }, ':', ';')
-
 -- Paste last thing yanked, not deleted
 vim.keymap.set({ 'n', 'v' }, ',p', [["0p]], { desc = 'Paste last yank' })
 
