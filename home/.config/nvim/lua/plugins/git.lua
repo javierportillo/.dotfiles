@@ -346,6 +346,7 @@ return {
       })
 
       vim.keymap.set('n', '<leader>gn', '<CMD>Neogit<CR>', { desc = 'Open NeoGit' })
+      vim.keymap.set('n', '<leader>Gc', '<CMD>Neogit commit<CR>', { desc = 'NeoGit commit' })
 
       -- Fix buffer not updating after some operations
       local group = vim.api.nvim_create_augroup('NeoGit', { clear = true })
