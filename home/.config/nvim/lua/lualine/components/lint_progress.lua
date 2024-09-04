@@ -10,7 +10,7 @@ local default_options = {
   icon = '󰦕 ',
   icon_running = '󱉶 ',
   split = ', ',
-  padding = { left = 0, right = 1 },
+  padding = { left = 1, right = 1 },
 }
 
 function M:init(options)
