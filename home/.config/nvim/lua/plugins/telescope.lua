@@ -44,6 +44,11 @@ return {
         }))
       end, { desc = '[/] Fuzzy find this buffer' })
 
+      local pomodori = require('telescope').extensions.pomodori.timers
+      vim.keymap.set('n', '<leader>ft', function()
+        pomodori()
+      end, { desc = '[F]ind Pomodoro [T]imers' })
+
       local open_with_trouble = require('trouble.sources.telescope').open
 
       require('telescope').setup({
@@ -95,6 +100,7 @@ return {
       require('telescope').load_extension('fzf')
       require('telescope').load_extension('ui-select')
       require('telescope').load_extension('noice')
+      require('telescope').load_extension('pomodori')
     end,
   },
 }
