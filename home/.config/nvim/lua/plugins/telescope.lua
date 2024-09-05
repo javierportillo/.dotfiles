@@ -32,6 +32,7 @@ return {
       vim.keymap.set('n', '<leader>fm', builtin.man_pages, { desc = '[F]ind [M]an Pages' })
       vim.keymap.set('n', '<leader>fqf', builtin.quickfix, { desc = '[F]ind [Q]uick[F]ix' })
       vim.keymap.set('n', '<leader>fms', '<cmd>Telescope noice<cr>', { desc = '[F]ind [M]e[s]sages' })
+      vim.keymap.set('n', '<leader>fo', '<cmd>ObsidianQuickSwitch<cr>', { desc = '[F]ind or create [O]bsidian note' })
 
       vim.keymap.set('n', '<leader>fth', function()
         builtin.colorscheme({ enable_preview = true })
@@ -39,7 +40,7 @@ return {
 
       vim.keymap.set('n', '<leader>/', function()
         builtin.current_buffer_fuzzy_find(require('telescope.themes').get_dropdown({
-          winblend = 10,
+          winblend = 0,
           previewer = false,
         }))
       end, { desc = '[/] Fuzzy find this buffer' })
