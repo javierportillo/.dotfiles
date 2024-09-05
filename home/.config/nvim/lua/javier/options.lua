@@ -68,3 +68,6 @@ vim.opt.virtualedit = 'block'
 
 -- for rmagatti/auto-session
 vim.opt.sessionoptions = 'blank,buffers,curdir,folds,help,tabpages,winsize,winpos,terminal'
+
+-- for obsidian to display checkboxes correctly
+vim.opt.conceallevel = 1
