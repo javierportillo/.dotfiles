@@ -32,6 +32,8 @@ return {
       completion = {
         nvim_cmp = true,
       },
+      wiki_link_func = 'use_alias_only',
+      preferred_link_style = 'wiki',
       follow_url_func = function(url)
         vim.fn.jobstart({ 'xdg-open', url })
       end,
@@ -40,6 +42,9 @@ return {
       end,
       picker = {
         name = 'telescope.nvim',
+      },
+      attachments = {
+        img_folder = 'pictures',
       },
     },
   },
