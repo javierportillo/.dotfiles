@@ -27,6 +27,7 @@ return {
           'bash',
           'markdown',
           'markdown_inline',
+          'latex',
         },
 
         ignore_install = {},
