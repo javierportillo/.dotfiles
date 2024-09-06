@@ -139,11 +139,6 @@
   "float_rules": [
     {
       "kind": "Title",
-      "id": "Media Player",
-      "matching_strategy": "Equals"
-    },
-    {
-      "kind": "Title",
       "id": "komorebi-bar",
       "matching_strategy": "Equals"
     }
