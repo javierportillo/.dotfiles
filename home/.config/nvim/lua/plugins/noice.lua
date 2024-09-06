@@ -46,6 +46,28 @@ return {
               winblend = 0,
             },
           },
+          hover = {
+            view = 'popup',
+            relative = 'cursor',
+            zindex = 45,
+            enter = false,
+            anchor = 'auto',
+            size = {
+              width = 'auto',
+              height = 'auto',
+              max_width = 120,
+              max_height = 20,
+            },
+            boder = {
+              style = 'none',
+              padding = { 0, 2 },
+            },
+            position = { row = 1, col = 0 },
+            win_options = {
+              wrap = true,
+              linebreak = true,
+            },
+          },
         },
       })
 
