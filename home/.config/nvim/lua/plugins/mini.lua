@@ -8,6 +8,14 @@ return {
       require('mini.indentscope').setup()
       require('mini.test').setup()
 
+      -- Builtin text objects:
+      -- b       = alias for )]}
+      -- q       = alias for "'`
+      -- ?       = user prompt for custom delimiter
+      -- t       = html tag
+      -- f       = function call (not the body)
+      -- a       = function call argument
+      -- default = any digit, punctuation or whitespace
       local spec_treesitter = require('mini.ai').gen_spec.treesitter
       require('mini.ai').setup({
         custom_textobjects = {
@@ -25,6 +33,7 @@ return {
             a = { '@conditional.outer', '@loop.outer' },
             i = { '@conditional.inner', '@loop.inner' },
           }),
+          c = spec_treesitter({ a = '@comment.outer', i = '@comment.outer' }),
         },
       })
     end,
