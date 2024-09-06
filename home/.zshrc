@@ -134,4 +134,5 @@ alias gg="lazygit"
 alias dc="docker compose"
 alias ip="ip --color=always"
 alias ff='fzf --layout reverse --height ~40% --border --tmux center'
+alias o='xdg-open' # open here
 
