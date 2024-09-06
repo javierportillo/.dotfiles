@@ -21,6 +21,8 @@ return {
     },
     config = function()
       local builtin = require('telescope.builtin')
+      local pomodori = require('telescope').extensions.pomodori.timers
+
       vim.keymap.set('n', '<leader>fh', builtin.help_tags, { desc = '[F]ind [H]elp' })
       vim.keymap.set('n', '<leader>fk', builtin.keymaps, { desc = '[F]ind [K]eymaps' })
       vim.keymap.set('n', '<leader>ff', builtin.find_files, { desc = '[F]idn [F]iles' })
@@ -31,8 +33,14 @@ return {
       vim.keymap.set('n', '<leader>fc', builtin.commands, { desc = '[F]ind [C]ommands' })
       vim.keymap.set('n', '<leader>fm', builtin.man_pages, { desc = '[F]ind [M]an Pages' })
       vim.keymap.set('n', '<leader>fqf', builtin.quickfix, { desc = '[F]ind [Q]uick[F]ix' })
+
       vim.keymap.set('n', '<leader>fms', '<cmd>Telescope noice<cr>', { desc = '[F]ind [M]e[s]sages' })
       vim.keymap.set('n', '<leader>fo', '<cmd>ObsidianQuickSwitch<cr>', { desc = '[F]ind or create [O]bsidian note' })
+      vim.keymap.set('n', '<leader>fob', '<cmd>ObsidianBacklinks<cr>', { desc = '[F]ind [O]bsidian [B]ackLinks' })
+      vim.keymap.set('n', '<leader>fod', '<cmd>ObsidianDailies<cr>', { desc = '[F]ind [O]bsidian [D]ailies' })
+      vim.keymap.set('n', '<leader>fol', '<cmd>ObsidianLinks<cr>', { desc = '[F]ind [O]bsidian [L]inks' })
+      vim.keymap.set('n', '<leader>fos', '<cmd>ObsidianSearch<cr>', { desc = '[F]ind [O]bsidian [S]earch' })
+      vim.keymap.set('n', '<leader>fot', '<cmd>ObsidianTags<cr>', { desc = '[F]ind [O]bsidian [T]ags' })
 
       vim.keymap.set('n', '<leader>fth', function()
         builtin.colorscheme({ enable_preview = true })
@@ -45,7 +53,6 @@ return {
         }))
       end, { desc = '[/] Fuzzy find this buffer' })
 
-      local pomodori = require('telescope').extensions.pomodori.timers
       vim.keymap.set('n', '<leader>ft', function()
         pomodori()
       end, { desc = '[F]ind Pomodoro [T]imers' })
