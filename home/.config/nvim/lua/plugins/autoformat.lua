@@ -32,7 +32,6 @@ return {
         yaml = { 'yamlfmt' },
         toml = { 'taplo' },
         json = { 'jq' },
-        markdown = { 'prettierd' },
         -- Conform can also run multiple formatters sequentially
         -- python = { "isort", "black" },
         --
