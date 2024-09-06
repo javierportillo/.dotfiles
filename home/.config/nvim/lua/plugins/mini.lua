@@ -6,6 +6,7 @@ return {
     config = function()
       require('mini.align').setup()
       require('mini.indentscope').setup()
+      require('mini.test').setup()
 
       local spec_treesitter = require('mini.ai').gen_spec.treesitter
       require('mini.ai').setup({
