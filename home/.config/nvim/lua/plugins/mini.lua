@@ -5,6 +5,7 @@ return {
     event = 'VeryLazy',
     config = function()
       require('mini.align').setup()
+      require('mini.indentscope').setup()
 
       local spec_treesitter = require('mini.ai').gen_spec.treesitter
       require('mini.ai').setup({
