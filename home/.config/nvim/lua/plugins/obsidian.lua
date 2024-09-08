@@ -49,6 +49,10 @@ return {
         return require('obsidian.util').wiki_link_id_prefix(opts)
       end,
 
+      markdown_link_func = function(opts)
+        return require('obsidian.util').markdown_link(opts)
+      end,
+
       preferred_link_style = 'wiki',
 
       templates = {
