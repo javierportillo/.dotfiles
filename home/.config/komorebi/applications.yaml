@@ -1532,3 +1532,12 @@
     - kind: Title
       id: Select firmware
       matching_strategy: StartsWith
+- name: VLC
+  identifier:
+    kind: Exe
+    id: vlc.exe
+    matching_strategy: Equals
+  float_identifiers:
+    - kind: Title
+      id: VLC media player updates
+      matching_strategy: Equals
