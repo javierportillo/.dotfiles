@@ -9,3 +9,5 @@ home/.config/configstore/
 home/.tool-versions
 home/.config/gcloud
 home/.config/go/telemetry/local
+home/.config/msmtp/
+home/.config/mutt/
