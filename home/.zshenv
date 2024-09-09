@@ -14,5 +14,6 @@ export LESSHISTFILE="-"
 # other
 export EDITOR="nvim"
 export COLORTERM="truecolor"
+export GPG_TTY="$(tty)"
 
 . "$HOME/.cargo/env"
