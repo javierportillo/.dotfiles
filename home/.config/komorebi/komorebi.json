@@ -26,12 +26,6 @@
   },
   "monitors": [
     {
-      "work_area_offset": {
-        "top": 46,
-        "bottom": 46,
-        "right": 0,
-        "left": 0
-      },
       "window_based_work_area_offset_limit": 1,
       "window_based_work_area_offset": {
         "top": 0,

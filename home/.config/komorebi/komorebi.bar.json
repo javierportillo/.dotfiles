@@ -1,0 +1,67 @@
+{
+  "$schema": "https://raw.githubusercontent.com/LGUG2Z/komorebi/feature/komorebi-status-bar/schema.bar.json",
+  "monitor": {
+    "index": 0,
+    "work_area_offset": {
+      "top": 46,
+      "bottom": 46,
+      "right": 0,
+      "left": 0
+    }
+  },
+  "theme": "CatppuccinFrappe",
+  "font_family": "JetBrainsMono Nerd Font Mono",
+  "left_widgets": [
+    {
+      "Komorebi": {
+        "focused_window": {
+          "enable": true,
+          "show_icon": true
+        },
+        "layout": {
+          "enable": true
+        },
+        "workspaces": {
+          "enable": true,
+          "hide_empty_workspaces": false
+        }
+      }
+    },
+    {
+      "Media": {
+        "enable": true
+      }
+    }
+  ],
+  "right_widgets": [
+    {
+      "Memory": {
+        "enable": true
+      }
+    },
+    {
+      "Storage": {
+        "enable": true
+      }
+    },
+    {
+      "Network": {
+        "enable": true,
+        "show_network_activity": true,
+        "show_total_data_transmitted": true
+      }
+    },
+    {
+      "Date": {
+        "enable": true,
+        "format": "DayDateMonthYear"
+      }
+    },
+    {
+      "Time": {
+        "enable": true,
+        "format": "TwentyFourHour"
+      }
+    }
+  ]
+}

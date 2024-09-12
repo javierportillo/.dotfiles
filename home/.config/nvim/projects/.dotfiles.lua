@@ -7,7 +7,7 @@ vim.api.nvim_create_user_command('SyncAlacritty', function()
       else
         print('synced alacritty to windows')
       end
-    end
+    end,
   })
 end, {})
 
@@ -17,10 +17,9 @@ vim.api.nvim_create_autocmd('BufWritePost', {
   command = 'SyncAlacritty',
 })
 
-
 vim.api.nvim_create_user_command('SyncWezterm', function()
   local command =
-  'cd $HOME && rsync .dotfiles/home/.config/wezterm/.wezterm.png winhome/ && rsync .dotfiles/home/.config/wezterm/.wezterm.lua winhome/'
+    'cd $HOME && rsync .dotfiles/home/.config/wezterm/.wezterm.png winhome/ && rsync .dotfiles/home/.config/wezterm/.wezterm.lua winhome/'
   vim.fn.jobstart(command, {
     on_exit = function(_, code)
       if code ~= 0 then
@@ -51,10 +50,30 @@ vim.api.nvim_create_user_command('SyncKomorebi', function()
   })
 end, {})
 
+local komorebi_group = vim.api.nvim_create_augroup('AutoSyncKomorebi', { clear = true })
 vim.api.nvim_create_autocmd('BufWritePost', {
-  group = vim.api.nvim_create_augroup('AutoSyncKomorebi', { clear = true }),
+  group = komorebi_group,
   pattern = 'komorebi.json',
   command = 'SyncKomorebi',
+})
+
+vim.api.nvim_create_user_command('SyncKomorebiBar', function()
+  local command = 'cd $HOME && rsync .dotfiles/home/.config/komorebi/komorebi.bar.json winhome/'
+  vim.fn.jobstart(command, {
+    on_exit = function(_, code)
+      if code ~= 0 then
+        print('could not sync komorebi bar to windows')
+      else
+        print('synced komorebi bar to windows')
+      end
+    end,
+  })
+end, {})
+
+vim.api.nvim_create_autocmd('BufWritePost', {
+  group = komorebi_group,
+  pattern = 'komorebi.bar.json',
+  command = 'SyncKomorebiBar',
 })
 
 vim.api.nvim_create_user_command('SyncWhkd', function()
@@ -97,7 +116,7 @@ vim.api.nvim_create_autocmd('BufWritePost', {
 
 vim.api.nvim_create_user_command('SyncYasb', function()
   local command =
-  'cd $HOME && rsync .dotfiles/home/.config/yasb/yasb.yaml winhome/.yasb/config.yaml && rsync .dotfiles/home/.config/yasb/yasb.css winhome/.yasb/styles.css'
+    'cd $HOME && rsync .dotfiles/home/.config/yasb/yasb.yaml winhome/.yasb/config.yaml && rsync .dotfiles/home/.config/yasb/yasb.css winhome/.yasb/styles.css'
   vim.fn.jobstart(command, {
     on_exit = function(_, code)
       if code ~= 0 then
