@@ -111,6 +111,11 @@ zstyle ':omz:plugins:alias-finder' exact yes # disabled by default
 zstyle ':omz:plugins:alias-finder' cheaper yes # disabled by default
 
 # KEYBINDS
+
+alias gg="lazygit"
+alias ip="ip --color=always"
+alias ff='fzf --layout reverse --height ~40% --border --tmux center'
+
 # History
 bindkey '^p' history-search-backward
 bindkey '^n' history-search-forward
@@ -130,10 +135,9 @@ alias la="exa -lah"
 alias nv="nvim"
 alias nk='NVIM_APPNAME="nvim-kickstart" nvim'
 
-alias gg="lazygit"
+# docker
 alias dc="docker compose"
-alias ip="ip --color=always"
-alias ff='fzf --layout reverse --height ~40% --border --tmux center'
+alias dclft="docker compose logs -f --tail=10"
 
 # Interaction with Windows
 alias wo='xdg-open' # open here
