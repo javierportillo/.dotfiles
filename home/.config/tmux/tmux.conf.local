@@ -448,7 +448,7 @@ set -g @plugin '27medkamal/tmux-session-wizard'
 set -g @session-wizard 't'
 set -g detach-on-destroy off
 bind x kill-pane # skip prompt
-bind -n Þ display-popup -w 80% -h 40% -E t # Open Session Wizard with Alt+Ctrl+Shift+t
+bind -n M-C-T display-popup -w 80% -h 40% -E t # Open Session Wizard
 
 ## TMUX NAVIGATOR (integrates with neovim)
 set -g @plugin 'christoomey/vim-tmux-navigator'
