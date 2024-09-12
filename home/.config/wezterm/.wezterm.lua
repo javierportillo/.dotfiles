@@ -50,7 +50,7 @@ config.font = wezterm.font('Ubuntu Mono Ligaturized')
 --   'Unicode BMP Fallback SIL',
 -- })
 
-config.font_size = 14
+config.font_size = 12
 config.use_cap_height_to_scale_fallback_fonts = true
 config.freetype_load_flags = 'FORCE_AUTOHINT'
 
@@ -74,7 +74,24 @@ config.window_frame = {
 
 config.window_background_opacity = 0
 config.win32_system_backdrop = 'Acrylic'
+-- NOTE: Layers apply top to bottom
 config.background = {
+  {
+    source = { Color = '#000000' },
+    width = '100%',
+    height = '100%',
+    opacity = 0.0,
+  },
+  {
+    source = { File = wezterm.config_dir .. '/.wezterm.png' },
+    opacity = 0.0,
+  },
+  {
+    source = { Color = '#04041A' },
+    width = '100%',
+    height = '100%',
+    opacity = 0.8,
+  },
   {
     source = {
       Gradient = {
@@ -84,18 +101,7 @@ config.background = {
     },
     width = '100%',
     height = '100%',
-    opacity = 0.25,
-  },
-  {
-    -- source = { Color = '#04040D' }, -- Blue tint
-    source = { Color = '#000000' },
-    width = '100%',
-    height = '100%',
-    opacity = 0.6,
-  },
-  {
-    source = { File = wezterm.config_dir .. '/.wezterm.png' },
-    opacity = 0,
+    opacity = 0.1,
   },
 }
 
