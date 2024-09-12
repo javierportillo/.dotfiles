@@ -29,11 +29,15 @@ config.color_scheme = 'tokyonight_moon'
 -- config.font = wezterm.font('GeistMono Nerd Font Mono')
 -- config.font = wezterm.font('Dank Mono')
 -- config.font = wezterm.font('Monaspace Krypton')
+config.font = wezterm.font('Ubuntu Mono Ligaturized')
+-- config.font = wezterm.font('Lekton')
+-- config.font = wezterm.font('Courier Prime')
+-- config.font = wezterm.font('PT Mono')
 
-config.font = wezterm.font({
-  family = 'Fira Code',
-  harfbuzz_features = { 'cv01', 'cv02', 'ss01', 'ss05', 'ss03', 'cv31', 'cv30', 'cv25', 'cv27', 'cv29' },
-})
+-- config.font = wezterm.font({
+--   family = 'Fira Code',
+--   harfbuzz_features = { 'cv01', 'cv02', 'ss01', 'ss05', 'ss03', 'cv31', 'cv30', 'cv25', 'cv27', 'cv29' },
+-- })
 
 -- config.font = wezterm.font({
 --   family = 'JetBrains Mono',
@@ -46,7 +50,7 @@ config.font = wezterm.font({
 --   'Unicode BMP Fallback SIL',
 -- })
 
-config.font_size = 12
+config.font_size = 14
 config.use_cap_height_to_scale_fallback_fonts = true
 config.freetype_load_flags = 'FORCE_AUTOHINT'
 
