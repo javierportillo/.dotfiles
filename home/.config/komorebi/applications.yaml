@@ -1541,3 +1541,12 @@
     - kind: Title
       id: VLC media player updates
       matching_strategy: Equals
+- name: CodeTwo QR Reader
+  identifier:
+    kind: Exe
+    id: CodeTwo QR Code Desktop Reader & Generator.exe
+    matching_strategy: Equals
+  float_identifiers:
+    - kind: Exe
+      id: CodeTwo QR Code Desktop Reader & Generator.exe
+      matching_strategy: Equals
