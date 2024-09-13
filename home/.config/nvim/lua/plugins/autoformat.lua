@@ -37,6 +37,7 @@ return {
         lua = { 'stylua' },
         javascript = { 'prettierd' },
         typescript = { 'prettierd' },
+        vue = { 'prettierd' },
         yaml = { 'yamlfmt' },
         toml = { 'taplo' },
         json = { 'jq' },
