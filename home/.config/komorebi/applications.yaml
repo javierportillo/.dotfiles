@@ -1550,3 +1550,12 @@
     - kind: Exe
       id: CodeTwo QR Code Desktop Reader & Generator.exe
       matching_strategy: Equals
+- name: Zen Browser
+  identifier:
+    kind: Exe
+    id: zen.exe
+    matching_strategy: Equals
+  float_identifiers:
+    - kind: Title
+      id: Picture-in-Picture
+      matching_strategy: Equals
