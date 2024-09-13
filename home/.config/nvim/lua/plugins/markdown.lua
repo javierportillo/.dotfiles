@@ -10,7 +10,6 @@ return {
         file_types = { 'markdown', 'vimwiki' },
         only_render_image_at_cursor = true,
         heading = {
-          border = true,
           position = 'inline',
         },
         quote = { repeat_linebreak = true },
