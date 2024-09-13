@@ -193,6 +193,7 @@ return {
       local ensure_installed = vim.tbl_keys(servers or {})
       vim.list_extend(ensure_installed, {
         'stylua', -- Used to format Lua code.
+        'volar',
       })
 
       require('mason-tool-installer').setup({ ensure_installed = ensure_installed })
@@ -227,7 +228,28 @@ return {
     dependencies = {
       'nvim-lua/plenary.nvim',
       'neovim/nvim-lspconfig',
+      'hrsh7th/cmp-nvim-lsp',
     },
-    opts = {},
+    config = function()
+      local capabilities = vim.lsp.protocol.make_client_capabilities()
+      capabilities = vim.tbl_deep_extend('force', capabilities, require('cmp_nvim_lsp').default_capabilities())
+
+      require('typescript-tools').setup({
+        filetypes = {
+          'javascript',
+          'javascriptreact',
+          'typescript',
+          'typescriptreact',
+          'vue',
+        },
+        settings = {
+          capabilities = capabilities,
+          single_file_support = false,
+          tsserver_plugins = {
+            '@vue/typescript-plugin',
+          },
+        },
+      })
+    end,
   },
 }
