@@ -28,12 +28,8 @@ return {
       -- Allows extra capabilities provided by nvim-cmp
       'hrsh7th/nvim-cmp',
       'hrsh7th/cmp-nvim-lsp',
-      'smjonas/inc-rename.nvim',
     },
     config = function()
-      -- Incremental Rename
-      require('inc_rename').setup({})
-
       --  This function gets run when an LSP attaches to a particular buffer.
       --    That is to say, every time a new file is opened that is associated with
       --    an lsp (for example, opening `main.rs` is associated with `rust_analyzer`) this
@@ -74,9 +70,7 @@ return {
           map('<leader>ds', builtin.lsp_document_symbols, '[D]ocument [S]ymbols')
 
           -- Rename the variable under the cursor.
-          map('<leader>rn', function()
-            return ':IncRename ' .. vim.fn.expand('<cword>')
-          end, '[R]e[n]ame', 'n', { expr = true })
+          map('<leader>rn', vim.lsp.buf.rename, '[R]e[n]ame')
 
           -- Display signature information of the type symbol under the cursor in
           -- a floating window.
