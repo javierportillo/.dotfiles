@@ -11,6 +11,9 @@ export XDG_CONFIG_HOME=${XDG_CONFIG_HOME:="$HOME/.config"}
 # clenaup
 export LESSHISTFILE="-"
 
+# WSLg support
+export LIBGL_ALWAYS_INDIRECT=1
+
 # other
 export EDITOR="nvim"
 export COLORTERM="truecolor"
