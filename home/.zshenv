@@ -1,6 +1,6 @@
 typeset -U PATH path
 
-export PATH=$HOME/bin:$HOME/.local/bin:/usr/local/bin:$PATH:/snap/bin:$HOME/.config/tmux/plugins/tmux-session-wizard/bin
+export PATH=$HOME/bin:$HOME/.local/bin:/usr/local/bin:$PATH:/snap/bin:$HOME/.config/tmux/plugins/tmux-session-wizard/bin:$HOME/.zsh-scripts
 export LANG=en_US.UTF-8
 
 # XDG Paths
