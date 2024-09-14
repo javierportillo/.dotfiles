@@ -71,6 +71,12 @@ return {
             },
           },
         },
+        routes = {
+          {
+            view = 'vsplit',
+            filter = { min_width = 500 },
+          },
+        },
       })
 
       ---@diagnostic disable-next-line: missing-fields
