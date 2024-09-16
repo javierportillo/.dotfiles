@@ -8,11 +8,9 @@
   },
   "app_specific_configuration_path": "$Env:USERPROFILE/applications.yaml",
   "border": true,
-  "border_colours": {
-    "single": "#50F020",
-    "stack": "#F6C177",
-    "monocle": "#FBAAAA",
-    "unfocused": "#a0a0c0"
+  "theme": {
+    "type": "Base16",
+    "name": "TokyoNightTerminalStorm"
   },
   "border_implementation": "Komorebi",
   "border_style": "Square",
