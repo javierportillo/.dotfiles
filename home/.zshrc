@@ -28,7 +28,7 @@ eval "$(atuin init zsh --disable-ctrl-r)"
 eval "$(starship init zsh)"
 
 # Source custom scripts
-source "/home/javier/.zsh-scripts/init.zsh"
+source "/home/javier/.config/zsh/functions/init.zsh"
 
 ### Added by Zinit's installer
 if [[ ! -f $HOME/.local/share/zinit/zinit.git/zinit.zsh ]]; then

@@ -1,5 +1,5 @@
 #!/usr/bin/env zsh
 
-printfpath () {
+function printfpath {
   echo $fpath | sed 's/\s/\n/g' | fzf
 }
