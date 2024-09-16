@@ -1,9 +1,16 @@
 .shell powershell
 
-# Reload whkd configuration
-# alt + o                 : taskkill /f /im whkd.exe && start /b whkd # if shell is cmd
+# BASIC HOTKEYS
+
+
+# KOMOREBI HOTKEYS
+
+# Restarts
 alt + o                 : taskkill /f /im whkd.exe; if ($?) { Start-Process whkd -WindowStyle hidden } # if shell is pwsh / powershell
 alt + shift + o         : Get-Process -Name "komorebi" | Stop-Process; Start-Sleep -Seconds 3; komorebic start -c "$Env:USERPROFILE\komorebi.json" --whkd;
+
+# Start The Bar
+alt + ctrl + shift + b : get-process -Name "komorebi-bar" | stop-process; start-sleep -Seconds 1; start-process komorebi-bar -WindowStyle hidden
 
 # Focus windows
 alt + h                 : komorebic focus left
