@@ -34,7 +34,10 @@
       "workspaces": [
         {
           "name": "Primary",
-          "layout": "BSP",
+          "layout_rules": {
+            "1": "BSP",
+            "5": "Grid"
+          },
           "initial_workspace_rules": [
             {
               "id": "wezterm-gui.exe",
@@ -50,7 +53,10 @@
         },
         {
           "name": "Other",
-          "layout": "Grid",
+          "layout_rules": {
+            "1": "BSP",
+            "5": "Grid"
+          },
           "initial_workspace_rules": [
             {
               "id": "Netflix",
@@ -70,7 +76,10 @@
       "workspaces": [
         {
           "name": "Secondary",
-          "layout": "Grid",
+          "layout_rules": {
+            "1": "BSP",
+            "5": "Grid"
+          },
           "initial_workspace_rules": [
             {
               "id": "zen.exe",
@@ -91,7 +100,10 @@
         },
         {
           "name": "Chat",
-          "layout": "Grid",
+          "layout_rules": {
+            "1": "BSP",
+            "5": "Grid"
+          },
           "initial_workspace_rules": [
             {
               "id": "WhatsApp",
