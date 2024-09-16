@@ -87,12 +87,6 @@ config.background = {
     opacity = 0.0,
   },
   {
-    source = { Color = '#04041A' },
-    width = '100%',
-    height = '100%',
-    opacity = 0.8,
-  },
-  {
     source = {
       Gradient = {
         preset = 'Viridis',
@@ -101,7 +95,13 @@ config.background = {
     },
     width = '100%',
     height = '100%',
-    opacity = 0.1,
+    opacity = 0.3,
+  },
+  {
+    source = { Color = '#04041A' },
+    width = '100%',
+    height = '100%',
+    opacity = 0.8,
   },
 }
 
