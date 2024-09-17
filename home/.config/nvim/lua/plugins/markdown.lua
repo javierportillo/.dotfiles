@@ -9,8 +9,20 @@ return {
         acknowledge_conflicts = true,
         file_types = { 'markdown', 'vimwiki' },
         only_render_image_at_cursor = true,
+        sign = {
+          enabled = false,
+        },
         heading = {
           position = 'inline',
+          width = 'full',
+        },
+        code = {
+          width = 'block',
+          left_pad = 2,
+          right_pad = 4,
+          min_width = 50,
+          position = 'right',
+          language_pad = 1,
         },
         quote = { repeat_linebreak = true },
         win_options = {
