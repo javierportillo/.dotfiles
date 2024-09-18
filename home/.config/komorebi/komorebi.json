@@ -9,7 +9,7 @@
   "app_specific_configuration_path": "$Env:USERPROFILE/applications.yaml",
   "border": true,
   "theme": {
-    "type": "Base16",
+    "palette": "Base16",
     "name": "TokyoNightTerminalStorm"
   },
   "border_implementation": "Komorebi",
