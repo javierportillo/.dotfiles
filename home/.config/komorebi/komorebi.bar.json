@@ -1,5 +1,5 @@
 {
-  "$schema": "https://raw.githubusercontent.com/LGUG2Z/komorebi/feature/komorebi-status-bar/schema.bar.json",
+  "$schema": "https://raw.githubusercontent.com/LGUG2Z/komorebi/master/schema.bar.json",
   "monitor": {
     "index": 0,
     "work_area_offset": {
