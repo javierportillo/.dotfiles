@@ -128,7 +128,7 @@
   "stackbar": {
     "height": 20,
     "label": "Title",
-    "mode": "OnStack",
+    "mode": "Never",
     "tabs": {
       "focused_text": "#50F020",
       "unfocused_text": "#b3b3b3",
