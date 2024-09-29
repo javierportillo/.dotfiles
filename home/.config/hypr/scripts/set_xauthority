@@ -1,0 +1,4 @@
+#!/usr/bin/env sh
+
+systemctl show-environment | grep 'XAUTH_TOKEN' | awk -F= '{print $2}' | base64 -d > $HOME/.Xauthority
+
