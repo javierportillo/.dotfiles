@@ -8,7 +8,7 @@ vim.api.nvim_create_user_command('TexCompile', function()
       else
         print('PDF compiled.')
       end
-    end
+    end,
   })
 end, {})
 
@@ -17,16 +17,15 @@ vim.api.nvim_create_user_command('TexCompileAndOpen', function()
   local current_buffer = vim.fn.expand('%')
   local file_extension = vim.fn.expand('%:e')
   local pdf_file = current_buffer:gsub(file_extension .. '$', 'pdf')
-  -- yup, sadly, im running on windows using WSL, no other choise for now...
-  local command = 'SumatraPDF.exe -reuse-instance ' .. pdf_file
+  local command = 'zathura ' .. pdf_file
   vim.fn.jobstart(command, {
     on_exit = function(_, code)
       if code ~= 0 then
-        print('SumatraPDF could not open this file: ' .. code)
+        print('Zathura could not open this file: ' .. code)
       else
-        print('PDF compiled and opened in sumatra.')
+        print('PDF compiled and opened in Zathura.')
       end
-    end
+    end,
   })
 end, {})
 
@@ -40,7 +39,7 @@ vim.api.nvim_create_user_command('BibCompile', function()
       else
         print('Biber compiled.')
       end
-    end
+    end,
   })
 end, {})
 

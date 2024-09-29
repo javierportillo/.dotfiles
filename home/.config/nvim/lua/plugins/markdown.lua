@@ -6,9 +6,7 @@ return {
     config = function()
       require('render-markdown').setup({
         enabled = true,
-        acknowledge_conflicts = true,
         file_types = { 'markdown', 'vimwiki' },
-        only_render_image_at_cursor = true,
         sign = {
           enabled = false,
         },

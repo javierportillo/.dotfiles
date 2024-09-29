@@ -139,8 +139,5 @@ alias nk='NVIM_APPNAME="nvim-kickstart" nvim'
 alias dc="docker compose"
 alias dclft="docker compose logs -f --tail=10"
 
-# Interaction with Windows
-alias wo='xdg-open' # open here
-alias wy='win32yank.exe -i --crlf'
-alias wp='win32yank.exe -o --lf'
-
+# cd to lf last dir
+alias lf="lfcd"

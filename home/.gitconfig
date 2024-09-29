@@ -1,6 +1,7 @@
 [user]
   name = Javier Portillo
   email = javiermarquezportillo@gmail.com
+  signingkey = 2FB60659F7C33AA8
 [checkout]
   defaultRemote = origin
 [init]
@@ -10,4 +11,7 @@
   pager = delta
 [commit]
   template = ~/.config/git/commit_template
+  gpgsign = true
 
+[tag]
+  gpgSign = true

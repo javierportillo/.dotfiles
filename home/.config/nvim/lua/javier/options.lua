@@ -67,4 +67,4 @@ vim.opt.showmatch = true
 vim.opt.virtualedit = 'block'
 
 -- for rmagatti/auto-session
-vim.opt.sessionoptions = 'blank,buffers,curdir,folds,help,tabpages,winsize,winpos,terminal'
+vim.opt.sessionoptions = 'blank,buffers,curdir,folds,help,tabpages,winsize,winpos,terminal,localoptions'
