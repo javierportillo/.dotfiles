@@ -1,7 +1,7 @@
 [user]
   name = Javier Portillo
   email = javiermarquezportillo@gmail.com
-  signingkey = 2FB60659F7C33AA8
+  signingkey = FD545F5644840F81DFD7C5E82FB60659F7C33AA8
 [checkout]
   defaultRemote = origin
 [init]
