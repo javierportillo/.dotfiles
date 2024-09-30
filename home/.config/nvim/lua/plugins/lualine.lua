@@ -45,7 +45,7 @@ return {
         sections = {
           lualine_a = { { 'fancy_mode', width = 3 } },
           lualine_b = { 'fancy_branch', 'fancy_diff', 'fancy_diagnostics' },
-          lualine_c = { { 'filename', path = 4 } },
+          lualine_c = { { 'filename', path = 1 } },
           lualine_x = {
             'pomodoro',
             'fancy_macro',
@@ -61,6 +61,7 @@ return {
           lualine_z = {
             { 'progress', padding = { left = 1, right = 0 } },
             { 'location', padding = { left = 0, right = 1 } },
+            { 'tabs', symbols = { modified = '' } },
           },
         },
         -- what to show on inactive splits
@@ -71,14 +72,6 @@ return {
           lualine_x = { 'location' },
           lualine_y = {},
           lualine_z = {},
-        },
-        tabline = {
-          lualine_a = {},
-          lualine_b = {},
-          lualine_c = { 'fancy_cwd', { 'filename', path = 1 } },
-          lualine_x = {},
-          lualine_y = {},
-          lualine_z = { { 'tabs', symbols = { modified = '' } } },
         },
         winbar = {
           lualine_a = {},
