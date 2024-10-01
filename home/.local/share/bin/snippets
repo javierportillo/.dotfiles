@@ -1,0 +1,9 @@
+#!/usr/bin/env sh
+
+snippet_file=~/.cache/snippets
+
+[[ -f $snippet_file ]] || touch $snippet_file
+
+grep -v '^#' $snippet_file | fuzzel --dmenu --placeholder="Search Bookmarks" | cut -d' ' -f1 | tr -d '\n' | wtype -
+
+
