@@ -6,18 +6,20 @@ destination=('Save File' 'Copy to Clipboard' 'Edit with Pinta')
 selected_mode=$(printf "%s\n" $modes | fuzzel --dmenu --placeholder="Select Mode")
 selected_dst=$(printf "%s\n" $destination | fuzzel --dmenu --placeholder="Destination")
 
-sleep 0.5 # give fuzzel time to hide
-
 screenshot_dir=~/Pictures/screenshots
+
+hyprctl keyword animations:enabled 0
 
 case $selected_dst in
   'Save File')
     [[ -d $screenshot_dir ]] || mkdir $screenshot_dir
-    hyprshot -m $selected_mode -z -D 1 --output-folder $screenshot_dir
+    hyprshot -m $selected_mode -z --output-folder $screenshot_dir
     ;;
   'Copy to Clipboard')
-    hyprshot -m $selected_mode -z -D 1 --clipboard-only
+    hyprshot -m $selected_mode -z --clipboard-only
     ;;
   'Edit with Pinta')
-    hyprshot -m $selected_mode -z -D 1 --output-folder $screenshot_dir -- pinta
+    hyprshot -m $selected_mode -z --output-folder $screenshot_dir -- pinta
 esac
+
+hyprctl reload
