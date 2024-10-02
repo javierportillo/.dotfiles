@@ -1,9 +1,7 @@
 #!/usr/bin/env zsh
 
-# This wont work on POSIX (because of '<<<')
-
 modes=(output window region)
-destination=('Save File' 'Copy to Clipboard')
+destination=('Save File' 'Copy to Clipboard' 'Edit with Pinta')
 
 selected_mode=$(printf "%s\n" $modes | fuzzel --dmenu --placeholder="Select Mode")
 selected_dst=$(printf "%s\n" $destination | fuzzel --dmenu --placeholder="Destination")
@@ -15,8 +13,11 @@ screenshot_dir=~/Pictures/screenshots
 case $selected_dst in
   'Save File')
     [[ -d $screenshot_dir ]] || mkdir $screenshot_dir
-    hyprshot -m $selected_mode -z -o $screenshot_dir
+    hyprshot -m $selected_mode -z --output-folder $screenshot_dir
     ;;
   'Copy to Clipboard')
     hyprshot -m $selected_mode -z --clipboard-only
+    ;;
+  'Edit with Pinta')
+    hyprshot -m $selected_mode -z --output-folder $screenshot_dir -- pinta
 esac
