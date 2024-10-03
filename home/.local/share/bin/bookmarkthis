@@ -6,7 +6,7 @@ snippet_file=~/.cache/snippets
 
 bookmark=$(wl-paste --primary)
 
-grep -q $bookmark $snippet_file && notify-send "String found" && exit 0
+grep -q $bookmark $snippet_file && notify-send "Already Bookmarked!" && exit 0
 
 echo $bookmark >> $snippet_file
 notify-send "Bookmark Saved!"

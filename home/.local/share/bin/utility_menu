@@ -1,0 +1,18 @@
+#!/usr/bin/env zsh
+
+utilities=('Add Bookmark' 'Type Bookmark' 'Edit Bookmarks' 'Print 256 Colors' 'Scan QR Code' 'Open Man Page as PDF' 'Color Picker')
+
+selected_item=$(printf "%s\n" $utilities | fuzzel --dmenu --placeholder="Select One")
+
+case $selected_item in
+  'Add Bookmark') bookmarkthis ;;
+  'Type Bookmark') snippets ;;
+  'Edit Bookmarks') kitty sh -c "nvim ~/.cache/snippets" ;;
+  'Print 256 Colors') kitty sh -c "print256colours.sh && sleep infinity" ;;
+  'Scan QR Code') qr_reader ;;
+  'Open Man Page as PDF') mansplain ;;
+  'Color Picker') hyprpicker | tr -d '\n' | wl-copy ;;
+  '') exit 0 ;;
+  *) notify-send "Menu Not Supported! (${selected_item})" ;;
+esac
+

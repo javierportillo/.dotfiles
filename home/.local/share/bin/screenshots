@@ -4,7 +4,12 @@ modes=(output window region)
 destination=('Save File' 'Copy to Clipboard' 'Edit with Pinta')
 
 selected_mode=$(printf "%s\n" $modes | fuzzel --dmenu --placeholder="Select Mode")
+
+[[ -z $selected_mode ]] && exit 0
+
 selected_dst=$(printf "%s\n" $destination | fuzzel --dmenu --placeholder="Destination")
+
+[[ -z $selected_dst ]] && exit 0
 
 screenshot_dir=~/Pictures/screenshots
 

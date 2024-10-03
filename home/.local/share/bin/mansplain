@@ -1,3 +1,5 @@
 #!/usr/bin/env zsh
 
-man -k . | fuzzel -d | awk '{print $1}' | xargs -r man -Tpdf | zathura -
+selection=$(man -k . | fuzzel -d)
+
+[[ -n $selection ]] && echo $selection | awk '{print $1}' | xargs -r man -Tpdf | zathura -
