@@ -1,0 +1,13 @@
+#!/usr/bin/env sh
+
+snippet_file=~/.cache/snippets
+
+[[ -f $snippet_file ]] || touch $snippet_file
+
+bookmark=$(wl-paste --primary)
+
+grep -q $bookmark $snippet_file && notify-send "String found" && exit 0
+
+echo $bookmark >> $snippet_file
+notify-send "Bookmark Saved!"
+
