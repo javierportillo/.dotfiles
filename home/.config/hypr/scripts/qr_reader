@@ -1,0 +1,9 @@
+#!/usr/bin/env  zsh
+
+hyprctl keyword animations:enabled 0
+data=$(hyprshot -s -m region --raw | zbarimg -q -1 - | cut -d ':' -f 2-)
+hyprctl reload
+
+[[ -n $data ]] && wl-copy --type text/plain $data && notify-send "QR contents copied to clipboard" && exit 0
+
+notify-send "No data found!"
