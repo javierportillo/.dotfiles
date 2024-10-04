@@ -1,0 +1,20 @@
+#!/usr/bin/env zsh
+
+utilities=(
+  'Close Session'
+  'Shutdown Now'
+  'Restart'
+  'Suspend'
+)
+
+selected_item=$(printf "%s\n" $utilities | fuzzel --dmenu --placeholder="Select One")
+
+case $selected_item in
+  'Close Session') hyprctl dispatch exit ;;
+  'Shutdown Now') shutdown now ;;
+  'Restart') reboot ;;
+  'Suspend') systemctl suspend ;;
+  '') exit 0 ;;
+  *) notify-send "Menu Not Supported! (${selected_item})" ;;
+esac
+
