@@ -1,0 +1,28 @@
+#!/usr/bin/env zsh
+
+found_dirs="All $(find ~/Pictures/wallpapers/* -maxdepth 0 -type d -printf '%f ')"
+
+wallpaper_dirs=(`echo ${found_dirs}`)
+
+selection=$(printf "%s\n" $wallpaper_dirs | fuzzel --dmenu --placeholder="Select Collection")
+
+[[ -z $selection ]] && exit 0
+
+[[ $selection = "All" ]] && selection=""
+
+selected=$(swiv -trofa -B "#000020" "/home/javier/Pictures/wallpapers/$selection" | head -n 1)
+
+[[ -z $selected ]] && exit 0
+
+config="/home/javier/.config/hypr/hyprpaper.conf"
+
+echo "\$wallpaper = $selected" > $config
+echo "preload = \$wallpaper" >> $config
+echo "wallpaper = , \$wallpaper" >> $config
+
+hyprctl hyprpaper unload all
+killall hyprpaper
+
+hyprpaper &
+
+notify-send "Wallpaper Changed!"
