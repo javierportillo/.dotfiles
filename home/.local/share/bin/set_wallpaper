@@ -10,7 +10,7 @@ selection=$(printf "%s\n" $wallpaper_dirs | fuzzel --dmenu --placeholder="Select
 
 [[ $selection = "All" ]] && selection=""
 
-selected=$(swiv -trofa -B "#000020" "/home/javier/Pictures/wallpapers/$selection" | head -n 1)
+selected=$(swiv -trofa "/home/javier/Pictures/wallpapers/$selection" | head -n 1)
 
 [[ -z $selected ]] && exit 0
 
