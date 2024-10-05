@@ -19,14 +19,14 @@ selected_item=$(printf "%s\n" $utilities | fuzzel --dmenu --placeholder="Select 
 case $selected_item in
   'Add Bookmark') bookmarkthis ;;
   'Type Bookmark') snippets ;;
-  'Edit Bookmarks') kitty sh -c "nvim ~/.cache/snippets" ;;
-  'Print 256 Colors') kitty sh -c "print256colours && sleep infinity" ;;
+  'Edit Bookmarks') kitty nvim ~/.cache/snippets ;;
+  'Print 256 Colors') kitty --hold print256colours ;;
   'Scan QR Code') qr_reader ;;
   'Open Man Page as PDF') mansplain ;;
   'Color Picker') hyprpicker | tr -d '\n' | wl-copy ;;
   'Hyprland Toggle Animations') hyprland_toggle_animations ;;
   'Reload Waybar') pkill -15 waybar; sleep 0.5; waybar ;;
-  'Task Manager') kitty sh -c "btop" ;;
+  'Task Manager') kitty btop ;;
   'Set Wallpaper') set_wallpaper ;;
   '') exit 0 ;;
   *) notify-send "Menu Not Supported! (${selected_item})" ;;
