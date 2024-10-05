@@ -42,6 +42,7 @@ return {
         toml = { 'taplo' },
         json = { 'jq' },
         jsonc = { 'prettierd' },
+        sh = { 'beautysh' },
         -- Conform can also run multiple formatters sequentially
         -- python = { "isort", "black" },
         --
