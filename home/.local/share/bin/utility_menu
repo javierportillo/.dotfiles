@@ -27,7 +27,7 @@ case $selected_item in
   'Hyprland Toggle Animations') hyprland_toggle_animations ;;
   'Reload Waybar') pkill -15 waybar; sleep 0.5; waybar ;;
   'Task Manager') kitty btop ;;
-  'Set Wallpaper') set_wallpaper ;;
+  'Set Wallpaper') choose_wallpaper ;;
   '') exit 0 ;;
   *) notify-send "Menu Not Supported! (${selected_item})" ;;
 esac

@@ -1,0 +1,59 @@
+#!/usr/bin/env zsh
+
+fullscreen=false
+base_dir="$HOME/Pictures/wallpapers/"
+default_collection=""
+
+usage() {
+  echo "Usage: $0 [-d <value>] [-f] [-h] <path>"
+  echo "Options:"
+  echo " -d  Default Collection, can be set to 'All' or a sub directory of path"
+  echo " -f  Run in full-screen mode"
+  echo " -h  Show this help usage"
+  exit 1
+}
+
+# check options
+while getopts ":d:fh" opt; do
+  case "$opt" in
+    d) default_collection="$OPTARG" ;;
+    f) fullscreen=true ;;
+    h) usage ;;
+    \?) echo "Invalid option: -$OPTARG" >&2; usage ;;
+    :) echo "Option -$OPTARG requires an argument" >&2 ;;
+  esac
+done
+
+# check if path is provided
+shift $((OPTIND - 1))
+if [[ $# -eq 1 ]]; then
+  [[ ! -d "$1" ]] && echo "Path not found!" >&2 && exit 1
+  base_dir="$1"
+fi
+
+base_dir=$(realpath "$base_dir")
+
+[[ "${base_dir}" != */ ]] && base_dir="$base_dir/"
+
+found_collections=$(find ${base_dir}* -maxdepth 0 -type d -printf '%f ' | sed 's/ $//')
+
+read -A collection_options <<< "All $found_collections"
+
+[[ -n "$default_collection" ]] && [[ ! "$default_collection" =~ ^(${(j:|:)collection_options})$ ]] && echo "Default collection ($default_collection) not found!" >&2 && exit 1
+[[ -n "$default_collection" ]] && selection="$default_collection"
+
+[[ -z "$selection" ]] && selection=$(printf "%s\n" $collection_options | fuzzel --dmenu --placeholder="Select Collection")
+[[ -z "$selection" ]] && exit 1
+
+[[ ! "$selection" =~ ^(${(j:|:)collection_options})$ ]] && echo "[$selection] not found in collections of $base_dir" >&2 && exit 1
+
+[[ "$selection" = "All" ]] && selection=""
+
+swiv_opts="troa"
+$fullscreen && swiv_opts="${swiv_opts}f"
+
+selected=$(swiv -${swiv_opts} -s "w" "${base_dir}${selection}")
+
+[[ -z $selected ]] && exit 1
+
+echo $selected
