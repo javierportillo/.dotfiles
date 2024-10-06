@@ -141,3 +141,7 @@ alias dclft="docker compose logs -f --tail=10"
 
 # cd to lf last dir
 alias lf="lfcd"
+
+# Run fastfetch every open
+fastfetch
+
