@@ -1,0 +1,27 @@
+pyprland.plugins = ["shortcuts_menu"]
+
+[shortcuts_menu]
+engine = "fuzzel"
+command_start = "󰜎"
+submenu_start = ">"
+parameters = "--dmenu --placeholder 'Choose One'"
+skip_single = false
+
+[shortcuts_menu.entries."Utilities Menu"]
+"Add Bookmark" = "bookmarkthis"
+"Type Bookmark" = "snippets"
+"Edit Bookmarks" = "kitty nvim ~/.cache/snippets"
+"Print 256 Colors" = "kitty --hold print256colours"
+"Scan QR Code" = "qr_reader"
+"Open Man Page as PDF" = "mansplain"
+"Color Picker" = 'hyprpicker | tr -d "\n" | wl-copy'
+"Hyprland Toggle Animations" = "hyprland_toggle_animations"
+"Reload Waybar" = "pkill -15 waybar; sleep 0.5; waybar"
+"Task Manager" = "kitty btop"
+"Set Wallpaper" = "choose_wallpaper"
+
+[shortcuts_menu.entries."Exit Menu"]
+"Close Session" = "hyprctl dispatch exit"
+"Shutdown Now" = "shutdown now"
+"Restart" = "reboot"
+"Suspend" = "systemctl suspend"
