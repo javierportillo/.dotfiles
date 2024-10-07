@@ -16,9 +16,13 @@ skip_single = false
 "Open Man Page as PDF" = "mansplain"
 "Color Picker" = 'hyprpicker | tr -d "\n" | wl-copy'
 "Hyprland Toggle Animations" = "hyprland_toggle_animations"
-"Reload Waybar" = "pkill -15 waybar; sleep 0.5; waybar"
 "Task Manager" = "kitty btop"
 "Set Wallpaper" = "choose_wallpaper"
+"File Explorer" = "kitty --hold lf"
+
+[shortcuts_menu.entries."Utilities Menu"."Reload Things"]
+"Reload Waybar" = "pkill -15 waybar; sleep 0.5; nohup waybar 2>&1 &"
+"Reload Pyprland" = "pkill -SIGINT pypr && sleep 1 && nohup pypr 2>&1 &"
 
 [shortcuts_menu.entries."Exit Menu"]
 "Close Session" = "hyprctl dispatch exit"
