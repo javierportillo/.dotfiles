@@ -2,6 +2,8 @@ set hidden true
 set ignorecase true
 set drawbox false
 set icons true
+set previewer ~/.config/lf/previewer
+set cleaner ~/.config/lf/cleaner
 
 cmd mkdir ${{
   printf "Directory name: "
@@ -26,7 +28,7 @@ cmd chmod ${{
 }}
 
 cmd OpenGallery ${{
-  swiv -t "$PWD"
+  swiv -tr "$PWD"
 }}
 
 map x delete
