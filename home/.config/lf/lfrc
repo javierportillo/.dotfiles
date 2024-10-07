@@ -25,15 +25,10 @@ cmd chmod ${{
   done
 }}
 
-cmd WinExplorerHere ${{
-  explorer.exe `wslpath -w "$PWD"`
-}}
-
-cmd LazyGit ${{
-  lazygit
+cmd OpenGallery ${{
+  swiv -t "$PWD"
 }}
 
 map x delete
-map W WinExplorerHere
-map Q LazyGit
+map G OpenGallery
 

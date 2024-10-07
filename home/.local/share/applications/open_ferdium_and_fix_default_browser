@@ -1,0 +1,8 @@
+#!/usr/bin/env zsh
+
+ferdium &
+
+sleep 5
+
+xdg-settings set default-web-browser thorium-browser.desktop
+
