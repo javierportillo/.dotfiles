@@ -43,6 +43,7 @@ return {
         json = { 'jq' },
         jsonc = { 'prettierd' },
         sh = { 'beautysh' },
+        zsh = { 'beautysh' },
         -- Conform can also run multiple formatters sequentially
         -- python = { "isort", "black" },
         --
