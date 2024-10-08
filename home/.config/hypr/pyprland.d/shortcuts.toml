@@ -18,7 +18,7 @@ skip_single = false
 "Hyprland Toggle Animations" = "hyprland_toggle_animations"
 "Task Manager" = "kitty btop"
 "Set Wallpaper" = "choose_wallpaper"
-"File Explorer" = "kitty --hold yazi"
+"File Explorer" = "kitty yazi"
 
 [shortcuts_menu.entries."Utilities Menu"."Reload Things"]
 "Reload Waybar" = "pkill -15 waybar; sleep 0.5; nohup waybar 2>&1 &"
