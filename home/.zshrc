@@ -1,9 +1,9 @@
 PS1="READY > "
 
 # The next line updates PATH for the Google Cloud SDK.
-if [ -f '/home/javier/google-cloud-sdk/path.zsh.inc' ]; then . '/home/javier/google-cloud-sdk/path.zsh.inc'; fi
+if [ -f '/opt/google-cloud-cli/path.zsh.inc' ]; then . '/opt/google-cloud-cli/path.zsh.inc'; fi
 # The next line enables shell command completion for gcloud.
-if [ -f '/home/javier/google-cloud-sdk/completion.zsh.inc' ]; then . '/home/javier/google-cloud-sdk/completion.zsh.inc'; fi
+if [ -f '/opt/google-cloud-cli/completion.zsh.inc' ]; then . '/opt/google-cloud-cli/completion.zsh.inc'; fi
 
 # pyenv stuff
 # WARN: ENABLE ONLY WHEN USING IT
