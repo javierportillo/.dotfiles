@@ -65,7 +65,7 @@ mode_select = { fg = "black", bg = "red", bold = true }
 mode_unset = { fg = "black", bg = "red", bold = true }
 
 # Progress
-progress_label = { fg = "black", bold = true }
+progress_label = { bold = true }
 progress_normal = { fg = "blue", bg = "black" }
 progress_error = { fg = "red", bg = "black" }
 
