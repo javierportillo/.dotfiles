@@ -1,0 +1,11 @@
+[Desktop Entry]
+Name=Obsidian
+# Exec=/usr/bin/obsidian %U
+Exec=sh -c "$HOME/.local/share/applications/open_and_fix_browser 'obsidian'"
+Terminal=false
+Type=Application
+Icon=obsidian
+StartupWMClass=obsidian
+Comment=Obsidian
+MimeType=x-scheme-handler/obsidian;
+Categories=Office;

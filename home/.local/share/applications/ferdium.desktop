@@ -1,6 +1,6 @@
 [Desktop Entry]
 Name=Ferdium
-Exec=sh -c "$HOME/.local/share/applications/open_ferdium_and_fix_default_browser"
+Exec=sh -c "$HOME/.local/share/applications/open_and_fix_browser 'ferdium'"
 Terminal=false
 Type=Application
 Icon=ferdium
