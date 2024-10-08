@@ -398,8 +398,10 @@ bind C-a send-prefix
 set -g status-position top
 
 
-# TMUX NVIM ZenMode Integration
-set-option -g allow-passthrough all
+# TMUX passthrough
+set -g allow-passthrough all
+set -ga update-environment TERM
+set -ga update-environment TERM_PROGRAM
 
 # -- tpm -----------------------------------------------------------------------
 
