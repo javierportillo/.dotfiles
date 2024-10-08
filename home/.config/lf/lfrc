@@ -1,4 +1,4 @@
-set hidden true
+set hidden false
 set ignorecase true
 set drawbox false
 set icons true
