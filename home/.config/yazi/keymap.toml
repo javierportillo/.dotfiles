@@ -12,6 +12,11 @@ on = ["c", "m"]
 run = "plugin chmod"
 desc = "Chmod on selected files"
 
+[[manager.prepend_keymap]]
+on = "!"
+run = 'shell "$SHELL" --block --confirm'
+desc = "Open shell here"
+
 [manager]
 
 keymap = [
@@ -45,6 +50,7 @@ keymap = [
   ], run = "arrow -99999999", desc = "Move cursor to the top" },
   { on = "G", run = "arrow 99999999", desc = "Move cursor to the bottom" },
   { on = "<C-g>", run = "shell --confirm 'swiv -tr $(dirname \"$0\")'", desc = "Open current dir with Swiv" },
+  { on = "<A-g>", run = "shell --confirm 'gimp $0'", desc = "Open with Gimp" },
 
   # Navigation
   { on = "h", run = "leave", desc = "Go back to the parent directory" },
