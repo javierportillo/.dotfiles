@@ -83,6 +83,12 @@ _fix-omz-plugin() {
 }
 
 ## PLUGINS
+
+# zsh-vi-mode options
+# Do the initialization when the script is sourced (i.e. Initialize instantly)
+ZVM_INIT_MODE=sourcing
+ZVM_LAZY_KEYBINDINGS=false
+
 zinit wait lucid light-mode for \
     OMZP::git \
     OMZP::zoxide \
@@ -102,7 +108,8 @@ zinit wait lucid light-mode for \
     bindkey '^f' autosuggest-accept" \
     zsh-users/zsh-autosuggestions \
     blockf atpull"zinit creinstall -q ." \
-    zsh-users/zsh-completions
+    zsh-users/zsh-completions \
+    depth=1 jeffreytse/zsh-vi-mode
 
 # For Alias Finder
 zstyle ':omz:plugins:alias-finder' autoload yes # disabled by default
