@@ -64,38 +64,13 @@ return {
       },
     },
     opts = {
-      --- Set margins around document
-      margins = '1.5cm',
-      -- tango, pygments are quite nice for white on white
       highlight = 'tango',
-      -- Generate a table of contents, on by default
       toc = false,
-      -- Define a custom preview command, enabling hooks and other custom logic
-      preview_cmd = function()
-        return 'fix-md-pdf-wsl-path'
-      end,
-      -- if true, then the markdown file is continuously converted on each write, even if the
-      -- file viewer closed, e.g., firefox is "closed" once the document is opened in it.
-      ignore_viewer_state = true,
-      -- Specify font, `nil` uses the default font of the theme
-      -- fonts = nil,
-      -- or, where all or only some options can be specified. NOTE: those that are `nil` can be left
-      -- out completely
-      fonts = {
-        main_font = 'JetBrainsMonoNerdFontMono-Light.ttf',
-      },
-      -- Custom options passed to `pandoc` CLI call, can be ignored for setup
-      -- pandoc_user_args = nil,
-      -- or
       pandoc_user_args = {
-        --   -- short
-        --   '-V KEY[:VALUE]',
-        --   -- long options
-        --   '--standalone=[true|false]',
         '--pdf-engine=pdflatex',
         '-V fontsize:6pt',
         '-V dpi:120',
-        '-V geometry:margin=0.5in',
+        '-V geometry:margin=1in',
         '-V papersize:a4',
         '-V colorlinks=true',
         '-V linkcolor=blue',
