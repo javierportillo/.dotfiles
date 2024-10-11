@@ -142,6 +142,10 @@ alias dclft="docker compose logs -f --tail=10"
 # cd to lf last dir
 alias lf="lfcd"
 
+# Gstreamer
+alias gla="gst-launch-1.0"
+alias gin="gst-inspect-1.0"
+
 # Run fastfetch every open
 fastfetch
 
