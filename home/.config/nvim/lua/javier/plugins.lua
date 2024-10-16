@@ -22,7 +22,7 @@ require('lazy').setup({
   },
   ---@diagnostic disable-next-line: assign-type-mismatch
   dev = {
-    path = '~/Documents/nvim_dev_projects',
+    path = '~/Documents/05-nvim-dev-projects/',
     fallback = false,
   },
 })
