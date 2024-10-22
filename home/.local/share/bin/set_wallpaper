@@ -1,9 +1,9 @@
 #!/usr/bin/env zsh
 
 if [[ -n "$1" ]]; then
-  image_path="$1"
+    image_path="$1"
 else
-  read -r image_path
+    read -r image_path
 fi
 
 image_path=$(tr -d '\n' <<< "$image_path")
@@ -11,16 +11,12 @@ image_path=$(tr -d '\n' <<< "$image_path")
 [[ -z $image_path ]] && echo "path required" && exit 1
 [[ ! -f $image_path ]] && echo "path is not a file" && exit 1
 
-config="/home/javier/.config/hypr/hyprpaper.conf"
+cp "$image_path" "$HOME/.cache/wallpaper/wallpaper"
 
-echo "\$wallpaper = $image_path" > $config
-echo "preload = \$wallpaper" >> $config
-echo "wallpaper = , \$wallpaper" >> $config
+config="$HOME/.config/hypr/hyprpaper.conf"
 
-hyprctl -q hyprpaper unload all 
-killall hyprpaper
-
-hyprpaper > /dev/null 2>&1 &
-disown
+hyprctl -q hyprpaper unload all
+hyprctl -q hyprpaper preload "$HOME/.cache/wallpaper/wallpaper"
+hyprctl -q hyprpaper wallpaper ", $HOME/.cache/wallpaper/wallpaper"
 
 notify-send "Wallpaper Changed!"
