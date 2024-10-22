@@ -153,6 +153,13 @@ alias lf="lfcd"
 alias gla="gst-launch-1.0"
 alias gin="gst-inspect-1.0"
 
+alias ssh="TERM=xterm-256color ssh"
+
 # Run fastfetch every open
 fastfetch
+
+## [Completion]
+## Completion scripts setup. Remove the following line to uninstall
+[[ -f /home/javier/.dart-cli-completion/zsh-config.zsh ]] && . /home/javier/.dart-cli-completion/zsh-config.zsh || true
+## [/Completion]
 
