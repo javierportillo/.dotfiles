@@ -19,7 +19,7 @@
 }
 
 #waybar {
-  font-family: 'JetBrains Mono Regular', sans-serif;
+  font-family: 'UbuntuSans Nerd Font Propo', sans-serif;
   font-size: 1.2em;
   font-weight: 400;
   color: @base04;
@@ -49,7 +49,7 @@
 }
 
 #tray {
-  margin: 4px 4px 4px 4px;
+  margin: 0;
 }
 
 #tray * {
