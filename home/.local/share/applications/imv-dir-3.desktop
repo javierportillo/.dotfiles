@@ -1,0 +1,6 @@
+[Desktop Entry]
+Exec=imv-dir
+MimeType=image/webp;
+Name=imv-dir
+NoDisplay=true
+Type=Application
