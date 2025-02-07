@@ -1,9 +1,11 @@
 return {
   {
     'rest-nvim/rest.nvim',
-    enabled = false,
-    ft = 'http',
+    enabled = true,
     dependencies = { 'luarocks.nvim' },
-    config = true,
+    ft = 'http',
+    keys = {
+      { '<leader>R', '<cmd>Rest run<cr>', desc = 'Run Rest Request' },
+    },
   },
 }
