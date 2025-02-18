@@ -44,11 +44,22 @@ return {
         jsonc = { 'prettierd' },
         sh = { 'beautysh' },
         zsh = { 'beautysh' },
+        php = { 'php-cs-fixer' },
+        html = { 'prettierd' },
+        tex = { 'latexindent' },
+        -- ['*'] = { 'injected' },
         -- Conform can also run multiple formatters sequentially
         -- python = { "isort", "black" },
         --
         -- You can use 'stop_after_first' to run the first available formatter from the list
         -- javascript = { "prettierd", "prettier", stop_after_first = true },
+      },
+      formatters = {
+        ['php-cs-fixer'] = {
+          command = 'php-cs-fixer',
+          args = { 'fix', '--rules=@PSR12', '$FILENAME' },
+          stdin = false,
+        },
       },
     },
   },
