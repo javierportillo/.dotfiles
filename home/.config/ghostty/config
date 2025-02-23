@@ -43,7 +43,7 @@
 # resize-overlay-duration = 4s 200ms
 
 font-family = UbuntuSansMono Nerd Font Mono
-font-size = 12
+font-size = 13
 
 theme = tokyonight
 background = #04041A
