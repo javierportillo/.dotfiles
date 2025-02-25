@@ -16,11 +16,11 @@ screenshot_dir=~/Pictures/screenshots
 case $selected_dst in
     'Save File')
         [[ -d $screenshot_dir ]] || mkdir $screenshot_dir
-        hyprshot -m $selected_mode --output-folder $screenshot_dir
+        hyprshot -D 1 -m $selected_mode --output-folder $screenshot_dir
         ;;
     'Copy to Clipboard')
-        hyprshot -m $selected_mode --clipboard-only
+        hyprshot -D 1 -m $selected_mode --clipboard-only
         ;;
     'Edit with Pinta')
-        hyprshot -m $selected_mode --output-folder $screenshot_dir -- pinta
+        hyprshot -D 1 -m $selected_mode --output-folder $screenshot_dir -- pinta
 esac
