@@ -12,8 +12,10 @@
 [commit]
   template = ~/.config/git/commit_template
   gpgsign = true
-
 [tag]
   gpgSign = true
 [pull]
-	rebase = false
+  rebase = false
+[push]
+  autoSetupRemote = true
+  default = current
