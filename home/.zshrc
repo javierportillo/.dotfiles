@@ -22,7 +22,7 @@ zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
 source <(fzf --zsh)
 
 # enables Atuin
-eval "$(atuin init zsh --disable-ctrl-r)"
+eval "$(atuin init zsh)"
 
 # Start StarShip
 eval "$(starship init zsh)"
@@ -145,9 +145,6 @@ alias nk='NVIM_APPNAME="nvim-kickstart" nvim'
 # docker
 alias dc="docker compose"
 alias dclft="docker compose logs -f --tail=10"
-
-# cd to lf last dir
-alias lf="lfcd"
 
 # Gstreamer
 alias gla="gst-launch-1.0"
