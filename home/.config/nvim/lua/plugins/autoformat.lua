@@ -47,6 +47,7 @@ return {
         php = { 'php-cs-fixer' },
         html = { 'prettierd' },
         tex = { 'latexindent' },
+        python = { 'autopep8' },
         -- ['*'] = { 'injected' },
         -- Conform can also run multiple formatters sequentially
         -- python = { "isort", "black" },
