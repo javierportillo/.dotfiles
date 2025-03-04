@@ -119,15 +119,16 @@ zstyle ':omz:plugins:alias-finder' cheaper yes # disabled by default
 
 # KEYBINDS
 
-alias gg="lazygit"
-alias ip="ip --color=always"
-alias ff='fzf --layout reverse --height ~40% --border --tmux center'
-
 # History
 bindkey '^p' history-search-backward
 bindkey '^n' history-search-forward
 
 # ALIASES
+# git
+alias gg="lazygit"
+alias ip="ip --color=always"
+alias ff='fzf --layout reverse --height ~40% --border --tmux center'
+
 # kubernetes
 alias k="kubectl"
 alias kx="kubectx"
@@ -150,7 +151,9 @@ alias dclft="docker compose logs -f --tail=10"
 alias gla="gst-launch-1.0"
 alias gin="gst-inspect-1.0"
 
+# Other
 alias ssh="TERM=xterm-256color ssh"
+alias pn="pnpm"
 
 # Run fastfetch every open
 fastfetch
