@@ -36,6 +36,9 @@ return {
       vim.keymap.set('n', '<leader>5', function()
         harpoon:list():select(5)
       end, { desc = 'Harpoon to 5' })
+
+      local harpoon_extensions = require('harpoon.extensions')
+      harpoon:extend(harpoon_extensions.builtins.highlight_current_file())
     end,
   },
 }
