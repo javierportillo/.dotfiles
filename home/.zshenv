@@ -11,3 +11,6 @@ export EDITOR="nvim"
 export COLORTERM="truecolor"
 
 . "$HOME/.cargo/env"
+
+export COMPOSE_BAKE="true"
+
