@@ -60,4 +60,16 @@ void mainImage( out vec4 fragColor, in vec2 fragCoord )
     col = mix(col,vec3(.9,.9,1.1),1.-exp(-.01*g*g*g));
     // Output to screen
     fragColor = vec4(col,1.0);
+
+    vec2 gv = fragCoord / iResolution.xy;
+    vec4 termColor = texture(iChannel0, gv);
+    // sample the background color (assuming top-left corner is bg color and it is a solid bg (no gradients))
+    vec4 bgColor = texture(iChannel0, vec2(0.001, 0.001));
+    // determine if the pixel belongs to text (different from bg)
+    float textMask = step(0.1, length(termColor.rgb - bgColor.rgb)); // 1 for text, 0 for bg
+    float bgMask = 1.0 - textMask; // inverse mask is bg
+    //blend shader with bg color
+    vec4 blendedBg = mix(bgColor, vec4(fragColor.rgb, 1.0), 0.15); // Adjust mix factor as needed
+    // apply: keep text, blend effect into bg
+    fragColor = vec4(mix(blendedBg, termColor, textMask).rgb, 1.0);
 }

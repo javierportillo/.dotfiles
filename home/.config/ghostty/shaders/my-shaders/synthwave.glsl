@@ -1,7 +1,7 @@
 //#define AA 2
 //#define VAPORWAVE
 //#define stereo 1. // -1. for cross-eyed (defaults to parallel view)
-#define speed 0.2 
+#define speed 0.8 
 #define wave_thing
 //#define city
 
@@ -251,10 +251,17 @@ void mainImage( out vec4 fragColor, in vec2 fragCoord )
     fragColor/=float(AA*AA);
     #endif
     
-    fragColor = vec4(fragColor.rgb, 1.0);
-    vec2 qq = fragCoord.xy / iResolution.xy;
-    vec4 terminalColor = texture(iChannel0, qq);
-    fragColor = mix(fragColor, terminalColor, step(0.05, length(terminalColor.rgb)));
+  vec2 gv = fragCoord / iResolution.xy;
+  vec4 termColor = texture(iChannel0, gv);
+  // sample the background color (assuming top-left corner is bg color and it is a solid bg (no gradients))
+  vec4 bgColor = texture(iChannel0, vec2(0.001, 0.001));
+  // determine if the pixel belongs to text (different from bg)
+  float textMask = step(0.1, length(termColor.rgb - bgColor.rgb)); // 1 for text, 0 for bg
+  float bgMask = 1.0 - textMask; // inverse mask is bg
+  //blend shader with bg color
+  vec4 blendedBg = mix(bgColor, vec4(fragColor.rgb, 1.0), 0.3); // Adjust mix factor as needed
+  // apply: keep text, blend effect into bg
+  fragColor = vec4(mix(blendedBg, termColor, textMask).rgb, 1.0);
 }
 
 /** SHADERDATA

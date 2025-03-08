@@ -44,7 +44,7 @@ void mainImage( out vec4 fragColor, in vec2 fragCoord ) {
     float textMask = step(0.1, length(termColor.rgb - bgColor.rgb)); // 1 for text, 0 for bg
     float bgMask = 1.0 - textMask; // inverse mask is bg
     //blend shader with bg color
-    vec4 blendedBg = mix(bgColor, vec4(finalColor.rgb, 1.0), 0.02); // Adjust mix factor as needed
+    vec4 blendedBg = mix(bgColor, vec4(finalColor.rgb, 1.0), 0.7); // Adjust mix factor as needed
     // apply: keep text, blend effect into bg
     fragColor = vec4(mix(blendedBg, termColor, textMask).rgb, 1.0);
 }
