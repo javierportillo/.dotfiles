@@ -5,7 +5,7 @@ engine = "fuzzel"
 command_start = "󰜎"
 submenu_start = ">"
 parameters = "--dmenu --placeholder 'Choose One'"
-skip_single = false
+skip_single = true
 
 [shortcuts_menu.entries."Utilities Menu"]
 "Add Bookmark" = "bookmarkthis"
@@ -29,3 +29,9 @@ skip_single = false
 "Shutdown Now" = "shutdown now"
 "Restart" = "reboot"
 "Suspend" = "systemctl suspend"
+
+[shortcuts_menu.entries."Terminal Shader"]
+"Choose Shader" = [
+  { name = "shader", command = 'find "$HOME/.config/ghostty/shaders" -type f -name "*.glsl" -printf "%P\n"' },
+  'test -n "[shader]" && ghostty --custom-shader="$HOME/.config/ghostty/shaders/[shader]"',
+]
