@@ -1,0 +1,6 @@
+[Desktop Entry]
+Type=Application
+Name=adskidmgr Scheme Handler
+Exec=sh -c 'env WINEPREFIX="/home/javier/.autodesk_fusion/wineprefixes/default" wine "/home/javier/.autodesk_fusion/wineprefixes/default/drive_c/Program Files/Autodesk/webdeploy/production/b4ebb90d69b5fc8cf013f75341ee2a1192c9da8e/Autodesk Identity Manager/AdskIdentityManager.exe" "%u"'
+StartupNotify=false
+MimeType=x-scheme-handler/adskidmgr;
