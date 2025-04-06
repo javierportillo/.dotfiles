@@ -20,6 +20,7 @@ skip_single = true
 "Set Wallpaper" = "choose_wallpaper"
 "File Explorer" = "kitty yazi"
 "Bluetooth" = "kitty bluetui"
+"Keyboard Tester" = "kitty wev"
 
 [shortcuts_menu.entries."Utilities Menu"."Reload Things"]
 "Reload Waybar" = "pkill -15 waybar; sleep 0.5; nohup waybar 2>&1 &"
