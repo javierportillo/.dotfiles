@@ -32,3 +32,5 @@ vim.keymap.set('n', '<c-w>z', '<c-w>_<c-w>|', { desc = 'Zoom this split' })
 
 -- Save with leader
 vim.keymap.set('n', '<leader>w', '<cmd>w<cr>', { desc = 'Save File' })
+
+vim.keymap.set('i', '', '<C-W>', { noremap = true, desc = 'Insert mode delete word' })
