@@ -105,7 +105,7 @@ Comment[vi]=Truy cập Internet
 Comment[zh_CN]=访问互联网
 Comment[zh_HK]=連線到網際網路
 Comment[zh_TW]=連線到網際網路
-Exec=/usr/bin/thorium-browser --test-type %U
+Exec=/usr/bin/thorium-browser --test-type --enable-features=UseOzonePlatform --ozone-platform=wayland --enable-features=WaylandLinuxDrmSyncobj %U
 StartupWMClass=thorium
 Keywords=browser
 StartupNotify=true
@@ -169,7 +169,7 @@ Name[uk]=Нове вікно
 Name[vi]=Cửa sổ Mới
 Name[zh_CN]=新建窗口
 Name[zh_TW]=開新視窗
-Exec=/usr/bin/thorium-browser --test-type --new-window %U
+Exec=/usr/bin/thorium-browser --test-type --new-window --enable-features=UseOzonePlatform --ozone-platform=wayland --enable-features=WaylandLinuxDrmSyncobj %U
 
 [Desktop Action new-private-window]
 Name=New Incognito Window
@@ -221,7 +221,7 @@ Name[uk]=Нове вікно в режимі анонімного перегля
 Name[vi]=Cửa sổ ẩn danh mới
 Name[zh_CN]=新建隐身窗口
 Name[zh_TW]=新增無痕式視窗
-Exec=/usr/bin/thorium-browser --test-type --incognito %U
+Exec=/usr/bin/thorium-browser --test-type --incognito --enable-features=UseOzonePlatform --ozone-platform=wayland --enable-features=WaylandLinuxDrmSyncobj %U
 
 [Desktop Action temp-profile]
 Name=Open New Window with a temporary profile
@@ -259,7 +259,7 @@ Name[ug]=ۋاقىتلىق سەپلىمە ھۆججەت بىلەن يېڭى كۆز
 Name[vi]=Mở cửa sổ mới với hồ sơ tạm
 Name[zh_CN]=以临时配置文件打开新窗口
 Name[zh_TW]=以暫時性個人身分開啟新視窗
-Exec=/usr/bin/thorium-browser --test-type --temp-profile %U
+Exec=/usr/bin/thorium-browser --test-type --temp-profile --enable-features=UseOzonePlatform --ozone-platform=wayland --enable-features=WaylandLinuxDrmSyncobj %U
 
 [Desktop Action content-shell]
 Name=Open Thorium Shell

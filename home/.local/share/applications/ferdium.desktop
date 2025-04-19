@@ -1,6 +1,6 @@
 [Desktop Entry]
 Name=Ferdium
-Exec=sh -c "$HOME/.local/share/applications/open_and_fix_browser 'ferdium'"
+Exec=sh -c "$HOME/.local/share/applications/open_and_fix_browser '/usr/bin/ferdium' --enable-features=UseOzonePlatform --ozone-platform=wayland --enable-features=WaylandLinuxDrmSyncobj"
 Terminal=false
 Type=Application
 Icon=ferdium
