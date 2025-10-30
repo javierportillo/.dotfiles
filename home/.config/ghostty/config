@@ -51,6 +51,9 @@ background-opacity = 0.8
 
 window-decoration = false
 
+# Custom keymaps
+keybind = "ctrl+backspace=text:\x17"
+
 # custom-shader = ~/.config/ghostty/shaders/ghostty-shaders/in-game-crt.glsl
 # custom-shader = ~/.config/ghostty/shaders/ghostty-shaders/just-snow.glsl
 # custom-shader = ~/.config/ghostty/shaders/ghostty-shaders/retro-terminal.glsl
